@@ -1,0 +1,243 @@
+﻿<?php
+
+/*
+ * %m1% - Dymamic markers which are replaced at run time by the relevant index.
+ */
+$lang = array ();
+
+// Account
+$lang = array_merge ( $lang, array (
+		"ACCOUNT_SPECIFY_USERNAME" => "Veuillez entrer votre courriel",
+		"ACCOUNT_SPECIFY_PASSWORD" => "Veuillez entrer votre  mot de passe",
+		"ACCOUNT_SPECIFY_EMAIL" => "Veuillez entrer votre adresse email",
+		"ACCOUNT_INVALID_EMAIL" => "Adresse email invalide",
+		"ACCOUNT_USER_OR_EMAIL_INVALID" => "Utilisateur ou courriel email invalide",
+		"ACCOUNT_USER_OR_PASS_INVALID" => "Utilisateur ou mot de passe invalide",
+		"ACCOUNT_ALREADY_ACTIVE" => "Votre compte est déjà activé",
+		"ACCOUNT_INACTIVE" => "Votre compte est inactif. Vérifiez votre boîte de réception/spam pour l'e-mail d'activation.  Sinon, vous pouvez demander un nouveau e-mail d'activation sur notre site web.",
+		"ACCOUNT_USER_CHAR_LIMIT" => "Votre nom d'utilisateur doit comporter un nombre de caractères compris entre %m1% et %m2%",
+		"ACCOUNT_FIRST_CHAR_LIMIT" => "Votre prénom d'utilisateur doit comporter un nombre de caractères compris entre %m1% et %m2%",
+		"ACCOUNT_LAST_CHAR_LIMIT" => "Votre nom de famille d'utilisateur doit comporter un nombre de caractères compris entre %m1% et %m2%",
+		"ACCOUNT_COMPANY_CHAR_LIMIT" => "Nom de la société doit comporter un nombre de caractères compris entre %m1% et %m2%",
+		"ACCOUNT_PASS_CHAR_LIMIT" => "Votre mot de passe doit comporter un nombre de caractères compris entre %m1% et %m2%",
+		"ACCOUNT_TITLE_CHAR_LIMIT" => "Les titres doivent comporter un nombre de caractères compris entre %m1% et %m2%",
+		"ACCOUNT_PASS_MISMATCH" => "Votre mot de passe et sa confirmation doivent être identiques",
+		"ACCOUNT_COMPANY_INVALID_CHARACTERS" => "Le nom de la société ne peut contenir que des caractères alpha-numériques",
+		"ACCOUNT_USERNAME_IN_USE" => "L'utilisateur %m1% existe déjà. Veuillez choisir un autre nom",
+		"ACCOUNT_DISPLAYNAME_IN_USE" => "L'avatar %m1% est déjà utilisé. Veuillez choisir un autre nom",
+		"ACCOUNT_EMAIL_IN_USE" => "Email %m1% est déja utilisé",
+		"ACCOUNT_LINK_ALREADY_SENT" => "Un courriel d'activation a déjà été envoyé à cette adresse dans la(es) dernière(s) %m1% heure(s)",
+		"ACCOUNT_NEW_ACTIVATION_SENT" => "Un nouveau lien d'activation a été envoyé. Vérifier votre boite mail",
+		"ACCOUNT_SPECIFY_NEW_PASSWORD" => "Votre nouveau mot de passe SVP",
+		"ACCOUNT_SPECIFY_CONFIRM_PASSWORD" => "Veuillez confirmer votre nouveau mot de passe SVP",
+		"ACCOUNT_NEW_PASSWORD_LENGTH" => "Votre nouveau mot de passe doit comporter un nombre de caractères compris entre %m1% et %m2%",
+		"ACCOUNT_PASSWORD_INVALID" => "Votre mot de passe est incorrect",
+		"ACCOUNT_DETAILS_UPDATED" => "Les paramètres de votre compte ont été modifiés",
+		"ACCOUNT_ACTIVATION_MESSAGE" => "http://%m1%activate-account.php?token=%m2%",
+		"ACCOUNT_ACTIVATION_COMPLETE" => "Votre compte a été activé avec succès. Vous pouvez vous annoncer maintenant. <a href=\"index.php\">here</a>",
+		"ACCOUNT_REGISTRATION_COMPLETE_TYPE1" => "Vous avez été enregistrés avec succès. Vous pouvez maintenant vous annoncer. <a href=\"index.php\">ici</a>",
+		"ACCOUNT_REGISTRATION_COMPLETE_TYPE2" => "Vous avez été enregistrés avec succès. Un courriel de confirmation a été envoyé à l'adresse que vous avez mentionnée. S'il vous plaît suivez le lien inscrit afin de terminer l'enregistrement.",
+		"ACCOUNT_PASSWORD_NOTHING_TO_UPDATE" => "L'ancien mot de passe et le nouveau ne peuvent être identique. Choisissez un nouveau mot de passe.",
+		"ACCOUNT_PASSWORD_UPDATED" => "Mot de passe du compte mis à jour",
+		"ACCOUNT_EMAIL_UPDATED" => "Adresse mail du compte mise à jour",
+		"ACCOUNT_TOKEN_NOT_FOUND" => "Votre compte a déjà été activé",
+		"ACCOUNT_USER_INVALID_CHARACTERS" => "Le nom d'utilisateur ne peut contenir que des caractères alpha-numerique",
+		"ACCOUNT_FIRST_INVALID_CHARACTERS" => "Le prénom d'utilisateur ne peut contenir que des caractères alpha-numérique",
+		"ACCOUNT_LAST_INVALID_CHARACTERS" => "Le nom de famille d'utilisateur ne peut contenir que des caractères alpha-numérique",
+		"ACCOUNT_DELETIONS_SUCCESSFUL" => "L'utilisateur %m1% a été effacé avec succès",
+		"ACCOUNT_MANUALLY_ACTIVATED" => "Le compte %m1% a été activé manuellement",
+		"ACCOUNT_DISPLAYNAME_UPDATED" => "Avatar changé pour %m1%",
+		"ACCOUNT_TITLE_UPDATED" => "%m1% a changé en %m2%",
+		"ACCOUNT_PERMISSION_ADDED" => "Permissions %m1% ajoutées",
+		"ACCOUNT_PERMISSION_REMOVED" => "Permissions %m1% retirées",
+		"ACCOUNT_INVALID_USERNAME" => "Utilisateur invalide",
+		"ACCOUNT_SPECIFY_COMPANY" => "Veuillez indiquer le nom de votre société SVP",
+		"ACCOUNT_COMPANY_INVALID" => "Nom de la société invalide",
+		"EMPTY_FEEDBACK" => "Le Feedback ne peut être vide." 
+) );
+
+// Configuration
+$lang = array_merge ( $lang, array (
+		"CONFIG_NAME_CHAR_LIMIT" => "Le nom du site doit contenir entre %m1% et %m2% caractères",
+		"CONFIG_URL_CHAR_LIMIT" => "L'URL du site doit contenir entre %m1% et %m2% caractères",
+		"CONFIG_EMAIL_CHAR_LIMIT" => "L'adresse mail lié au site doit contenir entre %m1% et %m2% caractères",
+		"CONFIG_ACTIVATION_TRUE_FALSE" => "L'activation par email doit être `true` ou `false`",
+		"CONFIG_ACTIVATION_RESEND_RANGE" => "Le temps pour l'activation doit être compris entre %m1% et %m2% heures",
+		"CONFIG_LANGUAGE_CHAR_LIMIT" => "Le chemin pour la langue doit contenir entre %m1% et %m2% caractères",
+		"CONFIG_LANGUAGE_INVALID" => "Il n'y a pas de fichier pour la langue suivante: `%m1%`",
+		"CONFIG_TEMPLATE_CHAR_LIMIT" => "Le chemin pour les modèles doit contenir entre %m1% et %m2% caractères",
+		"CONFIG_TEMPLATE_INVALID" => "Il n'y a pas de fichier lié au modèle suivant: `%m1%`",
+		"CONFIG_EMAIL_INVALID" => "L'adresse email est invalide",
+		"CONFIG_INVALID_URL_END" => "N'oubliez pas le symbol / à la fin de votre URL pour votre site",
+		"CONFIG_UPDATE_SUCCESSFUL" => "La configuration pour votre site à été mise à jour. Il est recommandé que vous chargiez une nouvelle page pour vérifier que les modificatons ont été prises en compte" 
+) );
+
+// Forgot Password
+$lang = array_merge ( $lang, array (
+		"FORGOTPASS_INVALID_TOKEN" => "Votre jeton d'activation est invalide",
+		"FORGOTPASS_NEW_PASS_EMAIL" => "Un nouveau mot de passe vous a été envoyé",
+		"FORGOTPASS_REQUEST_CANNED" => "La requête pour un nouveau mot de passe a été annulée",
+		"FORGOTPASS_REQUEST_EXISTS" => "Il y a déjà une requête en attente concernant le mot de passe perdu pour ce compte",
+		"FORGOTPASS_REQUEST_SUCCESS" => "Les instructions pour accéder de nouveau à votre compte vous ont été envoyées" 
+) );
+
+// Mail
+$lang = array_merge ( $lang, array (
+		"MAIL_ERROR" => "Erreur fatale. Veuillez contacter l'administrateur du serveur",
+		"MAIL_TEMPLATE_BUILD_ERROR" => "Erreur lors de la création du modèle d'email",
+		"MAIL_TEMPLATE_DIRECTORY_ERROR" => "Impossile d'ouvrir le dossier contenant les modèles d'email. Vous pouvez essayer d'utiliser le répertoire suivant: %m1%",
+		"MAIL_TEMPLATE_FILE_EMPTY" => "Le modèle est vide... Rien ne pourra être envoyé" 
+) );
+
+// Miscellaneous
+$lang = array_merge ( $lang, array (
+		"CAPTCHA_FAIL" => "Code sécurité invalide",
+		"CONFIRM" => "Confirmer",
+		"CONFIRM_UML" => "Confirmer",
+		"DENY" => "Refuser",
+		"SUCCESS" => "Succès",
+		"ERROR" => "Erreur",
+		"NOTHING_TO_UPDATE" => "Rien à mettre à jour",
+		"SQL_ERROR" => "Erreur SQL fatale",
+		"FEATURE_DISABLED" => "Cette fonction n'est pas actuellement utilisable",
+		"PAGE_PRIVATE_TOGGLED" => "Cette page est maintenaint devenue: %m1%",
+		"PAGE_ACCESS_REMOVED" => "L'accès à cette page est maintenant interdit pour les niveaux de permissions : %m1%",
+		"PAGE_ACCESS_ADDED" => "L'accès à cette page est maintenant autorisé pour les niveaux de permissions : %m1%" 
+) );
+
+// Permissions
+$lang = array_merge ( $lang, array (
+		"PERMISSION_CHAR_LIMIT" => "Les permissions doivent contenir entre %m1% et %m2% caractères",
+		"PERMISSION_NAME_IN_USE" => "La permission %m1% est déja utilisée",
+		"PERMISSION_DELETIONS_SUCCESSFUL" => "Le niveau de permission %m1% a été effacé avec succès",
+		"PERMISSION_CREATION_SUCCESSFUL" => "Le niveau de permission %m1% a été créé avec succès",
+		"PERMISSION_NAME_UPDATE" => "Le niveau de permission a été changé en `%m1%`",
+		"PERMISSION_REMOVE_PAGES" => "Accès supprimé pour %m1% page(s)",
+		"PERMISSION_ADD_PAGES" => "Accès ajouté pour %m1% page(s)",
+		"PERMISSION_REMOVE_USERS" => "Les permissions pour l'utilisateur %m1% ont été supprimées",
+		"PERMISSION_ADD_USERS" => "Les permissions pour l'utilisateur %m1% ont été ajoutées",
+		"CANNOT_DELETE_NEWUSERS" => "Il est interdit d'effacer le groupe par défaut 'new user'",
+		"CANNOT_DELETE_ADMIN" => "Il est interdit d'effacer le groupe administrateur par défaut 'admin'" 
+) );
+
+// Titles
+$lang = array_merge ( $lang, array (
+		"MAIN_TITLE" => "dropZone-Production",
+		"WELCOME_LOGIN" => "BIENVENUE AU DOMAINE D'ENREGISTREMENT DU CENTRE DE DÉMONSTRATION DE LA PLATEFORME EVALink<sup>&reg;</sup>",
+		"WELCOME_MSG" => "BIENVENUE",
+		"LOGIN" => "Login",
+		"LOGIN_INFO" => "Un utilisateur enregistré est nécessaire afin de pouvoir utiliser la démo",
+		"REGISTER" => "Création d'un compte",
+		"FORGOT_PASSWORD" => "Mot de passe oublié",
+		"RESEND_ACTIVATION_EMAIL" => "Courriel d'activation",
+		"SCREENCAST_INFO" => "Films \"How to\"",
+		"PW_CHANGE" => "Changer mot de passe",
+		"LOGOUT" => "Se déconnecter",
+		"ADMIN_CONFIGURATION" => "Configuration (Admin.)",
+		"ADMIN_USERS" => "Gestion des utilisateurs (Admin.)",
+		"ADMIN_PERMISSIONS" => "Gestion des droits (Admin.)",
+		"ADMIN_PAGES" => "Gestion des pages (Admin.)",
+		"HOME" => "Home",
+		"ACTIVATE_ACCOUNT" => "Activation compte",
+		"PAGE_INFORMATION" => "Information page",
+		"PAGE_ACCESS" => "Accès page",
+		"USER_INFO" => "Information utilisateur",
+		"PERMISSION_ACCESS" => "Autorisations des accès",
+		"NOT_REGISTERED" => "Pas de compte ? &#8680; <a href='register.php'>Nouveau compte</a>",
+		"FEEDBACK" => "Feedback",
+		"PW_FORGOT_TXT" => "Vous avez oublié votre mot de passe ? Inscrivez votre nom d'utilisateur et votre adresse email dans les champs suivants. Nous allons vous faire parvenir un courriel, avec lequel il vous sera possible de générer un nouveau mot de passe.",
+		"SC_TXT" => "Vous ne connaissez pas encore l'EVALink<sup>&reg;</sup>InstallerApp<sup>&trade;</sup> ? Visionnez les différentes vidéos mises à disposition afin de vous faire une première idée de ses possibilités.",
+		"REGISTER_MAIL_SUBJECT" => "Confirmation de l'inscription",
+		"LOSTPW_MAIL_SUBJECT" => "Requete mot de passe oublie",
+		"NEWPW_MAIL_SUBJECT" => "Votre nouveau mot de passe",
+		"HOME_TXT" => "Bienvenue au dropZone-Production",
+		"VIDEOS_TXT" => "Tellement simple est la mise en service des appareils de la série ipTNA<sup>®</sup> >", 
+                "LANGUAGE" => "Langue",
+		"PW_FORGOT_QST" => "Mot de passe oublié? Cliquez<a href='forgot-password.php'> ici </a>",
+		"RESEND_ACTIV_MAIL_TXT" => "Ici, vous pouvez renvoyer un courriel d'activation de votre inscription.",
+		"FEEDBACK_TXT" => "Nous sommes ravis de recevoir vos commentaires. S'il vous plaît, remplissez le formulaire ci-dessous.",
+		"PW_CHANGE_TXT" => "Utilisez le formulaire ci-dessous pour créer un nouveau mot de passe.",
+		"REGISTER_TXT" => "Ici, vous pouvez vous inscrire sur notre Centre de Démonstration de la Plateforme EVALink<sup>&reg;</sup> en suivant quelques étapes.",
+		"ACTIVATION_SUBJECT" => "Activation mail",
+		"FEEDBACK_SUCCESSFUL_SENT" => "Vos commentaires nous ont été envoyés avec succès. Nous vous remercions pour votre coopération.",
+		"TOOLTIP_SC1" => "Veuillez choisir une vidéo, svp",
+		"TOOLTIP_SC2" => "Veuillez choisir une vidéo, svp",
+		"TOOLTIP_SC3" => "Veuillez choisir une vidéo, svp",
+		"TOOLTIP_SC4" => "Veuillez choisir une vidéo, svp",
+		"TOOLTIP_SC5" => "Veuillez choisir une vidéo, svp",
+		"TOOLTIP_SC6" => "Veuillez choisir une vidéo, svp",
+		"TOOLTIP_SC7" => "Veuillez choisir une vidéo, svp" 
+) );
+
+// Buttons and form-fields
+$lang = array_merge ( $lang, array (
+		"LOGIN_BTN" => "Login",
+		"REGISTER_BTN" => "Valider",
+		"SUBMIT_BTN" => "Envoyer",
+		"USERNAME" => "Utilisateur",
+		"PW" => "Mot de passe",
+		"EMAIL" => "Courriel",
+		"COMPANY" => "Nom de la société",
+		"PW_CONFIRM" => "Confirmation MDP",
+		"SC1" => "Enregistrement responsable société",
+		"SC2" => "Enregistrement installateur",
+		"SC3" => "Création client",
+		"SC4" => "Création d'un modèle de transmetteur",
+		"SC5" => "Enregistrement d'un transmetteur",
+		"SC6" => "Remplacement d'un transmetteur",
+		"SC7" => "Mise et service et test",
+		"SC_PATH" => "vid_fr",
+		"INSTALLERAPP" => "InstallerApp<sup>&trade;</sup>",
+		"NEW_PW" => "Nouveau mot de passe",
+		"UPDATE_BTN" => "Mise à jour",
+		"WEBSITE_NAME" => "Nom de la page web",
+		"WEBSITE_URL" => "URL web page",
+		"ACTIVATION_THRESHOLD" => "Activation threshold",
+		"LANGUAGE" => "Langues",
+		"EMAIL_ACTIVATION" => "Courriel d'activation",
+		"STYLE_TEMPLATE" => "Modèles (Style)",
+		"DELETE" => "Effacer",
+		"TITLE" => "Titres",
+		"LAST_SIGN_IN" => "Dernière connexion",
+		"PERMISSION_NAME" => "Nom de l'autorisation",
+		"NEW_MEMBER" => "Nouveau membre",
+		"ADMINISTRATOR" => "Administrateur",
+		"ID" => "ID",
+		"NAME" => "Nom",
+		"PRIVATE" => "Privé",
+		"PAGE" => "Page",
+		"ACCESS" => "Accès",
+		"TRUE" => "Vrai",
+		"FALSE" => "Faux",
+		"REMOVE_ACCESS" => "Supprimer accès",
+		"FALSE" => "Faux",
+		"NEVER" => "Jamais",
+		"CODE" => "Code de sécurité",
+		"ENTER_CODE" => "Code affiché ci-dessus",
+		"ACTIVE" => "Actif",
+		"ACTIVATE" => "Activer",
+		"SIGN_UP" => "Se connecter",
+		"PERMISSION_MEMBER" => "Permission d'affiliation",
+		"REMOVE_PERMISSION" => "Supprimer permission",
+		"REMOVE_MEMBER" => "Supprimer membrer",
+		"ADD_PERMISSION" => "Ajouter permission",
+		"ADD_MEMBER" => "Ajouter membre",
+		"PERMISSION_INFO" => "Information sur les permissions",
+		"PUBLIC_ACCESS" => "Accès public",
+		"PRIVATE_ACCESS" => "Accès private",
+		"ADD_ACCESS" => "Ajouter accès",
+		"TOOLTIP_SC_DEFAULT" => "ipTNA Series: Verpackung, Zubehör und Inbetriebnahme",
+		"LAST_UPDATE_TEXT" => "Dernière MAJ",
+		"SEND" => "Envoyer",
+		"RETURN" => "Retour",
+		"EXPORT" => "Exporter",
+		"PW_CURRENT" => "Current password",
+		"FIRSTNAME" => "Prénom",
+		"LASTNAME" => "Nom",
+		"LOST_PW_REQ_FILE" => "lost-password-request_fr.txt",
+		"NEW_REGIST_FILE" => "new-registration_fr.txt",
+		"RESEND_ACTIV_FILE" => "resend-activation_fr.txt",
+		"YOUR_LOST_PW_FILE" => "your-lost-password_fr.txt",
+		"INSTALLERWEB_LANG" => "fr" 
+) );
+?>
