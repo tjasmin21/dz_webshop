@@ -1,11 +1,16 @@
 ﻿<?php
-require_once( "db-settings.php" ); // Require DB connection
+require_once( "models/db-settings.php" ); // Require DB connection
 
 
-require_once( "funcs.php" );
+require_once( "models/funcs.php" );
+require_once( "models/db_funcs.php" );
 session_start ();
 
-include_once ('httpsprache.php');
+include_once( 'httpsprache.php' );
+
+require_once ("models/class.user.php");
+require_once ("models/class.newuser.php");
+require_once ("models/class.mail.php");
 //$languages = getLanguageFiles ();
 // Only once during one SESSION-Lifetime
 // First set all SESSION_VARIABLES

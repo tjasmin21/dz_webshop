@@ -61,7 +61,7 @@ dfn {
 }
 h1 {
   margin: .67em 0;
-  font-size: 2em;
+  font-size: 300%;
 }
 mark {
   color: #000;
@@ -6951,16 +6951,29 @@ footer a:hover {
     box-sizing: border-box;
 }
 
+/**
+    CUSTOMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+ */
 
 .bgImage{
     background: #cccccc url("../img/layout/indexBackground.jpg");
-    height:100%;
-    color: white;
-    font-weight: bold;
-    font-size: 100;
+    height:80%;
+    width: 100%;
+}
 
+.welcomeTitle{
+    font-size: 100px;
+    color: white;
+    text-align: center;
+    position:absolute;
+    top:30px;
 }
 
 .welcomeText{
-    width: 100%;
-    text-align: center;}
+    margin: auto;
+    width: 80%;
+    text-align: center;
+font-size: 100%;
+}
+
+

@@ -2,17 +2,20 @@
     require_once ("header.php");
 ?>
 
-	<p><br/></p>
-	<p><br/></p>
-	<p><br/></p>
-
 <div class="bgImage">
-    <div class="welcomeText">
-        <div class="div_h2 title03">
-            <h1 class="textWelcome"> <?php echo lang ( "WELCOME_MSG" ) ?> </h1>
-        </div>
-        <h2  class="div_infotext"><?php echo lang ( "HOME_TXT" )  ?></h2>
+    <div class="welcomeTitle">
+        <?php echo lang ( "WELCOME_MSG" ) ?>
     </div>
+</div>
+
+<div class="welcomeText">
+        Wir freuen uns dir die Möglichkeit zu bieten, deine Ideen in ein Multimediaprodukt umzusetzen.
+        Unsere Angebotsstruktur ermöglicht dir, qualitativ hochstehende Unterstützung zu angemessenen Preisen.
+        Unser Ziel ist es, mit dir, egal ob Unternehmung oder  Privatperson, ein Multimediaprodukt zu realisieren,
+        welches deinen Vorstellungen gerecht wird. Dabei ist es unser Anliegen, das Projekt so zu gestalten, dass
+        es deinen Möglichkeiten entspricht.
+        <br/>
+        Wir freuen uns darauf, mit dir deine Vorstellungen in Bild und Ton Realität werden zu lassen.
 </div>
 
 <?php

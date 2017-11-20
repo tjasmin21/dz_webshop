@@ -11,10 +11,12 @@ include( "top-navigation.php" );
     <meta charset="UTF-8">
     <title>dropZone Production</title>
     <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/bootstrap-theme.css"/>
     <script src="js/jquery2.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="main.js"></script>
-    <link rel="icon" href='img/layout/logoDZ.png' type='image/png'>
+    <link rel="icon" href="img/content/favicon.ico" type="image/ico">
+
     <style>
         @media screen and (max-width:480px){
             #search{width:80%;}

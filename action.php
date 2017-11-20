@@ -1,5 +1,5 @@
 <?php
-require_once ("config.php");
+require_once( "config.php" );
 
 if(isset($_POST["brand"])){
 	$brand_query = "SELECT * FROM brands";

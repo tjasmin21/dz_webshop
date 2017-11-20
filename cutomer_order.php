@@ -2,15 +2,6 @@
 require_once ("header.php");
 ?>
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>dropZone Production</title>
-		<link rel="stylesheet" href="css/bootstrap.min.css"/>
-		<script src="js/jquery2.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<script src="main.js"></script>
-	</head>
 <body>
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container-fluid">	

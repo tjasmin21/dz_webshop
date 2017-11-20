@@ -8,11 +8,11 @@
             <div class='navbar-header'>
                 <button type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#collapse' aria-expanded='false'>
                     <span class='sr-only'>navigation</span>
-                    <span class='icon-bar'></span>
-                    <span class='icon-bar'></span>
-                    <span class='icon-bar'></span>
                 </button>
-                <a href='index.php' class='navbar-brand'>dropZone-Production</a>
+
+                <a href='index.php'> <img src="img/layout/logoDZ.png" alt="Home" style="width:42px;height:42px;"> </a>
+                <!-- <a href='index.php' class='navbar-brand'>dropZone-Production</a>-->
+
             </div>
             <div class='collapse navbar-collapse' id='collapse'>
                 <ul class='nav navbar-nav'>
@@ -52,12 +52,13 @@
                                     <div class='panel panel-primary'>
                                         <div class='panel-heading'>Login</div>
                                         <div class='panel-heading'>
-                                            <label for='email'>Email</label>
-                                            <input type='email' class='form-control' id='email' required/>
-                                            <label for='email'>Password</label>
+                                            <label for='username'>Username</label>
+                                            <input type='text' class='form-control' id='username' required/>
+                                            <label for='password'>Password</label>
                                             <input type='password' class='form-control' id='password' required/>
                                             <p><br/></p>
-                                            <a href='#' style='color:white; list-style:none;'>Forgotten Password</a><input type='submit' class='btn btn-success' style='float:right;' id='login' value='Login'>
+                                            <a href='#' style='color:white; list-style:none;'>Forgotten Password</a>
+                                            <input type='submit' class='btn btn-success' style='float:right;' id='login' value='Login'  onClick='history.go(0)'>
                                         </div>
                                     </div>
                                 </div>
