@@ -2,26 +2,6 @@
 	require_once ("header.php");
 ?>
 
-<body>
-	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container-fluid">	
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse" aria-expanded="false">
-					<span class="sr-only">navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a href="#" class="navbar-brand">dropZone Production</a>
-			</div>
-		<div class="collapse navbar-collapse" id="collapse">
-			<ul class="nav navbar-nav">
-				<li><a href="index.php"><span class="glyphicon glyphicon-home"></span>Home</a></li>
-				<li><a href="index.php"><span class="glyphicon glyphicon-modal-window"></span>Product</a></li>
-			</ul>
-		</div>
-	</div>
-	</div>
 	<p><br/></p>
 	<p><br/></p>
 	<p><br/></p>
@@ -74,9 +54,9 @@
 			<div class="col-md-2"></div>
 			
 		</div>
-</body>	
-</html>
-
+<?php
+    require_once ("footer.php");
+?>
 
 
 

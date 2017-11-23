@@ -3,7 +3,7 @@ require_once( "config.php" );
 
 if(isset($_POST["brand"])){
 	$brand_query = "SELECT * FROM brands";
-	$run_query = mysqli_query($con,$brand_query);
+	$run_query = mysqli_query($mysqli,$brand_query);
 	echo "
 		<div class='nav nav-pills nav-stacked'>
 			<li class='active'><a href='#'><h4>Brands</h4></a></li>
@@ -22,7 +22,7 @@ if(isset($_POST["brand"])){
 
 if(isset($_POST["category"])){
 	$category_query = "SELECT * FROM categories";
-	$run_query = mysqli_query($con,$category_query) or die(mysqli_error($con));
+	$run_query = mysqli_query($mysqli,$category_query) or die(mysqli_error($mysqli));
 	echo "
 		<div class='nav nav-pills nav-stacked'>
 			<li class='active'><a href='#'><h4>Categories</h4></a></li>
@@ -41,7 +41,7 @@ if(isset($_POST["category"])){
 
 if(isset($_POST["page"])){
 	$sql = "SELECT * FROM products";
-	$run_query = mysqli_query($con,$sql);
+	$run_query = mysqli_query($mysqli,$sql);
 	$count = mysqli_num_rows($run_query);
 	$pageno = ceil($count/9);
 	for($i=1;$i<=$pageno;$i++){
@@ -59,7 +59,7 @@ if(isset($_POST["getProduct"])){
 		$start = 0;
 	}
 	$product_query = "SELECT * FROM products LIMIT $start,$limit";
-	$run_query = mysqli_query($con,$product_query);
+	$run_query = mysqli_query($mysqli,$product_query);
 	if(mysqli_num_rows($run_query) > 0){
 		while($row = mysqli_fetch_array($run_query)){
 			$pro_id    = $row['product_id'];
@@ -96,7 +96,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 		$sql = "SELECT * FROM products WHERE product_keywords LIKE '%$keyword%'";
 	}
 	
-	$run_query = mysqli_query($con,$sql);
+	$run_query = mysqli_query($mysqli,$sql);
 	while($row=mysqli_fetch_array($run_query)){
 			$pro_id    = $row['product_id'];
 			$pro_cat   = $row['product_cat'];
@@ -126,7 +126,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 			$p_id = $_POST["proId"];
 		$user_id = $_SESSION["uid"];
 		$sql = "SELECT * FROM cart WHERE p_id = '$p_id' AND user_id = '$user_id'";
-		$run_query = mysqli_query($con,$sql);
+		$run_query = mysqli_query($mysqli,$sql);
 		$count = mysqli_num_rows($run_query);
 		if($count > 0){
 			echo "
@@ -137,7 +137,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 			";//not in video
 		} else {
 			$sql = "SELECT * FROM products WHERE product_id = '$p_id'";
-			$run_query = mysqli_query($con,$sql);
+			$run_query = mysqli_query($mysqli,$sql);
 			$row = mysqli_fetch_array($run_query);
 				$id = $row["product_id"];
 				$pro_name = $row["product_title"];
@@ -148,7 +148,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 			`product_image`, `qty`, `price`, `total_amt`)
 			VALUES (NULL, '$p_id', '0', '$user_id', '$pro_name', 
 			'$pro_image', '1', '$pro_price', '$pro_price')";
-			if(mysqli_query($con,$sql)){
+			if(mysqli_query($mysqli,$sql)){
 				echo "
 					<div class='alert alert-success'>
 						<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
@@ -173,7 +173,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 if(isset($_POST["get_cart_product"]) || isset($_POST["cart_checkout"])){
 	$uid = $_SESSION["uid"];
 	$sql = "SELECT * FROM cart WHERE user_id = '$uid'";
-	$run_query = mysqli_query($con,$sql);
+	$run_query = mysqli_query($mysqli,$sql);
 	$count = mysqli_num_rows($run_query);
 	if($count > 0){
 		$no = 1;
@@ -236,7 +236,7 @@ if(isset($_POST["get_cart_product"]) || isset($_POST["cart_checkout"])){
 				  $x=0;
 				  $uid = $_SESSION["uid"];
 				  $sql = "SELECT * FROM cart WHERE user_id = '$uid'";
-				  $run_query = mysqli_query($con,$sql);
+				  $run_query = mysqli_query($mysqli,$sql);
 				  while($row=mysqli_fetch_array($run_query)){
 					  $x++;
 				 echo  '<input type="hidden" name="item_name_'.$x.'" value="'.$row["product_title"].'">
@@ -265,14 +265,14 @@ if(isset($_POST["get_cart_product"]) || isset($_POST["cart_checkout"])){
 if(isset($_POST["cart_count"]) AND isset($_SESSION["uid"])){
 	$uid = $_SESSION["uid"];
 	$sql = "SELECT * FROM cart WHERE user_id = '$uid'";
-	$run_query = mysqli_query($con,$sql);
+	$run_query = mysqli_query($mysqli,$sql);
 	echo mysqli_num_rows($run_query);
 }
 if(isset($_POST["removeFromCart"])){
 	$pid = $_POST["removeId"];
 	$uid = $_SESSION["uid"];
 	$sql = "DELETE FROM cart WHERE user_id = '$uid' AND p_id = '$pid'";
-	$run_query = mysqli_query($con,$sql);
+	$run_query = mysqli_query($mysqli,$sql);
 	if($run_query){
 		echo "
 			<div class='alert alert-danger'>
@@ -292,7 +292,7 @@ if(isset($_POST["updateProduct"])){
 	
 	$sql = "UPDATE cart SET qty = '$qty',price='$price',total_amt='$total' 
 	WHERE user_id = '$uid' AND p_id='$pid'";
-	$run_query = mysqli_query($con,$sql);
+	$run_query = mysqli_query($mysqli,$sql);
 	if($run_query){
 		echo "
 			<div class='alert alert-success'>

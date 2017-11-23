@@ -19,42 +19,41 @@ require_once ("header.php");
 				<div class="panel panel-primary">
 					<div class="panel-heading"><?php echo lang("REGISTER") ?></div>
 					<div class="panel-body">
-					
 					<form method="post">
 						<div class="row">
 							<div class="col-md-6">
 								<label for="firstname"><?php echo lang("FIRSTNAME") ?></label>
-								<input type="text" id="firstname" name="firstname" class="form-control">
+								<input type="text" id="firstname" name="firstname" class="form-control" required>
 							</div>
 							<div class="col-md-6">
 								<label for="lastname"><?php echo lang("LASTNAME") ?></label>
-								<input type="text" id="lastname" name="lastname"class="form-control">
+								<input type="text" id="lastname" name="lastname"class="form-control" required>
 							</div>
 						</div>
 						<div class="row">
                             <div class="col-md-6">
                                 <label for="username"><?php echo lang("USERNAME") ?></label>
-                                <input type="text" id="username" name="username"class="form-control">
+                                <input type="text" id="username" name="username"class="form-control" required>
                             </div>
 							<div class="col-md-6">
 								<label for="email"><?php echo lang("EMAIL") ?></label>
-								<input type="text" id="email" name="email" class="form-control">
+								<input type="text" id="email" name="email" class="form-control" required>
 							</div>
 						</div>
                         <div class="row">
                             <div class="col-md-12">
                                 <label for="address"><?php echo lang("ADDRESS") ?></label>
-                                <input type="text" id="address" name="address" class="form-control">
+                                <input type="text" id="address" name="address" class="form-control" required>
                             </div>
                         </div>
 						<div class="row">
 							<div class="col-md-6">
 								<label for="password"><?php echo lang("PW") ?></label>
-								<input type="password" id="password" name="password"class="form-control">
+								<input type="password" id="password" name="password"class="form-control" required>
 							</div>
                             <div class="col-md-6">
                                 <label for="repassword"><?php echo lang("PW_CONFIRM") ?></label>
-                                <input type="password" id="repassword" name="passwordc" class="form-control">
+                                <input type="password" id="repassword" name="passwordc" class="form-control" required>
                             </div>
 						</div>
                         <div class="row">
@@ -72,7 +71,7 @@ require_once ("header.php");
                                 <p><br/></p>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <input style="float:right;" value="<?php echo lang("REGISTER_BTN") ?>" type="button" id="signup_button" name="signup_button"class="btn btn-success btn-lg">
+                                        <input style="float:right;" value="<?php echo lang("REGISTER_BTN") ?>" type="button" id="signup_button" name="signup_button" class="btn btn-success btn-lg">
                                     </div>
                                 </div>
 						

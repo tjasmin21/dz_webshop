@@ -3,6 +3,7 @@
     <!--
     Default navigation: Home, Products, Search, Cart
     -->
+
     <div class='navbar navbar-inverse navbar-fixed-top'>
         <div class='container-fluid'>
             <div class='navbar-header'>
@@ -40,30 +41,35 @@
                     </li>
 
 <?php
-    // Links for logged in user
+
     if ( !isUserLoggedIn() ) {
         /**
          * Navigation for guest (not logged in): + SignIn, SignUp
          */
-        echo "
-                        <li><a href='#' class='dropdown-toggle' data-toggle='dropdown'><span class='glyphicon glyphicon-user'></span>SignIn</a>
-                            <ul class='dropdown-menu'>
-                                <div style='width:300px;'>
-                                    <div class='panel panel-primary'>
-                                        <div class='panel-heading'>Login</div>
-                                        <div class='panel-heading'>
-                                            <label for='username'>Username</label>
-                                            <input type='text' class='form-control' id='username' required/>
-                                            <label for='password'>Password</label>
-                                            <input type='password' class='form-control' id='password' required/>
-                                            <p><br/></p>
-                                            <a href='#' style='color:white; list-style:none;'>Forgotten Password</a>
-                                            <input type='submit' class='btn btn-success' style='float:right;' id='login' value='Login'  onClick='history.go(0)'>
-                                        </div>
-                                    </div>
-                                </div>
-                            </ul>
-                        </li>
+
+
+//                        <li><a href='#' class='dropdown-toggle' data-toggle='dropdown'><span class='glyphicon glyphicon-user'></span>SignIn</a>
+//                            <ul class='dropdown-menu'>
+//                                <div style='width:300px;'>
+//                                    <div class='panel panel-primary'>
+//                                        <div class='panel-heading'>Login</div>
+//                                        <div class='panel-heading'>
+//                                            <label for='username'>Username</label>
+//                                            <input type='text' class='form-control' id='username' required/>
+//                                            <label for='password'>Password</label>
+//                                            <input type='password' class='form-control' id='password' required/>
+//                                            <p><br/></p>
+//                                            <a href='forgot-password.php' style='color:white; list-style:none;'>".lang("FORGOT_PASSWORD")."</a>
+//                                            <input type='submit' class='btn btn-success' style='float:right;' id='login_button' name='login_button' value='Login' >
+//                                        </div>
+//                                    </div>
+//                                </div>
+//                            </ul>
+//                        </li>
+
+
+       echo "
+                        <li><a href='customer_login.php'><span class='glyphicon glyphicon-user'></span>SignIn</a></li>
                         <li><a href='customer_registration.php'><span class='glyphicon glyphicon-user'></span>SignUp</a></li> ";
     } // Links for users not logged in
     else {
@@ -75,7 +81,7 @@
                             <ul class='dropdown-menu'>
                                 <li><a href='cart.php' style='text-decoration:none; color:blue;'><span class='glyphicon glyphicon-shopping-cart'>Cart</a></li>
                                 <li class='divider'></li>
-                                <li><a href='' style='text-decoration:none; color:blue;'>Change Password</a></li>
+                                <li><a href='user_settings.php' style='text-decoration:none; color:blue;'>Change Password</a></li>
                                 <li class='divider'></li>
                                 <li><a href='logout.php' style='text-decoration:none; color:blue;'>Logout</a></li>
                             </ul>
@@ -86,6 +92,4 @@
             </div>
         </div>
     </div>
-
-
 

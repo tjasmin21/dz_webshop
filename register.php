@@ -114,74 +114,8 @@ if (! empty ( $_POST )) {
 	}
 }
 
-require_once ("header.php");
-echo "
-<div class='div_h2 title05'>
-	<h2>" . lang ( "REGISTER" ) . "</h2>
-	</div>
-			<div class='div_infotext'>" . lang ( "REGISTER_TXT" ) . "</div>";
-
-echo "
-<div id='main'>";
-
+echo "<div id='main'>";
 echo resultBlock ( $errors, $successes );
-
-echo "
-	<div class='clearBoth'></div>
-	<div id='regbox'>
-	<form name='newUser' action='" . $_SERVER ['PHP_SELF'] . "' method='post' class='form_registrieren'>
-	<p>
-		<label>" . lang ( "ADDRESS" ) . ":</label>
-		<input type='text' name='address' value='" . $_SESSION ["address"] . "' required />
-	</p>
-	<p>
-		<label>" . lang ( "FIRSTNAME" ) . ":</label>
-		<input type='text' name='firstname' value='" . $_SESSION ["firstname"] . "' required/>
-	</p>
-	<p>
-		<label>" . lang ( "LASTNAME" ) . ":</label>
-		<input type='text' name='lastname' value='" . $_SESSION ["lastname"] . "' required/>
-	</p>
-	<p>
-		<label>" . lang ( "USERNAME" ) . ":</label>
-		<input type='text' name='username' value='" . $_SESSION ["username"] . "' required/>
-	</p>
-	<p>
-		<label>" . lang ( "PW" ) . ":</label>
-		<input type='password' name='password' required/>
-	</p>
-	<p>
-		<label>" . lang ( "PW_CONFIRM" ) . ":</label>
-		<input type='password' name='passwordc' required/>
-	</p>
-	<p>
-		<label>" . lang ( "EMAIL" ) . ":</label>
-		<input type='text' name='email' value='" . $_SESSION ["email"] . "'required />
-	</p>
-	<p>
-		<label>" . lang ( "CODE" ) . ":</label>
-		<img src='models/captcha.php'>
-	</p>
-		<label>" . lang ( "ENTER_CODE" ) . ":</label>
-		<input name='captcha' type='text' required />
-	</p>
-	<label>&nbsp;<br>";
-echo '
-	<input type="submit" value="' . lang ( "REGISTER_BTN" ) . '" class="myButton"/>
-	</p>
-
-	</form>
-	';
-
-
-
-
-require_once ("footer.php");
-?>
-
-
-<?php
-
-
+echo "</div>";
 
 ?>

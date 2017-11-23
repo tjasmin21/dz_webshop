@@ -15,14 +15,14 @@
       </div>
     </div-->
     <div class="footer-contact">
-       <h3><a href="">Contact</a></h3>
-       <p><a href="mailto:">fake@fake.com</a></p>
-       <p><a href="tel:">123-456-7890</a></p>
-       <p><a href="">123 Fake St<br />Fake, PA 11111</a></p>
+       <h3>Contact</h3>
+       <p><a href="mailto:">customercare@dropzoneproduction.com</a></p>
+       <p>123-456-7890</p>
+       <p>123 Musterstrasse<br />Musterdorf, 1234</p>
     </div>
 
     <div class="bottom-bar">
-      All Rights Reserved © 2016 | <a href="">Privacy Policy</a> | <a href="">Terms of Service</a>
+      All Rights Reserved © 2017 | <a href="">Privacy Policy</a> | <a href="">Terms of Service</a>
     </div>
 
     <div class="lang">

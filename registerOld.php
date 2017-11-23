@@ -97,7 +97,7 @@ if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empt
 	}
 	//existing email address in our database
 	$sql = "SELECT user_id FROM user_info WHERE email = '$email' LIMIT 1" ;
-	$check_query = mysqli_query($con,$sql);
+	$check_query = mysqli_query($mysqli,$sql);
 	$count_email = mysqli_num_rows($check_query);
 	if($count_email > 0){
 		echo "
@@ -114,7 +114,7 @@ if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empt
 		`password`, `mobile`, `address1`, `address2`) 
 		VALUES (NULL, '$f_name', '$l_name', '$email', 
 		'$password', '$mobile', '$address1', '$address2')";
-		$run_query = mysqli_query($con,$sql);
+		$run_query = mysqli_query($mysqli,$sql);
 		if($run_query){
 			echo "
 				<div class='alert alert-success'>

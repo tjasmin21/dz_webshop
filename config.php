@@ -16,6 +16,12 @@ require_once ("models/class.mail.php");
 // First set all SESSION_VARIABLES
 // Second set browserlanguage
 
+$emailActivation = false;
+GLOBAL $emailActivation;
+$mail_templates_dir = "models/mail-templates/";
+GLOBAL $loggedInUser;
+
+
 if (! isset ( $_SESSION ['setLanguage'] ) or $_SESSION ["setLanguage"] != "true") {
 	$allowed_langs = array ('de','en','fr');
 	$languageBrowser = lang_getfrombrowser ( $allowed_langs, 'en', null, false );

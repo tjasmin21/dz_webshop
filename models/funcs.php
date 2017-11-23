@@ -45,9 +45,11 @@
 	 */
 	function isUserLoggedIn() {
 		if(isset($_SESSION["uid"])){
+			echo '<script>console.log("user logged in")</script>';
 			return true;
 		} else {
-				return false;
+			echo '<script>console.log("user NOT logged in")</script>';
+			return false;
 		}
 	}
 
@@ -121,21 +123,6 @@
 		return strtolower ( strip_tags ( trim ( ($str) ) ) );}
 
 
-/**
- * @param $plainText - plain password
- * @param null $salt
- *
- * @return string
- */
-function generateHash($plainText, $salt = null) {
-	if ($salt === null) {
-		$salt = substr ( md5 ( uniqid ( rand (), true ) ), 0, 25 );
-	} else {
-		$salt = substr ( $salt, 0, 25 );
-	}
-
-	return $salt . sha1 ( $salt . $plainText );
-}
 
 /**
  * @return nstring - generated activation key
@@ -146,6 +133,30 @@ function generateActivationToken() {
 	} while ( validateActivationToken ( $gen ) );
 	return $gen;
 }
+
+/**
+ * @param string $length
+ *
+ * @return string - unique code
+ */
+function getUniqueCode($length = "") {
+	$code = md5 ( uniqid ( rand (), true ) );
+	if ($length != "")
+		return substr ( $code, 0, $length );
+	else
+		return $code;
+}
+
+/**
+ * @param $str
+ *
+ * @return mixed - replaced hooks with specified text
+ */
+function replaceDefaultHook($str) {
+	global $default_hooks, $default_replace;
+	return (str_replace ( $default_hooks, $default_replace, $str ));
+}
+
 
 
 ?>

@@ -88,7 +88,7 @@ $(document).ready(function(){
 		}
 	})
 	$("#signup_button").click(function(event){
-		event.preventDefault();
+        event.preventDefault();
 			$.ajax({
 			url		:	"register.php",
 			method	:	"POST",
@@ -99,14 +99,14 @@ $(document).ready(function(){
 		})
 		
 	})
-	$("#login").click(function(event){
-		event.preventDefault();
-		var email = $("#email").val();
+	$("#login_button").click(function(event){
+        event.preventDefault();
+		var username = $("#username").val();
 		var pass = $("#password").val();
 		$.ajax({
 			url	:	"login.php",
 			method:	"POST",
-			data	:	{userLogin:1,userEmail:email,userPassword:pass},
+			data	:	{userLogin:1,username:username,password:pass},
 			success	:function(data){
 				if(data == "truefsvkjbskvvsbd"){
 					window.location.href = "index.php";
