@@ -4,7 +4,13 @@
 
 <div class="bgImage">
     <div class="welcomeTitle">
-        <?php echo lang ( "WELCOME_MSG" ) ?>
+        <?php
+            if(!isUserLoggedIn()){
+                echo lang( "WELCOME_MSG" ) ;
+            } else {
+                echo lang( "WELCOME_MSG" )." ". strtoupper($_SESSION["name"]) ;
+            }
+        ?>
     </div>
 </div>
 

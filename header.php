@@ -2,6 +2,7 @@
 <?php
 require_once( "config.php" );
 include( "top-navigation.php" );
+if (!securePage($_SERVER['PHP_SELF'])){die();}
 ?>
 
 

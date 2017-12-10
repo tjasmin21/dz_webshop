@@ -1,18 +1,24 @@
 <?php
 require_once ("header.php");
 
-if(! empty ( $_POST )) {
-	$username = mysqli_real_escape_string($mysqli,$_POST["username"]);
+
+if(!empty ( $_POST )) {
+	echo '<script>console.log("count: ")</script>';
+
+	$username = trim($_POST["username"]);
 	$password = md5($_POST["password"]);
 
 	$sql = "SELECT * FROM users WHERE user_name = '$username' AND password = '$password'";
 	$run_query = mysqli_query($mysqli,$sql);
 	$count = mysqli_num_rows($run_query);
 
+
+
 	if($count == 1){
 		$row = mysqli_fetch_array($run_query);
 		$_SESSION["uid"] = $row["id"];
 		$_SESSION["name"] = $row["first_name"];
+		$_SESSION["email"] = $row["email"];
 
 		$userdetails = fetchUserDetails ( $username );
 
@@ -28,21 +34,27 @@ if(! empty ( $_POST )) {
 
 		// Update last sign in
 		$loggedInUser->updateLastSignIn ();
+		$_SESSION ["userCakeUser"] = $loggedInUser;
+
 
 		header('Location: index.php');
 	} else{
 		$errors[] = lang("ACCOUNT_USER_OR_PASS_INVALID");
 	}
 }
-
 ?>
 
 	<p><br/></p>
 	<p><br/></p>
 	<p><br/></p>
 
+<?php
 
-<?php echo resultBlock($errors,$successes); ?>
+    echo "<div id='main'>";
+    echo resultBlock ( $errors, $successes );
+    echo "</div>";
+
+?>
 
 	<div class="container-fluid">
 		<div class="row">
@@ -76,7 +88,7 @@ if(! empty ( $_POST )) {
                             <p><br/></p>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <input style="float:right;" value="<?php echo lang("LOGIN_BTN") ?>" type="submit" id="login_button" name="login_button" class="btn btn-success btn-lg">
+                                    <input style="float:right;" value="<?php echo lang("LOGIN_BTN") ?>" type="submit" class="btn btn-success btn-lg">
                                 </div>
                             </div>
                         </form>

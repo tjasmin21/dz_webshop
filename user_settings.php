@@ -2,7 +2,7 @@
 require_once ("config.php");
 
 // Prevent the user visiting the logged in page if he is not logged in
-if (! isUserLoggedIn ()) {
+if (!isUserLoggedIn ()) {
 	header ( "Location: index.php" );
 	die ();
 }
@@ -72,7 +72,7 @@ if (! empty ( $_POST )) {
 		// End data validation
 		if (count ( $errors ) == 0) {
 			// Also prevent updating if someone attempts to update with the same password
-			$entered_pass_new = generateHash ( $password_new, $loggedInUser->hash_pw );
+			$entered_pass_new = md5 ( $password_new, $loggedInUser->hash_pw );
 			
 			if ($entered_pass_new == $loggedInUser->hash_pw) {
 				// Don't update, this fool is trying to update with the same password Â¬Â¬
@@ -89,9 +89,17 @@ if (! empty ( $_POST )) {
 	}
 }
 
+echo "
+	<p><br/></p>
+	<p><br/></p>
+	<p><br/></p>
+	<div id='main'>";
+
 echo resultBlock ( $errors, $successes );
 
 echo "
+	</div>
+	
 	<div class='container-fluid'>
 		<div class='row'>
 			<div class='col-md-2'></div>
@@ -106,30 +114,46 @@ echo "
                         <p><br/></p>			
 						<div id='regbox'>
 							<form name='updateAccount' action='" . $_SERVER ['PHP_SELF'] . "' method='post' class='form_changePW'>
-								<p>
-									<label>" . lang ( "PW_CURRENT" ) . ":</label>
-									<input type='password' name='password' />
-								</p>
-								<p>
-									<label>" . lang ( "EMAIL" ) . ":</label>
-									<input type='text' name='email' value='" . $loggedInUser->email . "' disabled />
-								</p>
-								<p>
-									<label>" . lang ( "NEW_PW" ) . ":</label>
-									<input type='password' name='passwordc' />
-								</p>
-								<p>
-									<label>" . lang ( "PW_CONFIRM" ) . ":</label>
-									<input type='password' name='passwordcheck' />
-								</p>
-								<p>
-									<input type='submit' value='" . lang ( "UPDATE_BTN" ) . "' class='myButton' />
-								</p>
+								<div class='row'>
+									<div class='col-md-8'>
+										<label for='username'>".lang("PW_CURRENT").":</label>
+										<input type='password' name='password' id='password' class='form-control' required/>
+									</div>
+								</div>
+								<div class='row'>
+									<div class='col-md-8'>
+										<label for='email'>".lang("EMAIL").":</label>
+										<input type='text' name='email' id='email' class='form-control' value='" . $loggedInUser->email . "' disabled />
+									</div>
+								</div>
+								<div class='row'>
+									<div class='col-md-8'>
+										<label for='username'>".lang("NEW_PW").":</label>
+										<input type='password' name='passwordc' id='passwordc' class='form-control' required/>
+									</div>
+								</div>
+									<div class='row'>
+									<div class='col-md-8'>
+										<label for='username'>".lang("PW_CONFIRM").":</label>
+										<input type='password' name='passwordcheck' id='passwordcheck' class='form-control' required/>
+									</div>
+								</div>
+								<p></p>
+								<div class='row'>
+		                            <div class='col-md-12'>
+		                               <input style='float:right;'  type='submit' value='".lang("UPDATE_BTN")."' class='btn btn-success btn-lg' /> 
+		                            </div>
+		                        </div>
+								<p></p>
 							</form>
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>	
+	</div>	
 ";
 
+
+require_once ("footer.php");
 ?>

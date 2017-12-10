@@ -19,20 +19,30 @@ require_once ("models/class.mail.php");
 $emailActivation = false;
 GLOBAL $emailActivation;
 $mail_templates_dir = "models/mail-templates/";
-GLOBAL $loggedInUser;
-
 
 if (! isset ( $_SESSION ['setLanguage'] ) or $_SESSION ["setLanguage"] != "true") {
 	$allowed_langs = array ('de','en','fr');
 	$languageBrowser = lang_getfrombrowser ( $allowed_langs, 'en', null, false );
-	echo '<script type="application/x-javascript" > console.log("' . $languageBrowser. '") </script>';
+	echo '<script> console.log("' . $languageBrowser. '") </script>';
 	setLang ( $languageBrowser );
 } else {
 	$_SESSION ["setLanguage"] = "true";
-	echo '<script type="application/x-javascript" > console.log("' . $_SESSION ["language"]. '") </script>';
+	echo '<script> console.log("' . $_SESSION ["language"]. '") </script>';
 }
 
 require_once ($_SESSION ["language"]);
+
+
+// Global User Object Var
+// loggedInUser can be used globally if constructed
+if (isset ( $_SESSION ["userCakeUser"] ) /*&& is_object ( $_SESSION ["userCakeUser"] )*/) {
+	$loggedInUser = $_SESSION ["userCakeUser"];
+}
+
+
+
+
+/* ****************** FUNCTIONS ****************** */
 
 // $choosedLang can be: "en", "de", "fr"
 function setLang($choosedLang) {

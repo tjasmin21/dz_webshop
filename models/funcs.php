@@ -158,5 +158,74 @@ function replaceDefaultHook($str) {
 }
 
 
+//
+/**
+ * @param $uri - has to get checked
+ * @return bool - does user have access to the url
+ */
+function securePage($uri) {
+
+	// Separate document name from uri
+	$tokens = explode ( '/', $uri );
+	$page = $tokens [sizeof ( $tokens ) - 1];
+	echo '<script>console.log("dfg")</script>';
+
+	global $mysqli, $loggedInUser;
+
+	// retrieve page details
+	$stmt = $mysqli->prepare ( "SELECT 	id, page, private FROM pages
+		WHERE page = ?	LIMIT 1" );
+
+	$stmt->bind_param ( "s", $page );
+	$stmt->execute ();
+	$stmt->bind_result ( $id, $page, $private );
+	while ( $stmt->fetch () ) {
+		$pageDetails = array (
+			'id' => $id,
+			'page' => $page,
+			'private' => $private
+		);
+	}
+	$stmt->close ();
+	// If page does not exist in DB, allow access
+	if (empty ( $pageDetails )) {
+		return true;
+	} // If page is public, allow access
+	elseif ($pageDetails ['private'] == 0) {
+		return true;
+	} // If user is not logged in, deny access
+	elseif (! isUserLoggedIn ()) {
+		header ( "Location: index.php" );
+		return false;
+	} else {
+		// Retrieve list of permission levels with access to page
+		$stmt = $mysqli->prepare ( "SELECT
+			permission_id
+			FROM permission_page_matches
+			WHERE page_id = ?
+			" );
+		$stmt->bind_param ( "i", $pageDetails ['id'] );
+		$stmt->execute ();
+		$stmt->bind_result ( $permission );
+		while ( $stmt->fetch () ) {
+			$pagePermissions [] = $permission;
+		}
+		$stmt->close ();
+		// Check if user's permission levels allow access to page
+//		if ($loggedInUser->checkPermission ( $pagePermissions )) {
+//			return true;
+//		} // Grant access if master user
+//		elseif ($loggedInUser->user_id == $master_account) {
+//			return true;
+//		} else {
+//			header ( "Location: account.php" );
+//			return false;
+//		}
+
+		return true;
+	}
+}
+
+
 
 ?>

@@ -99,21 +99,21 @@ $(document).ready(function(){
 		})
 		
 	})
-	$("#login_button").click(function(event){
-        event.preventDefault();
-		var username = $("#username").val();
-		var pass = $("#password").val();
-		$.ajax({
-			url	:	"login.php",
-			method:	"POST",
-			data	:	{userLogin:1,username:username,password:pass},
-			success	:function(data){
-				if(data == "truefsvkjbskvvsbd"){
-					window.location.href = "index.php";
-				}
-			}
-		})
-	})
+	// $("#login_button").click(function(event){
+     //    event.preventDefault();
+	// 	var username = $("#username").val();
+	// 	var pass = $("#password").val();
+	// 	$.ajax({
+	// 		url	:	"login.php",
+	// 		method:	"POST",
+	// 		data	:	{userLogin:1,username:username,password:pass},
+	// 		success	:function(data){
+	// 			if(data == "truefsvkjbskvvsbd"){
+	// 				window.location.href = "index.php";
+	// 			}
+	// 		}
+	// 	})
+	// })
 	cart_count();
 	$("body").delegate("#product","click",function(event){
 		event.preventDefault();

@@ -2,7 +2,7 @@
 require_once( "config.php" );
 
 // Prevent the user visiting the logged in page if he/she is already logged in
-if (isUserLoggedIn ()) {
+if (isUserLoggedIn ()  ) {
 	header ( "Location: index.php" );
 	die ();
 }

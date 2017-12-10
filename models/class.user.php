@@ -92,6 +92,7 @@ class loggedInUser {
 				}
 			}
 		}
+		$stmt->close();
 		if ($access == 1)
 		{
 			return true;
@@ -103,7 +104,6 @@ class loggedInUser {
 		{
 			return false;	
 		}
-		$stmt->close();
 	}
 	
 	//Logout

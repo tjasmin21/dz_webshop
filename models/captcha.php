@@ -1,7 +1,7 @@
 <?php
 
-session_start();
-$md5_hash = md5(rand(0,99999)); 
+//session_start();
+$md5_hash = md5(rand(0,99999));
 $security_code = substr($md5_hash, 25, 5); 
 $enc = md5($security_code);
 $_SESSION['captcha'] = $enc;
