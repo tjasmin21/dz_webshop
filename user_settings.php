@@ -1,5 +1,5 @@
 ﻿<?php
-require_once ("config.php");
+require_once ("header.php");
 
 // Prevent the user visiting the logged in page if he is not logged in
 if (!isUserLoggedIn ()) {
@@ -18,17 +18,7 @@ if (! empty ( $_POST )) {
 	//$email = $_POST ["email"];
 	
 	// Perform some validation
-	// Feel free to edit / change as required
-	
-	// Confirm the hashes match before updating a users password
-	$entered_pass = md5( $password, $loggedInUser->hash_pw );
-	
-	if (trim ( $password ) == "") {
-		$errors [] = lang ( "ACCOUNT_SPECIFY_PASSWORD" );
-	} else if ($entered_pass != $loggedInUser->hash_pw) {
-		// No match
-		$errors [] = lang ( "ACCOUNT_PASSWORD_INVALID" );
-	}
+
 	/*if ($email != $loggedInUser->email) {
 		
 		 * if(trim($email) == "")
@@ -136,6 +126,46 @@ echo "
 									<div class='col-md-8'>
 										<label for='username'>".lang("PW_CONFIRM").":</label>
 										<input type='password' name='passwordcheck' id='passwordcheck' class='form-control' required/>
+									</div>
+								</div>
+								<p></p>
+								<div class='row'>
+		                            <div class='col-md-12'>
+		                               <input style='float:right;'  type='submit' value='".lang("UPDATE_BTN")."' class='btn btn-success btn-lg' /> 
+		                            </div>
+		                        </div>
+								<p></p>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class='col-md-3'>
+				<div class='panel panel-primary'>
+					<div class='panel-heading'>".lang("EMAIL_CHANGE")."</div>
+					<div class='panel-body'>
+                        ".lang("EMAIL_CHANGE_TXT")."
+                        <p><br/></p>			
+						<div id='regbox'>
+							<form name='updateAccount' action='" . $_SERVER ['PHP_SELF'] . "' method='post' class='form_changePW'>
+								<div class='row'>
+									<div class='col-md-8'>
+										<label for='username'>".lang("PW_CURRENT").":</label>
+										<input type='password' name='password' id='password' class='form-control' required/>
+									</div>
+								</div>
+								<div class='row'>
+									<div class='col-md-8'>
+										<label for='email'>".lang("EMAIL").":</label>
+										<input type='text' name='email' id='email' class='form-control' value='" . $loggedInUser->email . "' disabled />
+									</div>
+								</div>
+								<div class='row'>
+									<div class='col-md-8'>
+										<label for='username'>".lang("NEW_PW").":</label>
+										<input type='password' name='passwordc' id='passwordc' class='form-control' required/>
 									</div>
 								</div>
 								<p></p>

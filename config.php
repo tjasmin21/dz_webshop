@@ -36,7 +36,8 @@ require_once ($_SESSION ["language"]);
 // Global User Object Var
 // loggedInUser can be used globally if constructed
 if (isset ( $_SESSION ["userCakeUser"] ) /*&& is_object ( $_SESSION ["userCakeUser"] )*/) {
-	$loggedInUser = $_SESSION ["userCakeUser"];
+	//retrieve object from SESSION
+	$loggedInUser = unserialize($_SESSION ["userCakeUser"]);
 }
 
 

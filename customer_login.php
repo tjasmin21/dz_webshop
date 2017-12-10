@@ -34,7 +34,8 @@ if(!empty ( $_POST )) {
 
 		// Update last sign in
 		$loggedInUser->updateLastSignIn ();
-		$_SESSION ["userCakeUser"] = $loggedInUser;
+		//Store object into SESSION
+		$_SESSION ["userCakeUser"] = serialize($loggedInUser);
 
 
 		header('Location: index.php');
