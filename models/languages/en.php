@@ -190,6 +190,7 @@ $lang = array_merge ( $lang, array (
 		"SC_PATH" => "vid_en",
 		"INSTALLERAPP" => "InstallerApp<sup>&trade;</sup>",
 		"NEW_PW" => "New Password",
+        "NEW_EMAIL" => "New mail",
 		"UPDATE_BTN" => "Update",
 		"WEBSITE_NAME" => "Webite name",
 		"WEBSITE_URL" => "Website URL",

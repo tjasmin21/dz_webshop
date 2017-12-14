@@ -157,8 +157,6 @@ function replaceDefaultHook($str) {
 	return (str_replace ( $default_hooks, $default_replace, $str ));
 }
 
-
-//
 /**
  * @param $uri - has to get checked
  * @return bool - does user have access to the url

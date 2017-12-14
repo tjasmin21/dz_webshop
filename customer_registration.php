@@ -58,17 +58,17 @@ require_once ("header.php");
                             </div>
 						</div>
                         <div class="row">
-                                    <div class="col-md-6">
-                                        <label for="captcha"><?php echo lang("CODE") ?></label>
-                                        <img id="captcha" src='models/captcha.php'>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <label for="captchaTxt"><?php echo lang("ENTER_CODE") ?></label>
-                                        <input name='captcha' id="captchaTxt" type='text' required />
-                                    </div>
-                                </div>
+<!--                            <div class="col-md-6">-->
+<!--                                <label for="captcha">--><?php //echo lang("CODE") ?><!--</label>-->
+<!--                                <img id="captcha" src='models/captcha.php'>-->
+<!--                            </div>-->
+<!--                                </div>-->
+<!--                                <div class="row">-->
+<!--                                    <div class="col-md-6">-->
+<!--                                        <label for="captchaTxt">--><?php //echo lang("ENTER_CODE") ?><!--</label>-->
+<!--                                        <input name='captcha' id="captchaTxt" type='text' required />-->
+<!--                                    </div>-->
+<!--                                </div>-->
                                 <p><br/></p>
                                 <div class="row">
                                     <div class="col-md-12">

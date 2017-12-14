@@ -10,12 +10,11 @@ if(!empty ( $_POST )) {
 
 	$sql = "SELECT * FROM users WHERE user_name = '$username' AND password = '$password'";
 	$run_query = mysqli_query($mysqli,$sql);
-	$count = mysqli_num_rows($run_query);
 
 
 
-	if($count == 1){
-		$row = mysqli_fetch_array($run_query);
+    if(isUserPwCorrect($$username, $password)){
+        $row = mysqli_fetch_array($run_query);
 		$_SESSION["uid"] = $row["id"];
 		$_SESSION["name"] = $row["first_name"];
 		$_SESSION["email"] = $row["email"];
