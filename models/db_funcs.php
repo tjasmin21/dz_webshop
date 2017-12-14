@@ -196,4 +196,20 @@ function emailUsernameLinked($email, $username) {
 	}
 }
 
+/**
+ * @param $str
+ *
+ * @return mixed - replaced hooks with specified text
+ */
+function isUserPwCorrect($username, $password) {
+    global $mysqli;
+
+    $sql = "SELECT * FROM users WHERE user_name = '$username' AND password = '$password'";
+    $run_query = mysqli_query($mysqli,$sql);
+    $count = mysqli_num_rows($run_query);
+
+    return $count==1 ? true : false;
+}
+
+
 ?>

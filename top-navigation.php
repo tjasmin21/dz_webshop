@@ -23,22 +23,23 @@
                     <li style='top:10px;left:20px;'><button class='btn btn-primary' id='search_btn'>Search</button></li>
                 </ul>
                 <ul class='nav navbar-nav navbar-right'>
-                    <li><a href='#' class='dropdown-toggle' data-toggle='dropdown'><span class='glyphicon glyphicon-shopping-cart'></span>   Cart   <span class='badge'>  0</span></a>
-                        <div class='dropdown-menu' style='width:400px;'>
-                            <div class='panel panel-success'>
-                                <div class='panel-heading'>
-                                    <div class='row'>
-                                        <div class='col-md-3'>Sl.No</div>
-                                        <div class='col-md-3'>Product Image</div>
-                                        <div class='col-md-3'>Product Name</div>
-                                        <div class='col-md-3'>Price in $.</div>
-                                    </div>
-                                </div>
-                                <div class='panel-body'></div>
-                                <div class='panel-footer'></div>
-                            </div>
-                        </div>
-                    </li>
+                    <li><a href='cart.php'><span class='glyphicon glyphicon-shopping-cart'></span>   Cart</a></li>
+<!--                    <li><a href='#' class='dropdown-toggle' data-toggle='dropdown'><span class='glyphicon glyphicon-shopping-cart'></span>   Cart   <span class='badge'>  0</span></a>-->
+<!--                        <div class='dropdown-menu' style='width:400px;'>-->
+<!--                            <div class='panel panel-success'>-->
+<!--                                <div class='panel-heading'>-->
+<!--                                    <div class='row'>-->
+<!--                                        <div class='col-md-3'>Sl.No</div>-->
+<!--                                        <div class='col-md-3'>Product Image</div>-->
+<!--                                        <div class='col-md-3'>Product Name</div>-->
+<!--                                        <div class='col-md-3'>Price in $.</div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class='panel-body'></div>-->
+<!--                                <div class='panel-footer'></div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </li>-->
 
 <?php
 
@@ -71,7 +72,7 @@
        echo "
                         <li><a href='customer_login.php'><span class='glyphicon glyphicon-user'></span>SignIn</a></li>
                         <li><a href='customer_registration.php'><span class='glyphicon glyphicon-user'></span>SignUp</a></li> ";
-    } // Links for users not logged in
+    }
     else {
         /**
          * Navigation for user (logged in): + SignIn, SignUp
@@ -82,6 +83,8 @@
                                 <li><a href='cart.php' style='text-decoration:none; color:blue;'><span class='glyphicon glyphicon-shopping-cart'>Cart</a></li>
                                 <li class='divider'></li>
                                 <li><a href='user_settings.php' style='text-decoration:none; color:blue;'>Change Password</a></li>
+                                <li class='divider'></li>
+                                 <li><a href='email_settings.php' style='text-decoration:none; color:blue;'>Change E-Mail</a></li>
                                 <li class='divider'></li>
                                 <li><a href='logout.php' style='text-decoration:none; color:blue;'>Logout</a></li>
                             </ul>
