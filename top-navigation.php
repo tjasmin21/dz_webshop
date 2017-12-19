@@ -23,7 +23,7 @@
                     <li style='top:10px;left:20px;'><button class='btn btn-primary' id='search_btn'>Search</button></li>
                 </ul>
                 <ul class='nav navbar-nav navbar-right'>
-                    <li><a href='cart.php'><span class='glyphicon glyphicon-shopping-cart'></span>   Cart</a></li>
+<!--                    <li><a href='cart.php'><span class='glyphicon glyphicon-shopping-cart'></span>   Cart</a></li>-->
 <!--                    <li><a href='#' class='dropdown-toggle' data-toggle='dropdown'><span class='glyphicon glyphicon-shopping-cart'></span>   Cart   <span class='badge'>  0</span></a>-->
 <!--                        <div class='dropdown-menu' style='width:400px;'>-->
 <!--                            <div class='panel panel-success'>-->
@@ -78,10 +78,9 @@
          * Navigation for user (logged in): + SignIn, SignUp
          */
         echo "
+                        <li><a href='cart.php'><span class='glyphicon glyphicon-shopping-cart'></span>   Cart</a></li>
                         <li><a href='#' class='dropdown-toggle' data-toggle='dropdown'><span class='glyphicon glyphicon-user'></span> Hi," .$_SESSION['name'] . "</a>
                             <ul class='dropdown-menu'>
-                                <li><a href='cart.php' style='text-decoration:none; color:blue;'><span class='glyphicon glyphicon-shopping-cart'>Cart</a></li>
-                                <li class='divider'></li>
                                 <li><a href='user_settings.php' style='text-decoration:none; color:blue;'>Change Password</a></li>
                                 <li class='divider'></li>
                                  <li><a href='email_settings.php' style='text-decoration:none; color:blue;'>Change E-Mail</a></li>

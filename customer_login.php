@@ -1,19 +1,13 @@
 <?php
 require_once ("header.php");
 
-
 if(!empty ( $_POST )) {
-	echo '<script>console.log("count: ")</script>';
-
 	$username = trim($_POST["username"]);
 	$password = md5($_POST["password"]);
 
-	$sql = "SELECT * FROM users WHERE user_name = '$username' AND password = '$password'";
-	$run_query = mysqli_query($mysqli,$sql);
-
-
-
-    if(isUserPwCorrect($$username, $password)){
+    if(isUserPwCorrect($username, $password)){
+	    $sql = "SELECT * FROM users WHERE user_name = '$username' AND password = '$password'";
+	    $run_query = mysqli_query($mysqli,$sql);
         $row = mysqli_fetch_array($run_query);
 		$_SESSION["uid"] = $row["id"];
 		$_SESSION["name"] = $row["first_name"];

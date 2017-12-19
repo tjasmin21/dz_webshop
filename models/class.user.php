@@ -105,12 +105,6 @@ class loggedInUser {
 			return false;	
 		}
 	}
-	
-	//Logout
-	public function userLogOut()
-	{
-		destroySession("userCakeUser");
-	}	
 }
 
 ?>

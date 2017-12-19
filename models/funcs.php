@@ -166,7 +166,6 @@ function securePage($uri) {
 	// Separate document name from uri
 	$tokens = explode ( '/', $uri );
 	$page = $tokens [sizeof ( $tokens ) - 1];
-	echo '<script>console.log("dfg")</script>';
 
 	global $mysqli, $loggedInUser;
 
@@ -210,20 +209,29 @@ function securePage($uri) {
 		}
 		$stmt->close ();
 		// Check if user's permission levels allow access to page
-//		if ($loggedInUser->checkPermission ( $pagePermissions )) {
-//			return true;
-//		} // Grant access if master user
+		if ($loggedInUser->checkPermission ( $pagePermissions )) {
+			return true;
+		} // Grant access if master user
 //		elseif ($loggedInUser->user_id == $master_account) {
 //			return true;
-//		} else {
-//			header ( "Location: account.php" );
-//			return false;
 //		}
-
-		return true;
+		else {
+			header ( "Location: account.php" );
+			return false;
+		}
 	}
 }
 
+
+/**
+ * @param $name of the session which gets destroyed
+ */
+function destroySession($name) {
+	if (isset ( $_SESSION [$name] )) {
+		$_SESSION [$name] = NULL;
+		unset ( $_SESSION [$name] );
+	}
+}
 
 
 ?>
