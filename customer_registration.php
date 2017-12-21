@@ -28,17 +28,17 @@ require_once ("header.php");
 							</div>
 							<div class="col-md-6">
 								<label for="lastname"><?php echo lang("LASTNAME") ?></label>
-								<input type="text" id="lastname" name="lastname"class="form-control" required>
+								<input type="text" id="lastname" name="lastname" class="form-control" required>
 							</div>
 						</div>
 						<div class="row">
                             <div class="col-md-6">
                                 <label for="username"><?php echo lang("USERNAME") ?></label>
-                                <input type="text" id="username" name="username"class="form-control" required>
+                                <input type="text" id="username" name="username" class="form-control" required>
                             </div>
 							<div class="col-md-6">
 								<label for="email"><?php echo lang("EMAIL") ?></label>
-								<input type="text" id="email" name="email" class="form-control" required>
+								<input type="email" id="email" name="email" class="form-control" required>
 							</div>
 						</div>
                         <div class="row">

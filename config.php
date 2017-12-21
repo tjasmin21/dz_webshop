@@ -53,7 +53,7 @@ function setLang($choosedLang) {
 		if ($choosedLang == "de") {
 			$_SESSION ["language"] = "models/languages/de.php";
 		} else if ($choosedLang == "fr") {
-			$_SESSION ["language"] = "models/languages/fr.php";
+			$_SESSION ["language"] = "models/languages/en.php";
 		} else {
 			$_SESSION ["language"] = "models/languages/en.php";
 		}

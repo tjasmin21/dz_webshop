@@ -172,12 +172,17 @@ $lang = array_merge ( $lang, array (
 
 // Buttons and form-fields
 $lang = array_merge ( $lang, array (
+		"SHIP_METHOD" => "Shipping method",
+		"COMMENT" => "Write a comment to us",
+		"COUNTRY" => "Choose your country: ",
+		"CHECKOUT" => "Checkout ",
 		"LOGIN_BTN" => "Login",
 		"REGISTER_BTN" => "Register",
 		"SUBMIT_BTN" => "Submit",
 		"USERNAME" => "Username",
 		"PW" => "Password",
 		"EMAIL" => "Email",
+		"TEL" => "Tel number",
 		"ADDRESS" => "Address",
 		"PW_CONFIRM" => "Confirm Password",
 		"SC1" => "Registration company representative",

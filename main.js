@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 	function cat(){
 		$.ajax({
-			url	:	"action.php",
+			url	:	"shoppingCart.php",
 			method:	"POST",
 			data	:	{category:1},
 			success	:	function(data){
@@ -16,7 +16,7 @@ $(document).ready(function(){
 	}
 	function brand(){
 		$.ajax({
-			url	:	"action.php",
+			url	:	"shoppingCart.php",
 			method:	"POST",
 			data	:	{brand:1},
 			success	:	function(data){
@@ -26,7 +26,7 @@ $(document).ready(function(){
 	}
 		function product(){
 		$.ajax({
-			url	:	"action.php",
+			url	:	"shoppingCart.php",
 			method:	"POST",
 			data	:	{getProduct:1},
 			success	:	function(data){
@@ -40,7 +40,7 @@ $(document).ready(function(){
 		var cid = $(this).attr('cid');
 		
 			$.ajax({
-			url		:	"action.php",
+			url		:	"shoppingCart.php",
 			method	:	"POST",
 			data	:	{get_seleted_Category:1,cat_id:cid},
 			success	:	function(data){
@@ -58,7 +58,7 @@ $(document).ready(function(){
 		var bid = $(this).attr('bid');
 		
 			$.ajax({
-			url		:	"action.php",
+			url		:	"shoppingCart.php",
 			method	:	"POST",
 			data	:	{selectBrand:1,brand_id:bid},
 			success	:	function(data){
@@ -75,7 +75,7 @@ $(document).ready(function(){
 		var keyword = $("#search").val();
 		if(keyword != ""){
 			$.ajax({
-			url		:	"action.php",
+			url		:	"shoppingCart.php",
 			method	:	"POST",
 			data	:	{search:1,keyword:keyword},
 			success	:	function(data){ 
@@ -97,8 +97,21 @@ $(document).ready(function(){
 				$("#signup_msg").html(data);
 			}
 		})
-		
 	})
+
+    // $("#final_checkout").click(function(event){
+    //     event.preventDefault();
+    //     $.ajax({
+    //         url		:	"index.php",
+    //         method	:	"POST",
+    //         data	:	$("form").serialize(),
+    //         success	:	function(data){
+    //             $("#signup_msg").html(data);
+    //         }
+    //     })
+    // })
+
+
 	// $("#login_button").click(function(event){
      //    event.preventDefault();
 	// 	var username = $("#username").val();
@@ -119,7 +132,7 @@ $(document).ready(function(){
 		event.preventDefault();
 		var p_id = $(this).attr('pid');
 		$.ajax({
-			url	:	"action.php",
+			url	:	"shoppingCart.php",
 			method	:	"POST",
 			data	:	{addToProduct:1,proId:p_id},
 			success	:	function(data){
@@ -131,7 +144,7 @@ $(document).ready(function(){
 	cart_container();
 	function cart_container(){
 		$.ajax({
-			url	:	"action.php",
+			url	:	"shoppingCart.php",
 			method	:	"POST",
 			data	:	{get_cart_product:1},
 			success	:	function(data){
@@ -142,7 +155,7 @@ $(document).ready(function(){
 	};
 	function cart_count(){
 		$.ajax({
-			url	:	"action.php",
+			url	:	"shoppingCart.php",
 			method	:	"POST",
 			data	:	{cart_count:1},
 			success	:	function(data){
@@ -154,19 +167,18 @@ $(document).ready(function(){
 	$("#cart_container").click(function(event){
 		event.preventDefault();
 		$.ajax({
-			url	:	"action.php",
+			url	:	"shoppingCart.php",
 			method	:	"POST",
 			data	:	{get_cart_product:1},
 			success	:	function(data){
 				$("#cart_product").html(data);
 			}
 		})
-		
 	})
 	cart_checkout();
 	function cart_checkout(){
 		$.ajax({
-			url	:	"action.php",
+			url	:	"shoppingCart.php",
 			method	:	"POST",
 			data	:	{cart_checkout:1},
 			success	: function(data){
@@ -185,7 +197,7 @@ $(document).ready(function(){
 		event.preventDefault();
 		var pid = $(this).attr("remove_id");
 		$.ajax({
-			url	:	"action.php",
+			url	:	"shoppingCart.php",
 			method	:	"POST",
 			data	:	{removeFromCart:1,removeId:pid},
 			success	:	function(data){
@@ -201,7 +213,7 @@ $(document).ready(function(){
 		var price = $("#price-"+pid).val();
 		var total = $("#total-"+pid).val();
 		$.ajax({
-			url	:"action.php",
+			url	:"shoppingCart.php",
 			method	:	"POST",
 			data	:	{updateProduct:1,updateId:pid,qty:qty,price:price,total:total},
 			success	:	function(data){
@@ -213,7 +225,7 @@ $(document).ready(function(){
 	page();
 	function page(){
 		$.ajax({
-			url	:	"action.php",
+			url	:	"shoppingCart.php",
 			method	:	"POST",
 			data	:	{page:1},
 			success	:	function(data){
@@ -224,7 +236,7 @@ $(document).ready(function(){
 	$("body").delegate("#page","click",function(){
 		var pn = $(this).attr("page");
 		$.ajax({
-			url	:	"action.php",
+			url	:	"shoppingCart.php",
 			method	:	"POST",
 			data	:	{getProduct:1,setPage:1,pageNumber:pn},
 			success	:	function(data){

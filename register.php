@@ -12,7 +12,6 @@ $_SESSION ["username"] = "";
 $_SESSION ["firstname"] = "";
 $_SESSION ["lastname"] = "";
 $_SESSION ["companyname"] = "";
-//$_SESSION ["captcha"] = "";
 
 // Forms posted
 if (! empty ( $_POST )) {
@@ -24,7 +23,6 @@ if (! empty ( $_POST )) {
 	$address = trim ( $_POST ["address"] );
 	$password = trim ( $_POST ["password"] );
 	$confirm_pass = trim ( $_POST ["passwordc"] );
-//	$captcha = trim ( $_POST ["captcha"] );
 
 	// SESSION variables for save the correct fieldvalues until the user is successful registered
 	$_SESSION ["email"] = $email;
@@ -33,10 +31,7 @@ if (! empty ( $_POST )) {
 	$_SESSION ["username"] = $username;
 	$_SESSION ["address"] = $address;
 
-//	if ($captcha != $_SESSION ['captcha']) {
-//		$errors [] = lang ( "CAPTCHA_FAIL" );
-//	}
-	
+
 	if (minMaxRange ( 3, 25, $firstname )) {
 		$errors [] = lang ( "ACCOUNT_FIRST_CHAR_LIMIT", array (
 				3,

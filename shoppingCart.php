@@ -117,59 +117,56 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 							</div>
 						</div>	
 			";
-		}
 	}
+}
 									
-	if(isset($_POST["addToProduct"])){
-		
-		if(isset($_SESSION["uid"])){
-			$p_id = $_POST["proId"];
-		$user_id = $_SESSION["uid"];
-		$sql = "SELECT * FROM cart WHERE p_id = '$p_id' AND user_id = '$user_id'";
+if(isset($_POST["addToProduct"])){
+
+	if(isset($_SESSION["uid"])){
+		$p_id = $_POST["proId"];
+	$user_id = $_SESSION["uid"];
+	$sql = "SELECT * FROM cart WHERE p_id = '$p_id' AND user_id = '$user_id'";
+	$run_query = mysqli_query($mysqli,$sql);
+	$count = mysqli_num_rows($run_query);
+	if($count > 0){
+		echo "
+			<div class='alert alert-warning'>
+					<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+					<b>Product is already added into the cart Continue Shopping..!</b>
+			</div>
+		";
+	} else {
+		$sql = "SELECT * FROM products WHERE product_id = '$p_id'";
 		$run_query = mysqli_query($mysqli,$sql);
-		$count = mysqli_num_rows($run_query);
-		if($count > 0){
+		$row = mysqli_fetch_array($run_query);
+			$id = $row["product_id"];
+			$pro_name = $row["product_title"];
+			$pro_image = $row["product_image"];
+			$pro_price = $row["product_price"];
+		$sql = "INSERT INTO `cart` 
+		(`id`, `p_id`, `ip_add`, `user_id`, `product_title`,
+		`product_image`, `qty`, `price`, `total_amt`)
+		VALUES (NULL, '$p_id', '0', '$user_id', '$pro_name', 
+		'$pro_image', '1', '$pro_price', '$pro_price')";
+		if(mysqli_query($mysqli,$sql)){
 			echo "
-				<div class='alert alert-warning'>
-						<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-						<b>Product is already added into the cart Continue Shopping..!</b>
+				<div class='alert alert-success'>
+					<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+					<b>Product is Added..!</b>
 				</div>
-			";//not in video
-		} else {
-			$sql = "SELECT * FROM products WHERE product_id = '$p_id'";
-			$run_query = mysqli_query($mysqli,$sql);
-			$row = mysqli_fetch_array($run_query);
-				$id = $row["product_id"];
-				$pro_name = $row["product_title"];
-				$pro_image = $row["product_image"];
-				$pro_price = $row["product_price"];
-			$sql = "INSERT INTO `cart` 
-			(`id`, `p_id`, `ip_add`, `user_id`, `product_title`,
-			`product_image`, `qty`, `price`, `total_amt`)
-			VALUES (NULL, '$p_id', '0', '$user_id', '$pro_name', 
-			'$pro_image', '1', '$pro_price', '$pro_price')";
-			if(mysqli_query($mysqli,$sql)){
-				echo "
-					<div class='alert alert-success'>
-						<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-						<b>Product is Added..!</b>
-					</div>
-				";
-			}
+			";
 		}
-		}else{
-			echo "
-					<div class='alert alert-success'>
-						<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-						<b>Sorry..!go and Sign Up First then you can add a product to your cart</b>
-					</div>
-				";
-		}
-		
-		
-		
-		
 	}
+	}else{
+		echo "
+				<div class='alert alert-success'>
+					<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+					<b>Sorry..!go and Sign Up First then you can add a product to your cart</b>
+				</div>
+			";
+	}
+}
+
 if(isset($_POST["get_cart_product"]) || isset($_POST["cart_checkout"])){
 	$uid = $_SESSION["uid"];
 	$sql = "SELECT * FROM cart WHERE user_id = '$uid'";
@@ -211,54 +208,59 @@ if(isset($_POST["get_cart_product"]) || isset($_POST["cart_checkout"])){
 							</div>
 							<div class='col-md-2 col-sm-2'><img src='product_images/$pro_image' width='50px' height='60'></div>
 							<div class='col-md-2 col-sm-2'>$pro_name</div>
-							<div class='col-md-2 col-sm-2'><input type='text' class='form-control qty' pid='$pro_id' id='qty-$pro_id' value='$qty' ></div>
+							<div class='col-md-2 col-sm-2'><input type='number' class='form-control qty' pid='$pro_id' id='qty-$pro_id' value='$qty' min='1'></div>
 							<div class='col-md-2 col-sm-2'><input type='text' class='form-control price' pid='$pro_id' id='price-$pro_id' value='$pro_price' disabled></div>
 							<div class='col-md-2 col-sm-2'><input type='text' class='form-control total' pid='$pro_id' id='total-$pro_id' value='$total' disabled></div>
 						</div>
 				";
 			}
-				
+
 		}
 		if(isset($_POST["cart_checkout"])){
 			echo "<div class='row'>
-				<div class='col-md-8'></div>
-				<div class='col-md-4'>
-					<h1>Total $$total_amt</h1>
-				</div>";
+					<div class='col-md-8'></div>
+					<div class='col-md-4'>
+						<h1>Total: $total_amt CHF</h1>
+					</div>";
 		}
-		echo '
-		
-				<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
-				  <input type="hidden" name="cmd" value="_cart">
-				  <input type="hidden" name="business" value="shoppingcart@dropzone.com">
-				  <input type="hidden" name="upload" value="1">';
-				  
-				  $x=0;
-				  $uid = $_SESSION["uid"];
-				  $sql = "SELECT * FROM cart WHERE user_id = '$uid'";
-				  $run_query = mysqli_query($mysqli,$sql);
-				  while($row=mysqli_fetch_array($run_query)){
-					  $x++;
-				 echo  '<input type="hidden" name="item_name_'.$x.'" value="'.$row["product_title"].'">
-				  <input type="hidden" name="item_number_'.$x.'" value="'.$x.'">
-				  <input type="hidden" name="amount_'.$x.'" value="'.$row["price"].'">
-				  <input type="hidden" name="quantity_'.$x.'" value="'.$row["qty"].'">';
-				  
-				  }
-				  
-				echo   '
-				<input type="hidden" name="return" value="http://www.sysc.esy.es/shoppingCart/payment_success.php"/>
-				<input type="hidden" name="cancel_return" value="http://www.sysc.esy.es/shoppingCart/cancel.php"/>
-				<input type="hidden" name="currency_code" value="USD"/>
-				<input type="hidden" name="custom" value="'.$uid.'"/>
-				<input style="float:right;margin-right:80px;" type="image" name="submit"
-					src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/blue-rect-paypalcheckout-60px.png" alt="PayPal Checkout"
-					alt="PayPal - The safer, easier way to pay online">
-				</form>';
-		
-		
-		
-		
+
+		echo "
+            <div class='col-md-12'>
+                <input  onclick='location.href=\"shippingForm.php\"' style='float:right;' value=".lang("CHECKOUT")." type='button' id='checkout' name='checkout' class='btn btn-success btn-lg'>
+            </div>
+        ";
+
+//		echo '
+//			<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+//				  <input type="hidden" name="cmd" value="_cart">
+//				  <input type="hidden" name="business" value="shoppingcart@dropzone.com">
+//				  <input type="hidden" name="upload" value="1">';
+//
+//				  $x=0;
+//				  $uid = $_SESSION["uid"];
+//				  $sql = "SELECT * FROM cart WHERE user_id = '$uid'";
+//				  $run_query = mysqli_query($mysqli,$sql);
+//				  while($row=mysqli_fetch_array($run_query)){
+//					  $x++;
+//					 echo  '<input type="hidden" name="item_name_'.$x.'" value="'.$row["product_title"].'">
+//					  <input type="hidden" name="item_number_'.$x.'" value="'.$x.'">
+//					  <input type="hidden" name="amount_'.$x.'" value="'.$row["price"].'">
+//					  <input type="hidden" name="quantity_'.$x.'" value="'.$row["qty"].'">';
+//				  }
+//
+//				echo   '
+//				<input type="hidden" name="return" value="http://www.sysc.esy.es/shoppingCart/payment_success.php"/>
+//				<input type="hidden" name="cancel_return" value="http://www.sysc.esy.es/shoppingCart/cancel.php"/>
+//				<input type="hidden" name="currency_code" value="CHF"/>
+//				<input type="hidden" name="custom" value="'.$uid.'"/>
+//				<input style="float:right;margin-right:80px;" type="image" name="submit"
+//					src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/blue-rect-paypalcheckout-60px.png" alt="PayPal Checkout"
+//					alt="PayPal - The safer, easier way to pay online">
+//			</form>';
+
+
+
+
 	}
 }
 
@@ -289,7 +291,7 @@ if(isset($_POST["updateProduct"])){
 	$qty = $_POST["qty"];
 	$price = $_POST["price"];
 	$total = $_POST["total"];
-	
+
 	$sql = "UPDATE cart SET qty = '$qty',price='$price',total_amt='$total' 
 	WHERE user_id = '$uid' AND p_id='$pid'";
 	$run_query = mysqli_query($mysqli,$sql);
