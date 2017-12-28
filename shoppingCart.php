@@ -304,6 +304,7 @@ if(isset($_POST["updateProduct"])){
 		";
 	}
 }
+
 ?>
 
 

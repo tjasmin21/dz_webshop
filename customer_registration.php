@@ -72,6 +72,7 @@ require_once ("header.php");
                                 <p><br/></p>
                                 <div class="row">
                                     <div class="col-md-12">
+                                        <input style="float:right;" value="<?php echo lang("RESET") ?>" type="reset"  class="btn btn-info btn-lg">
                                         <input style="float:right;" value="<?php echo lang("REGISTER_BTN") ?>" type="button" id="signup_button" name="signup_button" class="btn btn-success btn-lg">
                                     </div>
                                 </div>

@@ -71,8 +71,11 @@
 
 
 	/**
+     * Extra validation for older bowsers, because
+     * new input types that are not supported by older web browsers,
+     * will behave as <input type="text">
+     *
 	 * @param $email
-	 *
 	 * @return bool true if email is valid
 	 */
 	function isValidEmail($email) {
@@ -231,6 +234,21 @@ function destroySession($name) {
 		$_SESSION [$name] = NULL;
 		unset ( $_SESSION [$name] );
 	}
+}
+
+/**
+ * Will set/create cookies with the given value array
+ *
+ * @param $arr array of values
+ */
+function setCookieData($arr) {
+    foreach ($arr as $name => $value) {
+
+        echo '<script>console.log("'.$name.' and  '.$value.'")</script>';
+
+        setcookie($name, $value,
+            time()+30*24*60*60);
+    }
 }
 
 

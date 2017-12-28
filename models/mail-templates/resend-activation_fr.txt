@@ -1,9 +1,0 @@
-﻿Bonjour #FIRSTNAME# #LASTNAME#,
-
-Vous avez demandé un courrier électronique d’activation sur notre Centre de Démonstration de la Plateforme EVALink®. Pour confirmer votre inscription, s’il vous plaît, suivez le lien ci-dessous :
-#ACTIVATION-URL
-
-Si vous n’avez pas demandé un email d’activation, ignorez ce message.
-
-Cordialement,
-Votre équipe Sitasys

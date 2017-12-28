@@ -99,19 +99,6 @@ $(document).ready(function(){
 		})
 	})
 
-    // $("#final_checkout").click(function(event){
-    //     event.preventDefault();
-    //     $.ajax({
-    //         url		:	"index.php",
-    //         method	:	"POST",
-    //         data	:	$("form").serialize(),
-    //         success	:	function(data){
-    //             $("#signup_msg").html(data);
-    //         }
-    //     })
-    // })
-
-
 	// $("#login_button").click(function(event){
      //    event.preventDefault();
 	// 	var username = $("#username").val();
@@ -244,6 +231,17 @@ $(document).ready(function(){
 			}
 		})
 	})
+
+    // this initializes the dialog
+    $("#dialog").dialog({
+        autoOpen : false, modal : true, show : "blind", hide : "blind"
+    });
+
+    // next add the onclick handler
+    $("#confirm_order").click(function() {
+        $("#dialog").dialog("open");
+        return false;
+    });
 })
 
 

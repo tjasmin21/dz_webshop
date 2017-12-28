@@ -76,6 +76,7 @@ if (! empty ( $_POST )) {
 	} else if ($password != $confirm_pass) {
 		$errors [] = lang ( "ACCOUNT_PASS_MISMATCH" );
 	}
+    //Extra validation for older bowsers, because
 	if (! isValidEmail ( $email )) {
 		$errors [] = lang ( "ACCOUNT_INVALID_EMAIL" );
 		$_SESSION ["email"] = "";

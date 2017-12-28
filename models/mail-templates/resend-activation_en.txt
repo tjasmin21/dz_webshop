@@ -1,9 +1,0 @@
-﻿Hello #FIRSTNAME# #LASTNAME#,
-
-You requested an activation email at our EVALink® Demo Center. In order to confirm your registration, please follow the link below:
-#ACTIVATION-URL
-
-If you did not request an activation email, please disregard this message.
-
-Best Regards,
-Your Sitasys team

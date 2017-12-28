@@ -1,9 +1,0 @@
-﻿Guten Tag #FIRSTNAME# #LASTNAME#
-
-Sie haben sich über unser EVALink® Demo Center die Aktivierungsmail erneut zusenden lassen. Um Ihre Registrierung zu bestätigen, klicken Sie bitte auf den folgenden Link:
-#ACTIVATION-URL
-
-Wenn Sie keine neue Aktivierungsmail verlangt haben, betrachten Sie dieses E-Mail als hinfällig.
-
-Freundliche Grüsse,
-Ihr Sitasys-Team
