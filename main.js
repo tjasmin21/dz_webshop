@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
 	cat();
 	brand();
 	product();
@@ -231,17 +232,67 @@ $(document).ready(function(){
 			}
 		})
 	})
+    function order_finsihed(){
+        $.ajax({
+            url	:	"shoppingCart.php",
+            method	:	"POST",
+            data	:	{removeAllFromCart:1},
+            success	: function(data){
+                $("#cart_checkout").html(data);
+            }
+        })
+    }
 
-    // this initializes the dialog
-    $("#dialog").dialog({
-        autoOpen : false, modal : true, show : "blind", hide : "blind"
+    $(function() {
+        // 1. initializes the dialog
+        $("#dialogConfirmation").dialog({
+            autoOpen: false,
+            modal: true,
+            show: "blind",
+            hide: "blind",
+            buttons: {
+                "Confirm purchase": function() {
+                    $( this ).dialog(close);
+                    order_finsihed();
+                    location.replace("http://localhost/dz_webshop/payment_success.php");
+                },
+                Cancel: function() {
+                    $( this ).dialog( "close" );
+                }
+            }
+        });
+
+
+        $("#dialogProductInfo").dialog({
+            autoOpen: false,
+            modal: true,
+            show: "blind",
+            hide: "blind",
+            buttons: {
+                Close: function() {
+                    $( this ).dialog( "close" );
+                }
+            }
+        });
+
+
+        // 2. add the onclick handler
+        $("#confirm-order").click(function () {
+            $("#dialogConfirmation").dialog("open");
+            return false;
+        });
+
+        $("#product-info").click(function () {
+            var pid = $(this).attr('pid');
+            $("#dialogProductInfo").dialog("open");
+            //.text("Product id:" + pid)
+            return false;
+        });
+
+
     });
 
-    // next add the onclick handler
-    $("#confirm_order").click(function() {
-        $("#dialog").dialog("open");
-        return false;
-    });
+
 })
 
 

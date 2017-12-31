@@ -1,5 +1,6 @@
 <footer >
-  <!--div class="centered clearfix">
+
+    <!--div class="centered clearfix">
     <div class="footer-logo">
       <img class="logo" src="img/layout/logoDZ.png">
       <div class="social">
@@ -41,13 +42,6 @@
 					?>
                         href='#' onclick='changeLang("en");'><span>EN</span></a>
             <a
-					<?php
-					if ($_SESSION ["language"] == "models/languages/fr.php") {
-						echo " id='currentLink'";
-					}
-					?>
-                        href='#' onclick='changeLang("fr");'><span>FR</span></a>
-    </div>
 </footer>
 
 </body>

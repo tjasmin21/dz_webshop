@@ -1,5 +1,6 @@
 <?php
-	require_once ("header.php");
+$thisPage = "cart";
+require_once ("header.php");
 ?>
 
 	<p><br/></p>
@@ -25,7 +26,7 @@
 							<div class="col-md-2 col-xs-2"><b>Product Name</b></div>
 							<div class="col-md-2 col-xs-2"><b>Quantity</b></div>
 							<div class="col-md-2 col-xs-2"><b>Product Price</b></div>
-							<div class="col-md-2 col-xs-2"><b>Price in $</b></div>
+							<div class="col-md-2 col-xs-2"><b>Price in CHF</b></div>
 						</div>
 						<div id="cart_checkout"></div>
                     </div>
@@ -34,8 +35,8 @@
 				</div>
 			</div>
 			<div class="col-md-2"></div>
-			
 		</div>
+
 <?php
     require_once ("footer.php");
 ?>

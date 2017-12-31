@@ -1,4 +1,5 @@
 <?php
+    $thisPage = "index";
     require_once ("header.php");
 ?>
 

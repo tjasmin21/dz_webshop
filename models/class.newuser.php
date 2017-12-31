@@ -30,7 +30,7 @@ class User {
 		}
 	}
 	public function userCakeAddUser() {
-		global $mysqli, $emailActivation, $websiteUrl;
+		global $mysqli;
 		
 		// Prevent this function being called if there were construction errors
 		if ($this->status) {
@@ -39,57 +39,11 @@ class User {
 
 			// Construct a unique activation token
 			$this->activation_token = generateActivationToken ();
-			
-			// Do we need to send out an activation email?
-			if ($emailActivation == "true") {
-				// User must activate their account first
-				$this->user_active = 0;
-				
-				$mail = new userCakeMail ();
-				
-				// Build the activation message
-				$activation_message = lang ( "ACCOUNT_ACTIVATION_MESSAGE", array (
-						$websiteUrl,
-						$this->activation_token 
-				) );
-				
-				// Define more if you want to build larger structures
-				$hooks = array (
-						"searchStrs" => array (
-								"#ACTIVATION-MESSAGE",
-								"#ACTIVATION-KEY",
-								"#FIRSTNAME#",
-								"#LASTNAME#" 
-						),
-						"subjectStrs" => array (
-								$activation_message,
-								$this->activation_token,
-								$this->firstname,
-								$this->lastname 
-						) 
-				);
-				
-				/*
-				 * Build the template - Optional, you can just use the sendMail function
-				 * Instead to pass a message.
-				 */
-				
-				if (! $mail->newTemplateMsg ( lang ( "NEW_REGIST_FILE" ), $hooks )) {
-					$this->mail_failure = true;
-				} else {
-					// Send the mail. Specify users email here and subject.
-					// SendMail can have a third parementer for message if you do not wish to build a template.
-					
-					if (! $mail->sendMail ( $this->clean_email, lang ( "REGISTER_MAIL_SUBJECT" ) )) {
-						$this->mail_failure = true;
-					}
-				}
-				$this->success = lang ( "ACCOUNT_REGISTRATION_COMPLETE_TYPE2" );
-			} else {
-				// Instant account activation
-				$this->user_active = 1;
-				$this->success = lang ( "ACCOUNT_REGISTRATION_COMPLETE_TYPE1" );
-			}
+
+            // Instant account activation
+            $this->user_active = 1;
+            $this->success = lang ( "ACCOUNT_REGISTRATION_COMPLETE_TYPE1" );
+
 			
 			if (! $this->mail_failure) {
 				// Insert the user into the database providing no errors have been found.

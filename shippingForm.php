@@ -1,22 +1,24 @@
 <?php
+$thisPage = "cart";
+require_once ("config.php");
 
 if(!isset($_COOKIE["firstname"])){
     //Cookies not set yet
     //First time accessing this site
     $cookiesArray = array (
-        "firstname" => $_SESSION["firstname"],
-        "lastname" => $_SESSION["lastname"],
-        "email" => $_SESSION["email"],
-        "address" => $_SESSION["address"],
-        "comment" => "",
-        "telephone" => "",
+        "firstname" => $_SESSION["name"],
+        "lastname" => $loggedInUser->lastname,
+        "email" => $loggedInUser->email,
+        "address" => $loggedInUser->address,
+        "comment" => " ",
+        "telephone" => " ",
     );
 
     setCookieData($cookiesArray);
 }
 
+require_once ("header.php");
 
-    require_once ("header.php");
 ?>
 
         <p><br/></p>

@@ -3,7 +3,7 @@
 require_once "Mail.php";
 class userCakeMail {
 
-		// UserCake uses a text based system with hooks to replace various strs in txt email templates
+		// A text based system with hooks to replace various strs in txt email templates is used
 	public $contents = NULL;
 	
 	// Function used for replacing hooks in our templates
@@ -27,9 +27,7 @@ class userCakeMail {
 	}
 	public function sendMail($email, $subject, $msg = NULL) {
 
-		// $from = '<no-reply@opentasdemo.com>';
 		$headers = array (
-				// 'From' => "EVALink Demo Center <" . $emailAddress . ">",
 				'From' => "dropZone Production < no-reply@dzproduction.com >",
 				'To' => $email,
 				'Subject' => '=?UTF-8?B?' . base64_encode ( $subject ) . '?=',
@@ -40,20 +38,14 @@ class userCakeMail {
 		//
 		// 'Content-type' => "text/html; charset=iso-8859-1\r\n\r\n"
 		
-// 		$smtp = Mail::factory ('smtp', array (
-// 				'host' => 'ssl://smtp.gmail.com',
-// 				'port' => '465',
-// 				'auth' => true,
-// 				'username' => 'sitasysmail@gmail.com',
-// 				'password' => 'mailsitasys' 
-// 		) );
-		
-		$smtp = Mail::factory ('smtp', array (
-				'host' => '139.79.107.25',
-				'port' => '25',
-				'auth' => false 
-		) );
-		
+ 		$smtp = Mail::factory ('smtp', array (
+ 				'host' => 'ssl://smtp.gmail.com',
+ 				'port' => '465',
+ 				'auth' => true,
+ 				'username' => 'jasmin.thevathas@gmail.com',
+ 				'password' => '21jas09min93'
+ 		) );
+
 		// $header = "MIME-Version: 1.0\r\n";
 		// $header .= "Content-type: text/plain; charset=iso-8859-1\r\n";
 		// $header .= "From: EVALink Download Center <" . $emailAddress . ">\r\n";

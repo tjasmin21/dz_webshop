@@ -1,4 +1,5 @@
 ﻿<?php
+$thisPage = "usermenu";
 require_once ("header.php");
 
 // Prevent the user visiting the logged in page if he is not logged in

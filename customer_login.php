@@ -1,4 +1,5 @@
 <?php
+$thisPage = "signin";
 require_once ("header.php");
 
 if(!empty ( $_POST )) {
@@ -11,7 +12,6 @@ if(!empty ( $_POST )) {
         $row = mysqli_fetch_array($run_query);
 		$_SESSION["uid"] = $row["id"];
 		$_SESSION["name"] = $row["first_name"];
-		$_SESSION["email"] = $row["email"];
 
 		$userdetails = fetchUserDetails ( $username );
 
@@ -24,14 +24,13 @@ if(!empty ( $_POST )) {
 		$loggedInUser->title = $userdetails ["title"];
 		$loggedInUser->address = $userdetails ["address"];
 		$loggedInUser->username = $userdetails ["user_name"];
-
+		$loggedInUser->lastname = $userdetails ["last_name"];
+        echo '<script>console.log("'.$loggedInUser->lastname.' & '.$userdetails ["last_name"].'" )</script>';
 		// Update last sign in
 		$loggedInUser->updateLastSignIn ();
 		//Store object into SESSION
 		$_SESSION ["userCakeUser"] = serialize($loggedInUser);
 
-
-		header('Location: index.php');
 	} else{
 		$errors[] = lang("ACCOUNT_USER_OR_PASS_INVALID");
 	}
@@ -82,7 +81,7 @@ if(!empty ( $_POST )) {
                             <p><br/></p>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <input style="float:right;" value="<?php echo lang("LOGIN_BTN") ?>" type="submit" class="btn btn-success btn-lg">
+                                    <input style="float:right;" value="<?php echo lang("LOGIN_BTN") ?>" type="submit" id="login_button" name="login_button" class="btn btn-success btn-lg">
                                 </div>
                             </div>
                         </form>

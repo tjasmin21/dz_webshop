@@ -1,4 +1,6 @@
 ﻿<?php
+$thisPage = "cart";
+
 require_once("models/funcs.php");
 
 //if (!isUserLoggedIn()) {
@@ -6,9 +8,7 @@ require_once("models/funcs.php");
 //    die ();
 //}
 
-if (! empty ( $_POST )) {
-    setCookieData($_POST);
-}
+setCookieData($_POST);
 
 require_once("header.php");
 
@@ -18,6 +18,7 @@ require_once("header.php");
 <p><br/></p>
 <p><br/></p>
 <p><br/></p>
+
 
 <div class="container-fluid">
     <div class="row">
@@ -73,15 +74,15 @@ require_once("header.php");
                             <label ><?php echo $_COOKIE["comment"] ?></label>
                         </div>
                     </div>
-                    <div id="dialog" title="Contact form">
-                        <p>appear now</p>
+                    <div id="dialogConfirmation" title="Purchase confirmation">
+                        <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>This is a binding contract of purchase. Are you sure you want to place the order?</p>
                     </div>
                     <div class="row">
                         <p><br/></p>
                         <div class="row">
                             <div class="col-md-12">
                                 <button style="float:right;" onclick="window.history.back()" class="btn btn-info btn-lg"><?php echo lang("EDIT") ?></button>
-                                <input style="float:right;" value="<?php echo lang("CONFIRM_ORDER") ?>" type="submit" id="confirm_order" name="confirm_order" class="btn btn-success btn-lg">
+                                <button style="float:right;" id="confirm-order" name="confirm-order" class="btn btn-success btn-lg"><?php echo lang("CONFIRM_ORDER") ?></button>
                             </div>
                         </div>
                     </div>
@@ -107,25 +108,30 @@ if(!empty($_POST))
     //Setup our custom hooks
     $hooks = array(
         "searchStrs" => array("#FIRSTNAME#","#LASTNAME#"),
-        "subjectStrs" => array($_COOKIE ['firstname'],$_COOKIE ['lastname'])
+        "subjectStrs" => array($_COOKIE ['firstname'], $_COOKIE ['lastname'])
     );
 
-    if(!$mail->newTemplateMsg(lang("LOST_PW_REQ_FILE"),$hooks))
+    if(!$mail->newTemplateMsg(lang("ORDER_CONFIRMATION_FILE"),$hooks))
     {
         $errors[] = lang("MAIL_TEMPLATE_BUILD_ERROR");
     }
     else
     {
-        if(!$mail->sendMail($_COOKIE ['email'],lang("LOSTPW_MAIL_SUBJECT")) ||
-            !$mail->sendMail("customercare@dropzone.com",lang("LOSTPW_MAIL_SUBJECT")))
+//        if(!$mail->sendMail($_COOKIE ['email'],lang("ORDER_CONFIRM_SUBJECT")) ||
+//            !$mail->sendMail("customercare@dropzone.com",lang("ORDER_CONFIRM_SUBJECT")))
+        if(!$mail->sendMail("jasmin.thevathas@hotmail.com",lang("ORDER_CONFIRM_SUBJECT")))
         {
             $errors[] = lang("MAIL_ERROR");
         }
         else
         {
-            $successes[] = lang("FORGOTPASS_REQUEST_SUCCESS");
+            $successes[] = lang("CONFIRMATION_SUCCESS");
         }
     }
+
+    echo "<div id='main'>";
+    echo resultBlock ( $errors, $successes );
+    echo "</div>";
 }
 
 ?>
