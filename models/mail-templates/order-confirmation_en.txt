@@ -2,9 +2,5 @@
 
 Do you need a new password for the EVALink® Demo Center? Please follow the link below to reset it.
 
-#CONFIRM-URL#
-
-#DENY-URL#
-
 Best regards,
-Your Sitasys-Team
+dropZone Team

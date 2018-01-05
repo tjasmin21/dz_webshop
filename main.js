@@ -262,7 +262,6 @@ $(document).ready(function(){
             }
         });
 
-
         $("#dialogProductInfo").dialog({
             autoOpen: false,
             modal: true,
@@ -283,9 +282,9 @@ $(document).ready(function(){
         });
 
         $("#product-info").click(function () {
-            var pid = $(this).attr('pid');
+            var p_desc = $(this).attr('p_desc');
             $("#dialogProductInfo").dialog("open");
-            //.text("Product id:" + pid)
+            //.text("Product description:" + p_desc)
             return false;
         });
 

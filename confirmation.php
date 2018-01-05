@@ -12,6 +12,17 @@ setCookieData($_POST);
 
 require_once("header.php");
 
+$user_id = $_SESSION["uid"];
+$sql = "SELECT * FROM cart WHERE user_id = '$user_id'";
+$run_query = mysqli_query($mysqli, $sql);
+
+while ($row = mysqli_fetch_array($run_query)) {
+    $pro_title = $row['product_title'];
+    $pro_img = $row['product_image'];
+    $pro_qty = $row['qty'];
+    $pro_price = $row['price'];
+    $tot_amount = $row['total_amt'];
+}
 ?>
 
 
@@ -74,6 +85,47 @@ require_once("header.php");
                             <label ><?php echo $_COOKIE["comment"] ?></label>
                         </div>
                     </div>
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading"></div>
+                        <div class="panel-body">
+                            <h1>Customer Order details</h1>
+                            <hr/>
+                            <?php
+                            $transNr = 0;
+                            $transId = "RTSH5415SHSHYD87D25S";
+                            while ($row = mysqli_fetch_array($run_query)) {
+                                $pro_title = $row['product_title'];
+                                $pro_img = $row['product_image'];
+                                $pro_qty = $row['product_qty'];
+                                $pro_price = $row['product_price'];
+                                $tot_amount = $row['total_amount'];
+
+                                $transId = $transId.$transNr;
+                                $transNr++;
+                            }
+                            echo '
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img style="float:right;" src="img/content/'.$pro_img.'" class="img-thumbnail"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <table>
+                                        <tr><td>Product Name</td><td><b>'.$pro_title.'</b> </td></tr>
+                                        <tr><td>Product Price</td><td><b>'.$pro_price.' CHF</b></td></tr>
+                                        <tr><td>Quantity</td><td><b>'.$pro_qty.'</b></td></tr>
+                                        <tr><td>Payment</td><td><b>Completed</b></td></tr>
+                                        <tr><td>Transaction Id</td><td><b>'.$transId.'</b></td></tr>
+                                    </table>
+                                </div>
+                            </div>';
+                            ?>
+                        </div>
+                    </div>
+
+
+
+
                     <div id="dialogConfirmation" title="Purchase confirmation">
                         <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>This is a binding contract of purchase. Are you sure you want to place the order?</p>
                     </div>
@@ -98,40 +150,4 @@ require_once("header.php");
 require_once("footer.php");
 ?>
 
-<?php
 
-//Forms posted
-if(!empty($_POST))
-{
-    $mail = new userCakeMail();
-
-    //Setup our custom hooks
-    $hooks = array(
-        "searchStrs" => array("#FIRSTNAME#","#LASTNAME#"),
-        "subjectStrs" => array($_COOKIE ['firstname'], $_COOKIE ['lastname'])
-    );
-
-    if(!$mail->newTemplateMsg(lang("ORDER_CONFIRMATION_FILE"),$hooks))
-    {
-        $errors[] = lang("MAIL_TEMPLATE_BUILD_ERROR");
-    }
-    else
-    {
-//        if(!$mail->sendMail($_COOKIE ['email'],lang("ORDER_CONFIRM_SUBJECT")) ||
-//            !$mail->sendMail("customercare@dropzone.com",lang("ORDER_CONFIRM_SUBJECT")))
-        if(!$mail->sendMail("jasmin.thevathas@hotmail.com",lang("ORDER_CONFIRM_SUBJECT")))
-        {
-            $errors[] = lang("MAIL_ERROR");
-        }
-        else
-        {
-            $successes[] = lang("CONFIRMATION_SUCCESS");
-        }
-    }
-
-    echo "<div id='main'>";
-    echo resultBlock ( $errors, $successes );
-    echo "</div>";
-}
-
-?>

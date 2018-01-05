@@ -58,7 +58,7 @@ class userCakeMail {
 		
 		$message = wordwrap ( $message, 70 );
 		
-		$mail = $smtp->send ( $email, $headers, $msg );
+		$mail = $smtp->send ( $email, $headers, $message );
 		// mail($to,$subject,$msg,$header);
 		
 		/*

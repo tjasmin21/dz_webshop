@@ -54,14 +54,7 @@ if (isset($_POST["page"])) {
     }
 }
 if (isset($_POST["getProduct"])) {
-    $limit = 9;
-    if (isset($_POST["setPage"])) {
-        $pageno = $_POST["pageNumber"];
-        $start = ($pageno * $limit) - $limit;
-    } else {
-        $start = 0;
-    }
-    $product_query = "SELECT * FROM products LIMIT $start,$limit";
+    $product_query = "SELECT * FROM products";
     $run_query = mysqli_query($mysqli, $product_query);
     if (mysqli_num_rows($run_query) > 0) {
         while ($row = mysqli_fetch_array($run_query)) {
@@ -70,15 +63,20 @@ if (isset($_POST["getProduct"])) {
             $pro_brand = $row['product_brand'];
             $pro_title = $row['product_title'];
             $pro_price = $row['product_price'];
+            if($pro_price == 0){
+                $pro_price = "Preis auf Anfrage";
+            }else{
+                $pro_price = $pro_price."00 CHF/per hour";
+            }
             $pro_image = $row['product_image'];
             echo "
 				<div class='col-md-4'>
 							<div class='panel panel-info'>
 								<div class='panel-heading'>$pro_title</div>
 								<div class='panel-body'>
-									<img src='product_images/$pro_image' style='width:160px; height:250px;'/>
+									<img src='img/content/$pro_image' style='width:160px; height:250px;'/>
 								</div>
-								<div class='panel-heading'> $pro_price.00 CHF/per hour 
+								<div class='panel-heading'> $pro_price
 									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>AddToCart</button>
 									<button pid='$pro_id' style='float:right;' id='product-info' name='product-info' class='btn btn-info btn-xs'>Info</button>
 								</div>
@@ -112,17 +110,24 @@ if (isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || iss
         $pro_brand = $row['product_brand'];
         $pro_title = $row['product_title'];
         $pro_price = $row['product_price'];
+        if($pro_price == 0){
+            $pro_price = "Preis auf Anfrage";
+        }else{
+            $pro_price = $pro_price."00 CHF/per hour";
+        }
         $pro_image = $row['product_image'];
+        $pro_desc = $row['product_desc'];
         echo "
 				<div class='col-md-4'>
 							<div class='panel panel-info'>
 								<div class='panel-heading'>$pro_title</div>
 								<div class='panel-body'>
-									<img src='product_images/$pro_image' style='width:160px; height:250px;'/>
+									<img src='img/content/$pro_image' style='width:160px; height:250px;'/>
 								</div>
-								<div class='panel-heading'>$pro_price.00 CHF/per hour 
+								<div class='panel-heading'>$pro_price
 									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>AddToCart</button>
-								</div>
+									<button p_desc='$pro_desc' style='float:right;' id='product-info' name='product-info' class='btn btn-info btn-xs'>Info</button>
+                                </div>
 							</div>
 						</div>	
 			";
@@ -200,7 +205,7 @@ if (isset($_POST["get_cart_product"]) || isset($_POST["cart_checkout"])) {
                 echo "
 				<div class='row'>
 					<div class='col-md-3 col-xs-3'>$no</div>
-					<div class='col-md-3 col-xs-3'><img src='product_images/$pro_image' width='60px' height='50px'></div>
+					<div class='col-md-3 col-xs-3'><img src='img/content/$pro_image' width='60px' height='50px'></div>
 					<div class='col-md-3 col-xs-3'>$pro_name</div>
 					<div class='col-md-3 col-xs-3'>$pro_price.00 CHF/per hour </div>
 				</div>
@@ -215,7 +220,7 @@ if (isset($_POST["get_cart_product"]) || isset($_POST["cart_checkout"])) {
 									<a href='' update_id='$pro_id' class='btn btn-primary btn-xs update'><span class='glyphicon glyphicon-ok-sign'></span></a>
 								</div>
 							</div>
-							<div class='col-md-2 col-sm-2'><img src='product_images/$pro_image' width='50px' height='60'></div>
+							<div class='col-md-2 col-sm-2'><img src='img/content/$pro_image' width='50px' height='60'></div>
 							<div class='col-md-2 col-sm-2'>$pro_name</div>
 							<div class='col-md-2 col-sm-2'><input type='number' class='form-control qty' pid='$pro_id' id='qty-$pro_id' value='$qty' min='1'></div>
 							<div class='col-md-2 col-sm-2'><input type='text' class='form-control price' pid='$pro_id' id='price-$pro_id' value='$pro_price' disabled></div>

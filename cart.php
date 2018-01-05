@@ -31,7 +31,6 @@ require_once ("header.php");
 						<div id="cart_checkout"></div>
                     </div>
 					</div>
-					<div class="panel-footer"></div>
 				</div>
 			</div>
 			<div class="col-md-2"></div>
