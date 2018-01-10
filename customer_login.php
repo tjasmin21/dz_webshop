@@ -43,7 +43,7 @@ if(!empty ( $_POST )) {
 
 <?php
 
-    echo "<div id='main'>";
+    echo "<div id='main' class='alert alert-secondary' role='alert'>";
     echo resultBlock ( $errors, $successes );
     echo "</div>";
 
@@ -58,36 +58,21 @@ if(!empty ( $_POST )) {
 			<div class="col-md-4"></div>
 			<div class="col-md-3">
 				<div class="panel panel-primary">
-					<div class="panel-heading"><?php echo lang("LOGIN") ?></div>
-					<div class="panel-body">
-                        <?php echo lang("LOGIN_INFO") ?>
-                        <p><br/></p>
-
-                        <form method="post">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label for="username"><?php echo lang("USERNAME") ?></label>
-                                    <input type="text" id="username" name="username" class="form-control" required>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label for="password"><?php echo lang("PW") ?></label>
-                                    <input type="password" id="password" name="password" class="form-control" required>
-                                </div>
-                            </div>
-                            <p><br/></p>
-                            <?php echo lang("PW_FORGOT_QST") ?>
-                            <p><br/></p>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <input style="float:right;" value="<?php echo lang("LOGIN_BTN") ?>" type="submit" id="login_button" name="login_button" class="btn btn-success btn-lg">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+					<h1><?php echo lang("LOGIN") ?></h1>
+					<p><?php echo lang("LOGIN_INFO") ?></p>
+                    <form method="post">
+                        <div class="form-group">
+                            <label for="username"><?php echo lang("USERNAME") ?></label>
+                            <input type="text" id="username" name="username" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password"><?php echo lang("PW") ?></label>
+                            <input type="password" id="password" name="password" class="form-control" required>
+                        </div>
+                        <?php echo lang("PW_FORGOT_QST") ?>
+                        <input style="float:right;" value="<?php echo lang("LOGIN_BTN") ?>" type="submit" id="login_button" name="login_button" class='btn btn-primary'>
+                    </form>
                 </div>
-                <div class="col-md-2"></div>
             </div>
         </div>
 <?php

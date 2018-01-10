@@ -248,7 +248,7 @@ $lang = array_merge ( $lang, array (
 $lang = array_merge ( $lang, array (
     "COUNTRY_CHOOSE" => "Choose your country: ",
     "COMMENT_WRITE" => "Write a comment to us",
-
+    "SHIP_INFORMATION" => "Shipping information",
 
 ) );
 

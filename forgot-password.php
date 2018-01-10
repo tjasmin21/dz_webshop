@@ -184,36 +184,34 @@ echo "
 		<div class='row'>
 			<div class='col-md-4'></div>
 			<div class='col-md-3'>
-				<div class='panel panel-primary'>
-					<div class='panel-heading'>".lang("FORGOT_PASSWORD")."</div>
-					<div class='panel-body'>
-                        ".lang("PW_FORGOT_TXT")."
-                        <p><br/></p>			
-						<div id='regbox'>
-							<form name='newLostPass' action='".$_SERVER['PHP_SELF']."' method='post' class='form_forgotPW'>
-								<div class='row'>
-									<div class='col-md-6'>
-										<label for='username'>".lang("USERNAME").":</label>
-										<input type='text' name='username' id='username' class='form-control' required/>
-									</div>
-								</div>
-								<div class='row'>
-									<div class='col-md-6'>
-										<label for='email'>".lang("EMAIL").":</label>
-										<input type='text' name='email' id='email' class='form-control' required/>
-									</div>
-								</div>
-								 <div class='row'>
-		                            <div class='col-md-12'>
-		                               <input style=\"float:right;\"  type='submit' value='".lang("SUBMIT_BTN")."' class='btn btn-success btn-lg' /> 
-		                            </div>
-		                        </div>
-								<p>
-									
-								</p>
-							</form>
-						</div>
-					</div>
+				<p class='panel panel-primary'>
+					<h1>".lang("FORGOT_PASSWORD")."</h1>
+					<p>".lang("PW_FORGOT_TXT")."</p>
+                    <p><br/></p>			
+                    <div id='regbox'>
+                        <form name='newLostPass' action='".$_SERVER['PHP_SELF']."' method='post' class='form_forgotPW'>
+                            <div class='row'>
+                                <div class='col-md-6'>
+                                    <label for='username'>".lang("USERNAME").":</label>
+                                    <input type='text' name='username' id='username' class='form-control' required/>
+                                </div>
+                            </div>
+                            <div class='row'>
+                                <div class='col-md-6'>
+                                    <label for='email'>".lang("EMAIL").":</label>
+                                    <input type='text' name='email' id='email' class='form-control' required/>
+                                </div>
+                            </div>
+                             <div class='row'>
+                                <div class='col-md-12'>
+                                   <input style=\"float:right;\"  type='submit' value='".lang("SUBMIT_BTN")."' class='btn btn-success btn-lg' /> 
+                                </div>
+                            </div>
+                            <p>
+                                
+                            </p>
+                        </form>
+                    </div>
 				</div>
 			</div>
 		</div>

@@ -39,7 +39,6 @@ else
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
 				<div class="panel panel-default">
-					<div class="panel-heading"></div>
 					<div class="panel-body">
 						<h1>Thankyou </h1>
 						<hr/>

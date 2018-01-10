@@ -30,10 +30,10 @@ require_once ("header.php");
                 <div class="col-md-8">
                     <div class="shippingConfirmation">
                         <div class="panel panel-primary">
-                            <div class="panel-heading"><?php echo lang("REGISTER")?></div>
+                            <h1><?php echo lang("SHIP_INFORMATION")?></h1>
                             <div class="panel-body">
                             <form action="confirmation.php" method="post">
-                                <div class="row">
+                                <div class='form-group'>
                                     <div class="col-md-6">
                                         <label for="firstname"><?php echo lang("FIRSTNAME") ?></label>
                                         <input type="text" id="firstname" name="firstname" class="form-control" value="<?php echo $_COOKIE ["firstname"] ?>" required>
@@ -43,7 +43,7 @@ require_once ("header.php");
                                         <input type="text" id="lastname" name="lastname" class="form-control"  value="<?php echo $_COOKIE ["lastname"]?>" required>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class='form-group'>
                                     <div class="col-md-6">
                                         <label for="telephone"><?php echo lang("TEL") ?></label>
                                         <input type="tel" id="telephone" name="telephone" class="form-control" value="<?php echo $_COOKIE ["telephone"] ?>" required>
@@ -53,13 +53,13 @@ require_once ("header.php");
                                         <input type="email" id="email" name="email" class="form-control" value="<?php echo $_COOKIE ["email"] ?>" required>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class='form-group'>
                                     <div class="col-md-12">
                                         <label for="address"><?php echo lang("ADDRESS") ?></label>
                                         <input type="text" id="address" name="address" class="form-control" value="<?php echo $_COOKIE ["address"] ?>" required>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class='form-group'>
                                     <div class="col-md-6">
                                         <label for="countries"><?php echo lang("COUNTRY_CHOOSE") ?></label>
                                         <select id="countries" name="countries">
@@ -313,13 +313,13 @@ require_once ("header.php");
                                         <input type="radio" name="shipMethod" value="Premium express shipping"> Premium express shipping
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class='form-group'>
                                     <div class="col-md-12">
                                         <label for="comment"><?php echo lang("COMMENT_WRITE") ?></label><br>
                                         <textarea name="comment"  rows="4" cols="50" > <?php echo $_COOKIE ["comment"] ?></textarea>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class='form-group'>
                                     <p><br/></p>
                                     <div class="row">
                                         <div class="col-md-12">

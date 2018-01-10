@@ -72,19 +72,19 @@ $(document).ready(function(){
 	
 	})
 	$("#search_btn").click(function(){
-		$("#get_product").html("<h3>Loading...</h3>");
-		var keyword = $("#search").val();
-		if(keyword != ""){
+        $("#get_product").html("<h3>Loading...</h3>");
+        var keyword = $("#search").val();
+        if(keyword !== ""){
 			$.ajax({
 			url		:	"shoppingCart.php",
 			method	:	"POST",
 			data	:	{search:1,keyword:keyword},
-			success	:	function(data){ 
+			success	:	function(data){
 				$("#get_product").html(data);
 				if($("body").width() < 480){
 					$("body").scrollTop(683);
 				}
-			}
+            }
 		})
 		}
 	})
@@ -262,29 +262,11 @@ $(document).ready(function(){
             }
         });
 
-        $("#dialogProductInfo").dialog({
-            autoOpen: false,
-            modal: true,
-            show: "blind",
-            hide: "blind",
-            buttons: {
-                Close: function() {
-                    $( this ).dialog( "close" );
-                }
-            }
-        });
 
 
         // 2. add the onclick handler
         $("#confirm-order").click(function () {
             $("#dialogConfirmation").dialog("open");
-            return false;
-        });
-
-        $("#product-info").click(function () {
-            var p_desc = $(this).attr('p_desc');
-            $("#dialogProductInfo").dialog("open");
-            //.text("Product description:" + p_desc)
             return false;
         });
 

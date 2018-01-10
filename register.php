@@ -111,7 +111,7 @@ if (! empty ( $_POST )) {
 	}
 }
 
-echo "<div id='main'>";
+echo "<div id='main' class='alert alert-secondary' role='alert'>";
 echo resultBlock ( $errors, $successes );
 echo "</div>";
 

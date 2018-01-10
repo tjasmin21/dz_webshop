@@ -34,9 +34,12 @@ while ($row = mysqli_fetch_array($run_query)) {
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-2"></div>
+        <div id="dialogConfirmation" title="Purchase confirmation">
+            <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>This is a binding contract of purchase. Are you sure you want to place the order?</p>
+        </div>
         <div class="col-md-8">
             <div class="panel panel-primary">
-                <div class="panel-heading"><?php echo lang("CONFIRM_DATA") ?></div>
+                <h1><?php echo lang("CONFIRM_DATA") ?></h1>
                 <div class="panel-body">
                     <div class="row">
                         <?php echo lang("TXT_CONTROL") ?>
@@ -87,7 +90,6 @@ while ($row = mysqli_fetch_array($run_query)) {
                     </div>
 
                     <div class="panel panel-default">
-                        <div class="panel-heading"></div>
                         <div class="panel-body">
                             <h1>Customer Order details</h1>
                             <hr/>
@@ -123,12 +125,6 @@ while ($row = mysqli_fetch_array($run_query)) {
                         </div>
                     </div>
 
-
-
-
-                    <div id="dialogConfirmation" title="Purchase confirmation">
-                        <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>This is a binding contract of purchase. Are you sure you want to place the order?</p>
-                    </div>
                     <div class="row">
                         <p><br/></p>
                         <div class="row">

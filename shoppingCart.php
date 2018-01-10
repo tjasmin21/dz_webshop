@@ -5,18 +5,16 @@ if (isset($_POST["brand"])) {
     $brand_query = "SELECT * FROM brands";
     $run_query = mysqli_query($mysqli, $brand_query);
     echo "
-		<div class='nav nav-pills nav-stacked'>
-			<li class='active'><a href='#'><h4>Brands</h4></a></li>
+		<a href='#' class='list-group-item list-group-item-action disabled'><h4>Brands</h4></a>
 	";
     if (mysqli_num_rows($run_query) > 0) {
         while ($row = mysqli_fetch_array($run_query)) {
             $bid = $row["brand_id"];
             $brand_name = $row["brand_title"];
             echo "
-					<li><a href='#' class='selectBrand' bid='$bid'>$brand_name</a></li>
+				<a href='#' class='list-group-item list-group-item-action' bid='$bid'>$brand_name</a>
 			";
         }
-        echo "</div>";
     }
 }
 
@@ -24,21 +22,20 @@ if (isset($_POST["category"])) {
     $category_query = "SELECT * FROM categories";
     $run_query = mysqli_query($mysqli, $category_query) or die(mysqli_error($mysqli));
     echo "
-		<div class='nav nav-pills nav-stacked'>
-			<li class='active'><a href='#'><h4>Categories</h4></a></li>
+			<a href='#' class='list-group-item list-group-item-action disabled'><h4>Categories</h4></a>
 	";
     if (mysqli_num_rows($run_query) > 0) {
         while ($row = mysqli_fetch_array($run_query)) {
             $cid = $row["cat_id"];
             $cat_name = $row["cat_title"];
             echo "
-					<li><a href='#' class='category' cid='$cid'>$cat_name</a></li>
+
+				<a href='#' class='list-group-item list-group-item-action' cid='$cid'>$cat_name</a>
 			";
         }
         echo "
-		            <li><a href='#' id='resetLink' class='category' cid='0'>Reset filter</a></li>
+		        <a href='#' id='resetLink' class='list-group-item list-group-item-action active' cid='0'>Reset filter</a>
 			";
-        echo "</div>";
     }
 }
 
@@ -63,6 +60,8 @@ if (isset($_POST["getProduct"])) {
             $pro_brand = $row['product_brand'];
             $pro_title = $row['product_title'];
             $pro_price = $row['product_price'];
+            $pro_desc = $row['product_desc'];
+
             if($pro_price == 0){
                 $pro_price = "Preis auf Anfrage";
             }else{
@@ -70,18 +69,14 @@ if (isset($_POST["getProduct"])) {
             }
             $pro_image = $row['product_image'];
             echo "
-				<div class='col-md-4'>
-							<div class='panel panel-info'>
-								<div class='panel-heading'>$pro_title</div>
-								<div class='panel-body'>
-									<img src='img/content/$pro_image' style='width:160px; height:250px;'/>
-								</div>
-								<div class='panel-heading'> $pro_price
-									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>AddToCart</button>
-									<button pid='$pro_id' style='float:right;' id='product-info' name='product-info' class='btn btn-info btn-xs'>Info</button>
-								</div>
-							</div>
-						</div>	
+				<div class='card' style='width: 18rem;'>
+				    <div class='card-body'>
+                        <h5 class='card-title'>$pro_title</h5>
+                        <h6 class='card-subtitle mb-2 text-primary' >$pro_price</h6>
+                        <p class='card-text'>$pro_desc</p>
+                        <button pid='$pro_id' style='float:right;' id='product' class='btn btn-primary'>AddToCart</button>
+                    </div>
+                </div>	
 			";
         }
     }
@@ -100,7 +95,7 @@ if (isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || iss
         $sql = "SELECT * FROM products WHERE product_brand = '$id'";
     } else {
         $keyword = $_POST["keyword"];
-        $sql = "SELECT * FROM products WHERE product_keywords LIKE '%$keyword%'";
+        $sql = "SELECT * FROM products WHERE product_title LIKE '%$keyword%'";
     }
 
     $run_query = mysqli_query($mysqli, $sql);
@@ -110,6 +105,8 @@ if (isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || iss
         $pro_brand = $row['product_brand'];
         $pro_title = $row['product_title'];
         $pro_price = $row['product_price'];
+        $pro_desc = $row['product_desc'];
+
         if($pro_price == 0){
             $pro_price = "Preis auf Anfrage";
         }else{
@@ -118,18 +115,14 @@ if (isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || iss
         $pro_image = $row['product_image'];
         $pro_desc = $row['product_desc'];
         echo "
-				<div class='col-md-4'>
-							<div class='panel panel-info'>
-								<div class='panel-heading'>$pro_title</div>
-								<div class='panel-body'>
-									<img src='img/content/$pro_image' style='width:160px; height:250px;'/>
-								</div>
-								<div class='panel-heading'>$pro_price
-									<button pid='$pro_id' style='float:right;' id='product' class='btn btn-danger btn-xs'>AddToCart</button>
-									<button p_desc='$pro_desc' style='float:right;' id='product-info' name='product-info' class='btn btn-info btn-xs'>Info</button>
-                                </div>
-							</div>
-						</div>	
+				<div class='card' style='width: 18rem;'>
+				    <div class='card-body'>
+                        <h5 class='card-title'>$pro_title</h5>
+                        <h6 class='card-subtitle mb-2 text-primary' >$pro_price</h6>
+                        <p class='card-text'>$pro_desc</p>
+                        <button pid='$pro_id' style='float:right;' id='product' class='btn btn-primary'>AddToCart</button>
+                    </div>
+                </div>	
 			";
     }
 }
@@ -203,29 +196,28 @@ if (isset($_POST["get_cart_product"]) || isset($_POST["cart_checkout"])) {
             setcookie("ta", $total_amt, strtotime("+1 day"), "/", "", "", TRUE);
             if (isset($_POST["get_cart_product"])) {
                 echo "
-				<div class='row'>
-					<div class='col-md-3 col-xs-3'>$no</div>
-					<div class='col-md-3 col-xs-3'><img src='img/content/$pro_image' width='60px' height='50px'></div>
-					<div class='col-md-3 col-xs-3'>$pro_name</div>
-					<div class='col-md-3 col-xs-3'>$pro_price.00 CHF/per hour </div>
-				</div>
+				 <tr>
+					<td>$no</td>
+					<td><img src='img/content/$pro_image' width='60px' height='50px'></td>
+					<td>$pro_name</td>
+					<td>$pro_price.00 CHF/per hour </td>
+				 </tr>
 			";
                 $no = $no + 1;
             } else {
                 echo "
-					<div class='row'>
-							<div class='col-md-2 col-sm-2'>
-								<div class='btn-group'>
-									<a href='#' remove_id='$pro_id' class='btn btn-danger btn-xs remove'><span class='glyphicon glyphicon-trash'></span></a>
-									<a href='' update_id='$pro_id' class='btn btn-primary btn-xs update'><span class='glyphicon glyphicon-ok-sign'></span></a>
-								</div>
-							</div>
-							<div class='col-md-2 col-sm-2'><img src='img/content/$pro_image' width='50px' height='60'></div>
-							<div class='col-md-2 col-sm-2'>$pro_name</div>
-							<div class='col-md-2 col-sm-2'><input type='number' class='form-control qty' pid='$pro_id' id='qty-$pro_id' value='$qty' min='1'></div>
-							<div class='col-md-2 col-sm-2'><input type='text' class='form-control price' pid='$pro_id' id='price-$pro_id' value='$pro_price' disabled></div>
-							<div class='col-md-2 col-sm-2'><input type='text' class='form-control total' pid='$pro_id' id='total-$pro_id' value='$total' disabled></div>
-						</div>
+					<tr>
+					    <td>
+                            <div class='btn-group' role='group'>
+                                <a href='#' remove_id='$pro_id' class='btn btn-danger btn-xs remove'><span class='glyphicon glyphicon-trash'></span></a>
+                                <a href='' update_id='$pro_id' class='btn btn-primary btn-xs update'><span class='glyphicon glyphicon-ok-sign'></span></a>
+                            </div>
+                        </td>
+                        <td>$pro_name</td>
+                        <td><input type='number' class='form-control qty' pid='$pro_id' id='qty-$pro_id' value='$qty' min='1'></td>
+                        <td><input type='text' class='form-control price' pid='$pro_id' id='price-$pro_id' value='$pro_price' disabled></td>
+                        <td><input type='text' class='form-control total' pid='$pro_id' id='total-$pro_id' value='$total' disabled></td>
+					</tr>
 				";
             }
 

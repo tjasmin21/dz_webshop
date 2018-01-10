@@ -10,9 +10,9 @@
 		<div class="row">
 			<div class="col-md-1"></div>
 			<div class="col-md-2 col-xs-12">
-                <div id="get_brand">
+                <div id="get_brand" class="list-group">
                 </div>
-				<div id="get_category">
+				<div id="get_category" class="list-group">
 				</div>
 			</div>
 			<div class="col-md-8 col-xs-12">
@@ -20,17 +20,14 @@
 					<div class="col-md-12 col-xs-12" id="product_msg">
 					</div>
 				</div>
-                <div id="dialogProductInfo" title="Product information">
-                    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>This is a binding contract of purchase. Are you sure you want to place the order?</p>
+                <div class="album text-muted">
+                    <div class="container">
+                        <h1>Products</h1>
+                            <div id="get_product" class="row">
+                                <!--Here we get product jquery Ajax Request-->
+                            </div>
+                    </div>
                 </div>
-				<div class="panel panel-info">
-					<div class="panel-heading">Products</div>
-					<div class="panel-body">
-						<div id="get_product">
-							<!--Here we get product jquery Ajax Request-->
-						</div>
-					</div>
-				</div>
 			</div>
 			<div class="col-md-1"></div>
 		</div>

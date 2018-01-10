@@ -57,7 +57,7 @@ echo "
 	<p><br/></p>
 	<p><br/></p>
 	<p><br/></p>
-	<div id='main'>";
+	<div id='main' class='alert alert-secondary' role='alert'>";
 
 echo resultBlock ( $errors, $successes );
 
@@ -72,43 +72,27 @@ echo "
 			<div class='col-md-4'></div>
 			<div class='col-md-3'>
 				<div class='panel panel-primary'>
-					<div class='panel-heading'>".lang("PW_CHANGE")."</div>
-					<div class='panel-body'>
-                        ".lang("PW_CHANGE_TXT")."
-                        <p><br/></p>			
+					<h1>".lang("PW_CHANGE")."</h1>
+					<p>".lang("PW_CHANGE_TXT")."</p>			
 						<div id='regbox'>
 							<form name='updateAccount' action='" . $_SERVER ['PHP_SELF'] . "' method='post' class='form_changePW'>
-								<div class='row'>
-									<div class='col-md-8'>
+								<div class='form-group'>
 										<label for='username'>".lang("PW_CURRENT").":</label>
 										<input type='password' name='password' id='password' class='form-control' required/>
-									</div>
 								</div>
-								<div class='row'>
-									<div class='col-md-8'>
+								<div class='form-group'>
 										<label for='email'>".lang("EMAIL").":</label>
 										<input type='text' name='email' id='email' class='form-control' value='" . $loggedInUser->email . "' disabled />
-									</div>
 								</div>
-								<div class='row'>
-									<div class='col-md-8'>
+								<div class='form-group'>
 										<label for='username'>".lang("NEW_PW").":</label>
 										<input type='password' name='passwordc' id='passwordc' class='form-control' required/>
-									</div>
 								</div>
-									<div class='row'>
-									<div class='col-md-8'>
+								<div class='form-group'>
 										<label for='username'>".lang("PW_CONFIRM").":</label>
 										<input type='password' name='passwordcheck' id='passwordcheck' class='form-control' required/>
-									</div>
 								</div>
-								<p></p>
-								<div class='row'>
-		                            <div class='col-md-12'>
-		                               <input style='float:right;'  type='submit' value='".lang("UPDATE_BTN")."' class='btn btn-success btn-lg' /> 
-		                            </div>
-		                        </div>
-								<p></p>
+		                        <input type='submit' value='".lang("UPDATE_BTN")."' class='btn btn-primary' /> 
 							</form>
 						</div>
 					</div>
