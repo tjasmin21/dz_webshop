@@ -77,6 +77,7 @@ $lang = array_merge ( $lang, array (
 $lang = array_merge ( $lang, array (
     "CAPTCHA_FAIL" => "Fehler beim Erstellen des Securitycodes",
     "DENY" => "Abbrechen",
+    "CONFIRM_URL" => "Bestätigen",
     "SUCCESS" => "Erfolgreich",
     "ERROR" => "Fehler",
     "NOTHING_TO_UPDATE" => "Nichts zum aktualisieren",

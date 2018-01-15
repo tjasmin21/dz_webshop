@@ -37,14 +37,14 @@ class userCakeMail {
 		);
 		//
 		// 'Content-type' => "text/html; charset=iso-8859-1\r\n\r\n"
-		
- 		$smtp = Mail::factory ('smtp', array (
- 				'host' => 'ssl://smtp.gmail.com',
- 				'port' => '465',
- 				'auth' => true,
- 				'username' => 'jasmin.thevathas@gmail.com',
- 				'password' => '21jas09min93'
- 		) );
+
+		$smtp = Mail::factory ('smtp', array (
+			'host' => 'ssl://smtp.bfh.ch',
+			'port' => '587',
+			'auth' => true,
+			'username' => 'thevj1',
+			'password' => 'Starbucks21'
+		) );
 
 		// $header = "MIME-Version: 1.0\r\n";
 		// $header .= "Content-type: text/plain; charset=iso-8859-1\r\n";
@@ -61,15 +61,14 @@ class userCakeMail {
 		$mail = $smtp->send ( $email, $headers, $message );
 		// mail($to,$subject,$msg,$header);
 		
-		/*
-		 * if (PEAR::isError($mail)) {
-		 * echo('<p>' . $mail->getMessage() . '</p>');
-		 * } else {
-		 * echo('<p>Message successfully sent!</p>');
-		 * }
-		 */
-		
-		return true;
+
+		 if (PEAR::isError($mail)) {
+			 echo('<p>' . $mail->getMessage() . '</p>');
+			 return false;
+		 } else {
+			 return true;
+		 }
+
 	}
 }
 

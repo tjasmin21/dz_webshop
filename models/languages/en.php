@@ -76,6 +76,7 @@ $lang = array_merge ( $lang, array (
 // Miscellaneous
 $lang = array_merge ( $lang, array (
     "DENY" => "Deny",
+    "CONFIRM_URL" => "Confirm",
     "SUCCESS" => "Success",
     "ERROR" => "Error",
     "NOTHING_TO_UPDATE" => "Nothing to update",
