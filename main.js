@@ -243,6 +243,9 @@ $(document).ready(function(){
         })
     }
 
+
+
+
     $(function() {
         // 1. initializes the dialog
         $("#dialogConfirmation").dialog({
@@ -254,7 +257,7 @@ $(document).ready(function(){
                 "Confirm purchase": function() {
                     $( this ).dialog(close);
                     order_finsihed();
-                    location.replace("http://localhost/dz_webshop/payment_success.php");
+                    location.replace("payment_success.php");
                 },
                 Cancel: function() {
                     $( this ).dialog( "close" );
@@ -264,11 +267,14 @@ $(document).ready(function(){
 
 
 
+
         // 2. add the onclick handler
         $("#confirm-order").click(function () {
             $("#dialogConfirmation").dialog("open");
             return false;
         });
+
+
 
 
     });

@@ -30,8 +30,8 @@ if(!empty ( $_POST )) {
 		$loggedInUser->updateLastSignIn ();
 		//Store object into SESSION
 		$_SESSION ["userCakeUser"] = serialize($loggedInUser);
-
-	} else{
+        $successes[] = "You logged in successfully. Click <a href='shop.php'>here</a> to browse our shop.";
+    } else{
 		$errors[] = lang("ACCOUNT_USER_OR_PASS_INVALID");
 	}
 }
@@ -49,7 +49,7 @@ if(!empty ( $_POST )) {
 
 ?>
 
-	<div class="container-fluid">
+	<div class="container-fluid" id="loginform">
 		<div class="row">
 			<div class="col-md-2"></div>
 			<div class="col-md-2"></div>

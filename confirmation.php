@@ -15,14 +15,6 @@ require_once("header.php");
 $user_id = $_SESSION["uid"];
 $sql = "SELECT * FROM cart WHERE user_id = '$user_id'";
 $run_query = mysqli_query($mysqli, $sql);
-
-while ($row = mysqli_fetch_array($run_query)) {
-    $pro_title = $row['product_title'];
-    $pro_img = $row['product_image'];
-    $pro_qty = $row['qty'];
-    $pro_price = $row['price'];
-    $tot_amount = $row['total_amt'];
-}
 ?>
 
 
@@ -98,29 +90,29 @@ while ($row = mysqli_fetch_array($run_query)) {
                             $transId = "RTSH5415SHSHYD87D25S";
                             while ($row = mysqli_fetch_array($run_query)) {
                                 $pro_title = $row['product_title'];
-                                $pro_img = $row['product_image'];
-                                $pro_qty = $row['product_qty'];
-                                $pro_price = $row['product_price'];
-                                $tot_amount = $row['total_amount'];
+                                $pro_qty = $row['qty'];
+                                $pro_price = $row['price'];
+                                $tot_amount = $row['total_amt'];
 
                                 $transId = $transId.$transNr;
                                 $transNr++;
+
+                                echo '
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <table>
+                                            <tr><td>Product Name</td><td><b>'.$pro_title.'</b> </td></tr>
+                                            <tr><td>Product Price</td><td><b>'.$pro_price.' CHF</b></td></tr>
+                                            <tr><td>Quantity</td><td><b>'.$pro_qty.'</b></td></tr>
+                                            <tr><td>Payment</td><td><b>Waiting for confirmation</b></td></tr>
+                                            <tr><td>Transaction Id</td><td><b>'.$transId.'</b></td></tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <p></p>
+                                <p></p>
+                                <p></p>';
                             }
-                            echo '
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <img style="float:right;" src="img/content/'.$pro_img.'" class="img-thumbnail"/>
-                                </div>
-                                <div class="col-md-6">
-                                    <table>
-                                        <tr><td>Product Name</td><td><b>'.$pro_title.'</b> </td></tr>
-                                        <tr><td>Product Price</td><td><b>'.$pro_price.' CHF</b></td></tr>
-                                        <tr><td>Quantity</td><td><b>'.$pro_qty.'</b></td></tr>
-                                        <tr><td>Payment</td><td><b>Completed</b></td></tr>
-                                        <tr><td>Transaction Id</td><td><b>'.$transId.'</b></td></tr>
-                                    </table>
-                                </div>
-                            </div>';
                             ?>
                         </div>
                     </div>

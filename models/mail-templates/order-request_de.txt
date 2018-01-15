@@ -1,0 +1,8 @@
+﻿Hallo dropZone Mitarbeiter
+
+Eine Bestellung von #FIRSTNAME# #LASTNAME# ist eingegangen.
+Die Mail Adresse lautet #EMAIL#.
+
+
+Freundliche Grüsse,
+Ihr Mailservice
