@@ -1,6 +1,6 @@
-﻿<?php
+<?php
 // Pear Mail Library
-require_once "Mail.php";
+require_once "pear/Mail.php";
 class userCakeMail {
 
 		// A text based system with hooks to replace various strs in txt email templates is used
