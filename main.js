@@ -199,7 +199,7 @@ $(document).ready(function(){
 		var pid = $(this).attr("update_id");
 		var qty = $("#qty-"+pid).val();
 		var price = $("#price-"+pid).val();
-		var total = $("#total-"+pid).val();
+		var total = qty * price;
 		$.ajax({
 			url	:"shoppingCart.php",
 			method	:	"POST",

@@ -12,7 +12,7 @@ if (isset($_POST["brand"])) {
             $bid = $row["brand_id"];
             $brand_name = $row["brand_title"];
             echo "
-				<a href='#' class='list-group-item list-group-item-action' bid='$bid'>$brand_name</a>
+				<a href='#' class='selectBrand list-group-item list-group-item-action' bid='$bid'>$brand_name</a>
 			";
         }
     }
@@ -30,11 +30,11 @@ if (isset($_POST["category"])) {
             $cat_name = $row["cat_title"];
             echo "
 
-				<a href='#' class='list-group-item list-group-item-action' cid='$cid'>$cat_name</a>
+				<a href='#' class='category list-group-item list-group-item-action' cid='$cid'>$cat_name</a>
 			";
         }
         echo "
-		        <a href='#' id='resetLink' class='list-group-item list-group-item-action active' cid='0'>Reset filter</a>
+		        <a href='#' id='resetLink' class='category list-group-item list-group-item-action active' cid='0'>Reset filter</a>
 			";
     }
 }
@@ -210,7 +210,7 @@ if (isset($_POST["get_cart_product"]) || isset($_POST["cart_checkout"])) {
 					    <td>
                             <div class='btn-group' role='group'>
                                 <a href='#' remove_id='$pro_id' class='btn btn-danger btn-xs remove'><span class='glyphicon glyphicon-trash'></span></a>
-                                <a href='' update_id='$pro_id' class='btn btn-primary btn-xs update'><span class='glyphicon glyphicon-ok-sign'></span></a>
+                                <a href='#' update_id='$pro_id' class='btn btn-primary btn-xs update'><span class='glyphicon glyphicon-ok-sign'></span></a>
                             </div>
                         </td>
                         <td>$pro_name</td>
