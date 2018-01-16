@@ -75,6 +75,7 @@ $lang = array_merge ( $lang, array (
 
 // Miscellaneous
 $lang = array_merge ( $lang, array (
+    "CAPTCHA_FAIL" => "Error creating the security code",
     "DENY" => "Deny",
     "CONFIRM_URL" => "Confirm",
     "SUCCESS" => "Success",
@@ -131,10 +132,9 @@ $lang = array_merge ( $lang, array (
     "PW_FORGOT_TXT" => "You forgot your password? Please enter your login and email address into the fields below and we will send you an email to reset your password.",
     "SC_TXT" => "Have a look at the videos below to learn the basics of the EVALink<sup>&reg;</sup>InstallerApp<sup>&trade;</sup>. The videos cover the most important features of the InstallerApp<sup>&trade;</sup>.",
     "REGISTER_MAIL_SUBJECT" => "Confirmation registration",
-
     "HOME_TXT" => "Welcome to dropZone-Production",
     "VIDEOS_TXT" => "So simple is commissioning of the ipTNA<sup>®</sup>series >",
-            "LANGUAGE" => "Language",
+    "LANGUAGE" => "Language",
     "PW_FORGOT_QST" => "Forgot your password? &#8680; <a href='forgot-password.php'> here </a>",
     "RESEND_ACTIV_MAIL_TXT" => "Here, you can retrieve a copy of your registration activation email.",
     "FEEDBACK_TXT" => "We look forward to your feedback. Please fill out the form below.",
@@ -207,7 +207,7 @@ $lang = array_merge ( $lang, array (
     "PUBLIC_ACCESS" => "Public access",
     "PRIVATE_ACCESS" => "Private access",
     "ADD_ACCESS" => "Add access",
-    "TOOLTIP_SC_DEFAULT" => "ipTNA Series: Verpackung, Zubehör und Inbetriebnahme",
+    "TOOLTIP_SC_DEFAULT" => "ipTNA Series: Packaging, Accessories and Commissioning",
     "LAST_UPDATE_TEXT" => "Last update",
     "SEND" => "Send",
     "RETURN" => "Return",

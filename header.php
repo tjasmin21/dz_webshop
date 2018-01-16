@@ -16,12 +16,12 @@ include( "top-navigation.php" );
     <title>dropZone Production</title>
     <link rel="icon" href="img/content/favicon.ico" type="image/ico">
 
-<!--    <link rel="stylesheet" href="css/bootstrap.css"/>-->
-<!--    <link rel="stylesheet" href="css/bootstrap-theme.css"/>-->
     <link rel="stylesheet" href="css/jquery-ui.min.css"/>
     <link rel="stylesheet" href="css/jquery-ui.structure.min.css"/>
     <link rel="stylesheet" href="css/jquery-ui.theme.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css"/>
 
     <script src="js/jquery-3.2.1.min.js"></script>
 <!--    <script src="js/jquery2.js"></script>-->

@@ -141,6 +141,7 @@ $lang = array_merge ( $lang, array (
     "PW_CHANGE_TXT" => "Mit dem untenstehenden Formular können Sie sich ein neues Passwort vergeben.",
     "EMAIL_CHANGE_TXT" => "Mit dem untenstehenden Formular können Sie sich eine neue Email Adresse vergeben.",
     "REGISTER_TXT" => "Hier können Sie sich mit wenigen Schritten für unser EVALink<sup>&reg;</sup> Demo Center registrieren.",
+    "ACTIVATION_SUBJECT" => "Aktivierungmail",
     "FEEDBACK_SUCCESSFUL_SENT" => "Ihr Feedback wurde erfolgreich an uns gesendet.",
 ) );
 
@@ -190,8 +191,9 @@ $lang = array_merge ( $lang, array (
     "TRUE" => "wahr",
     "FALSE" => "falsch",
     "REMOVE_ACCESS" => "Zugriff entfernen",
+    "FALSE" => "falsch",
     "NEVER" => "Nie",
-    "CODE" => "Security code",
+    "CODE" => "Sicherheitscode",
     "ENTER_CODE" => "Code bestätigen",
     "ACTIVE" => "Aktiv",
     "ACTIVATE" => "Aktivieren",

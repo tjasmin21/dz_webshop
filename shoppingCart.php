@@ -69,12 +69,14 @@ if (isset($_POST["getProduct"])) {
             }
             $pro_image = $row['product_image'];
             echo "
-				<div class='card' style='width: 18rem;'>
+				<div class='card col-md-4 col-md-5 col-xs-12'>
 				    <div class='card-body'>
                         <h5 class='card-title'>$pro_title</h5>
-                        <h6 class='card-subtitle mb-2 text-primary' >$pro_price</h6>
+                        <h6 class='card-subtitle' >$pro_price</h6>
                         <p class='card-text'>$pro_desc</p>
-                        <button pid='$pro_id' style='float:right;' id='product' class='btn btn-primary'>AddToCart</button>
+                    </div>
+                    <div class='card-button'>
+                        <button pid='$pro_id' id='product' class='btn btn-primary'>AddToCart</button>
                     </div>
                 </div>	
 			";
@@ -209,8 +211,8 @@ if (isset($_POST["get_cart_product"]) || isset($_POST["cart_checkout"])) {
 					<tr>
 					    <td>
                             <div class='btn-group' role='group'>
-                                <a href='#' remove_id='$pro_id' class='btn btn-danger btn-xs remove'><span class='glyphicon glyphicon-trash'></span></a>
-                                <a href='#' update_id='$pro_id' class='btn btn-primary btn-xs update'><span class='glyphicon glyphicon-ok-sign'></span></a>
+                                <a href='#' remove_id='$pro_id' class='btn btn-danger btn-xs remove'><span class='fa fa-trash'></span></a>
+                                <a href='#' update_id='$pro_id' class='btn btn-primary btn-xs update'><span class='fa fa-check-circle-o '></span></a>
                             </div>
                         </td>
                         <td>$pro_name</td>
