@@ -5,12 +5,50 @@ body {
 
 /* SHOP*/
 
-div div:first-child div.card{
+div#get_product div:first-of-type {
     margin-left: -5px;
 }
 
+.filter{
+    margin-bottom: 2em;
+}
+
+.content.shop {
+    text-align: left;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card h5{
+    margin-bottom: 1.5rem;
+}
+.card h6.card-subtitle{
+    color: rgba(120, 65, 155, 0.8);
+}
+.card-button{
+    padding: 10px 0;
+    margin: 10px 0;
+}
+.card-button button{
+    float: right;
+}
+.btn-primary{
+    background-color: rebeccapurple;
+    border-color: rebeccapurple;
+}
+
+.btn-primary:hover, .btn-primary:active, .btn-primary:not([disabled]):not(.disabled):active{
+    background-color: #7744bb;
+    border-color: #7744bb;
+}
 
 
+.list-group-item.active {
+    background-color: rebeccapurple;
+    border-color: rebeccapurple;
+}
 /*div:first-child .card {*/
     /*margin-left: -5px;*/
 /*}*/
@@ -67,6 +105,7 @@ div div:first-child div.card{
 }
 
 .navbar{
+    z-index: 3;
     padding: 1rem;
     box-shadow: 0 0 15px #000;
     position: fixed;
@@ -156,8 +195,14 @@ footer a ,footer a:hover, footer a:active{
     text-align: right;
     line-height: 20px;
 }
+.top-nav-right{
+    list-style-type: none;
+    float: right;
+    width: 20%;
+    text-align: right;
+}
 
-.footer-language ul {
+.footer-language ul, .top-nav-right ul {
     list-style-position: inside;
     padding-left: 0;
 }

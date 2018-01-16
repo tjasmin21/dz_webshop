@@ -26,7 +26,7 @@ Default navigation: Home, Products, Search, Cart
                 <li class="nav-item"><a <?php if ($thisPage == "shop") {
                         echo " id='currentLink'";
                     } ?>
-                            class="nav-link" href='shop.php'><span class='glyphicon glyphicon-modal-window'></span> Shop</a>
+                            class="nav-link" href='shop.php'><span class='fa fa-window-maximize'></span> Shop</a>
                 </li>
 
 
@@ -34,8 +34,10 @@ Default navigation: Home, Products, Search, Cart
                     <input type='text' class='form-control mr-sm-2' id='search' placeholder="Search">
                 </li>
                 <li style='top:10px;left:20px;'>
-                    <button class='btn btn-outline-success my-2 my-sm-0' id='search_btn'>Search</button>
+                    <button class='btn btn-primary my-2 my-sm-0' id='search_btn'>Search</button>
                 </li>
+            </ul>
+            <ul class="navbar-nav top-nav-right">
                 <?php
 
                 if (!isUserLoggedIn()) {
@@ -50,13 +52,13 @@ Default navigation: Home, Products, Search, Cart
                         echo " id='currentLink'";
                     }
                     echo "
-                       class='nav-link' href='customer_login.php'><span class='glyphicon glyphicon-user'></span>SignIn</a></li>
+                       class='nav-link' href='customer_login.php'><span class='fa fa-user'></span>SignIn</a></li>
                         
                         <li class='nav-item'><a ";
                     if ($thisPage == "signup") {
                         echo " id='currentLink'";
                     }
-                    echo "class='nav-link' href='customer_registration.php'><span class='glyphicon glyphicon-user'></span>SignUp</a></li> ";
+                    echo "class='nav-link' href='customer_registration.php'><span class='fa fa-user'></span>SignUp</a></li> ";
                 } else {
                     /**
                      * Navigation for user (logged in): + SignIn, SignUp
@@ -66,14 +68,14 @@ Default navigation: Home, Products, Search, Cart
                     if ($thisPage == "cart") {
                         echo " id='currentLink'";
                     }
-                    echo "  class='nav-link' href='cart.php'><span class='glyphicon glyphicon-shopping-cart'></span>   Cart <span class='badge'>  0</span></a></li>
+                    echo "  class='nav-link' href='cart.php'><span class='fa fa-shopping-cart'></span>   Cart <span class='badge'>  0</span></a></li>
                       
                         <li class='nav-item dropdown'>
                             <a ";
                     if ($thisPage == "usermenu") {
                         echo " id='currentLink'";
                     }
-                    echo "href='#' class='nav-link dropdown-toggle' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><span class='glyphicon glyphicon-user'></span> Hi," . $_SESSION['name'] . "</a>
+                    echo "href='#' class='nav-link dropdown-toggle' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'><span class='fa fa-user'></span> Hi," . $_SESSION['name'] . "</a>
                             <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
                                 <a href='user_settings.php' class='dropdown-item'>Change Password</a>
                                 <a href='email_settings.php' class='dropdown-item'>Change E-Mail</a>
