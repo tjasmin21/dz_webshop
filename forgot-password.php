@@ -130,7 +130,8 @@ if(!empty($_POST))
 				//We can use the template builder here
 				
 				//We use the activation token again for the url key it gets regenerated everytime it's used.
-				
+
+				//TODO JASMIN Adressen anpassen??
 				$mail = new userCakeMail();
 				$confirm_url = lang("CONFIRM_UML")."\n"."http://localhost/dz_webshop/forgot-password.php?confirm=".$userdetails["activation_token"];
 				$deny_url = lang("DENY")."\n"."http://localhost/dz_webshop/forgot-password.php?deny=".$userdetails["activation_token"];
@@ -168,7 +169,7 @@ if(!empty($_POST))
 		}
 	}
 }
-
+//TODO HTML CSS
 echo "
 <p><br/></p>
 <p><br/></p>
@@ -204,7 +205,7 @@ echo "
                             </div>
                              <div class='row'>
                                 <div class='col-md-12'>
-                                   <input style=\"float:right;\"  type='submit' value='".lang("SUBMIT_BTN")."' class='btn btn-success btn-lg' /> 
+                                   <input style=\"float:right;\"  type='submit' value='".lang("SUBMIT_BTN")."' class='btn btn-primary btn-lg' /> 
                                 </div>
                             </div>
                             <p>

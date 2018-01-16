@@ -1,21 +1,21 @@
 ﻿<?php
 $thisPage = "usermenu";
-require_once ("header.php");
+require_once("header.php");
 
 // Prevent the user visiting the logged in page if he is not logged in
-if (!isUserLoggedIn ()) {
-	header ( "Location: index.php" );
-	die ();
+if (!isUserLoggedIn()) {
+    header("Location: index.php");
+    die ();
 }
 
-if (! empty ( $_POST )) {
+if (!empty ($_POST)) {
 
-    $errors = array ();
-	$successes = array ();
-	$password = $_POST ["password"];
-	$email = $_POST ["email"];
-	
-    if(isUserPwCorrect($loggedInUser->user_name, $password)) {
+    $errors = array();
+    $successes = array();
+    $password = $_POST ["password"];
+    $email = $_POST ["email"];
+
+    if (isUserPwCorrect($loggedInUser->user_name, $password)) {
         if ($email != $loggedInUser->email) {
 
             if (trim($email) == "") {
@@ -35,19 +35,19 @@ if (! empty ( $_POST )) {
             }
 
         }
-    }else{
+    } else {
         $errors[] = lang("ACCOUNT_USER_OR_PASS_INVALID");
     }
 
-    }
-
+}
+//TODO HTML CSS
 echo "
 	<p><br/></p>
 	<p><br/></p>
 	<p><br/></p>
 	<div id='main' class='alert alert-secondary' role='alert'>";
 
-echo resultBlock ( $errors, $successes );
+echo resultBlock($errors, $successes);
 
 echo "
 	</div>
@@ -61,23 +61,23 @@ echo "
 						
 			<div class='col-md-3'>
 				<div class='panel panel-primary'>
-					<h1>".lang("EMAIL_CHANGE")."</h1>
-					<p>".lang("EMAIL_CHANGE_TXT")."</p>			
+					<h1>" . lang("EMAIL_CHANGE") . "</h1>
+					<p>" . lang("EMAIL_CHANGE_TXT") . "</p>			
 						<div id='regbox'>
 							<form name='updateAccount' action='" . $_SERVER ['PHP_SELF'] . "' method='post' class='form_changePW'>
 								<div class='form-group'>
-                                    <label for='username'>".lang("PW_CURRENT").":</label>
+                                    <label for='username'>" . lang("PW_CURRENT") . ":</label>
                                     <input type='password' name='password' id='password' class='form-control' required/>
 								</div>
 								<div class='form-group'>
-                                    <label for='email'>".lang("EMAIL").":</label>
+                                    <label for='email'>" . lang("EMAIL") . ":</label>
                                     <input type='text' name='email' id='email' class='form-control' value='" . $loggedInUser->email . "' disabled />
 								</div>
 								<div class='form-group'>
-                                    <label for='email'>".lang("NEW_EMAIL").":</label>
+                                    <label for='email'>" . lang("NEW_EMAIL") . ":</label>
                                     <input type='text' name='email' id='email' class='form-control' required/>
 								</div>
-		                        <input type='submit' value='".lang("UPDATE_BTN")."' class='btn btn-primary' /> 
+		                        <input type='submit' value='" . lang("UPDATE_BTN") . "' class='btn btn-primary' /> 
 							</form>
 						</div>
 				</div>
@@ -87,5 +87,5 @@ echo "
 ";
 
 
-require_once ("footer.php");
+require_once("footer.php");
 ?>

@@ -71,6 +71,15 @@ $lang = array_merge ( $lang, array (
     "CONFIG_UPDATE_SUCCESSFUL" => "Your site's configuration has been updated. You may need to load a new page for all the settings to take effect"
 ) );
 
+//Navigation
+$lang = array_merge($lang, array(
+    "NAV_CART" => "Cart",
+    "NAV_SIGN_IN" => "Sign in",
+    "NAV_SIGN_UP" => "Sign up",
+    "NAV_CH_PW" => "cahnge password",
+    "NAV_CH_MAIL" => "cahnge e-mail",
+    "NAV_LOFOUT" => "Logout"
+));
 
 
 // Miscellaneous
@@ -101,6 +110,15 @@ $lang = array_merge ( $lang, array (
     "CANNOT_DELETE_NEWUSERS" => "You cannot delete the default 'new user' group",
     "CANNOT_DELETE_ADMIN" => "You cannot delete the default 'admin' group"
 ) );
+
+// Welcome
+$lang = array_merge ( $lang, array (
+    "WELCOME_TEXT_1" => "We are pleased to offer you the opportunity to turn your ideas into a multimedia product.
+            Our offer structure allows you to get high quality support at fair prices.
+            Our goal is to create a multimedia product with you, no matter whether you are a company or a person. Our aim is to design the project in such a way that you like.",
+    "WELCOME_TEXT_2" => "We are looking forward to making your ideas come true in sound and vision.",
+));
+
 
 // Titles
 $lang = array_merge ( $lang, array (
@@ -139,14 +157,26 @@ $lang = array_merge ( $lang, array (
     "FEEDBACK_TXT" => "We look forward to your feedback. Please fill out the form below.",
     "PW_CHANGE_TXT" => "Please use the form below to create a new password.",
     "EMAIL_CHANGE_TXT" => "Please use the form below to update your email.",
-    "REGISTER_TXT" => "Here, you can register to the EVALink<sup>&reg;</sup> Demo Center by following only a few steps.",
     "ACTIVATION_SUBJECT" => "Activation mail",
     "FEEDBACK_SUCCESSFUL_SENT" => "Your feedback has been successfully sent.",
+    "CART_CHECKOUT" => "cart checkout",
+    "ORDER_DETAILS" => "customer order details",
+    "THANK_YOU" => "Thank you",
+    "HELLO" => "Hello",
+    "SEARCH_BUTTON" => "Search",
+    "SHOPPING" => "continue shopping",
+    "TITLE_PROD" => "Products",
+    "TITLE_BRAND" => "Brand",
+    "TITLE_CAT" => "Categories",
+    "TITLE_RESET_FILTER" => "RESET FILTER"
 ) );
 
 // Buttons and form-fields
 $lang = array_merge ( $lang, array (
     "SHIP_METHOD" => "Shipping method",
+    "SHIP_METHOD_STANDARD" => "Standard shipping",
+    "SHIP_METHOD_EXPRESS" => "Express shipping",
+    "SHIP_METHOD_PREMIUM" => "Premium express shipping",
     "CHECKOUT" => "Checkout ",
     "RESET" => "Reset ",
     "LOGIN_BTN" => "Login",
@@ -252,6 +282,27 @@ $lang = array_merge ( $lang, array (
 
 ) );
 
+//cart & shopping
+$lang = array_merge ( $lang, array (
+    "CART_ACTION" => "action",
+    "CART_PRODUCT" => "product name",
+    "CART_QUANTITY" => "quantity",
+    "CART_PROD_PRICE" => "product price",
+    "CART_PRICE" => "price in CHF",
+    "CART_PPAYMENT" => "payment",
+    "CART_WAITING_CONF" => "Waiting for confirmation",
+    "CART_ID" => "Transaction Id",
+    "CART_PRICE_ON_DEMAND" => "price on demand",
+    "CART_PRICE_HOUR" => ".00 CHF/per hour",
+    "CART_ADD" => "add to cart",
+    "CART_MSG_ALREADY" => "Product is already added into the cart.",
+    "CART_MSG_ADDED" => "added product",
+    "CART_MSG_REMOVED" => "removed product from cart",
+    "CART_MSG_UPDATED" => "updated product",
+
+) );
+
+
 //confirmation
 $lang = array_merge ( $lang, array (
     "TXT_CONTROL" => "Please check your inputs. In case there is a wrong information, you can go back and edit it.",
@@ -260,6 +311,7 @@ $lang = array_merge ( $lang, array (
     "CONFIRM_DATA" => "Confirm your data",
     "COUNTRY" => "Country",
     "COMMENT" => "Your comment",
-    "CONFIRMATION_SUCCESS" => "We have emailed you the order confirmation."
+    "CONFIRMATION_SUCCESS" => "We have emailed you the order confirmation.",
+    "LOGIN_SUCC" => "You logged in successfully. Click <a href='shop.php'>here</a> to browse our shop."
 ) );
 ?>

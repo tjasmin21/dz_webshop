@@ -1,6 +1,5 @@
-body {
-    /*color: #222222;*/
-
+img.dzlogo{
+    max-height:45px;
 }
 
 /* SHOP*/
@@ -34,16 +33,33 @@ div#get_product div:first-of-type {
 .card-button button{
     float: right;
 }
+body{
+    width: 99%;
+}
+.btn{
+    margin:5px;
+}
 .btn-primary{
     background-color: rebeccapurple;
     border-color: rebeccapurple;
+}
+
+.btn.btn-primary i.fa{
+    font-size: 24px;
+    padding: 1px 6px 1px 1px;
 }
 
 .btn-primary:hover, .btn-primary:active, .btn-primary:not([disabled]):not(.disabled):active{
     background-color: #7744bb;
     border-color: #7744bb;
 }
-
+button a, button a:hover, button a:active, button a:visited, button a:focus{
+    text-decoration: none;
+    color:#fff;
+}
+.product-table td{
+    padding: 5px 15px 5px 0;
+}
 
 .list-group-item.active {
     background-color: rebeccapurple;
@@ -180,6 +196,7 @@ div#get_product div:first-of-type {
 .footer {
     background-color: #222222;
     color: #fff;
+    margin-top: 2em;
 
 }
 footer #currentLink{

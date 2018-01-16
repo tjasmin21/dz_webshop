@@ -17,6 +17,7 @@ $sql = "SELECT * FROM cart WHERE user_id = '$user_id'";
 $run_query = mysqli_query($mysqli, $sql);
 ?>
 
+<!--TODO HTML CSS-->
 
 <p><br/></p>
 <p><br/></p>
@@ -34,7 +35,11 @@ $run_query = mysqli_query($mysqli, $sql);
                 <h1><?php echo lang("CONFIRM_DATA") ?></h1>
                 <div class="panel-body">
                     <div class="row">
-                        <?php echo lang("TXT_CONTROL") ?>
+                        <div class="col-md-12">
+                            <p>
+                            <?php echo lang("TXT_CONTROL") ?>
+                            </p>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
@@ -83,7 +88,7 @@ $run_query = mysqli_query($mysqli, $sql);
 
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <h1>Customer Order details</h1>
+                            <h1><?php echo lang("ORDER_DETAILS") ?></h1>
                             <hr/>
                             <?php
                             $transNr = 0;
@@ -96,16 +101,16 @@ $run_query = mysqli_query($mysqli, $sql);
 
                                 $transId = $transId.$transNr;
                                 $transNr++;
-
                                 echo '
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <table>
-                                            <tr><td>Product Name</td><td><b>'.$pro_title.'</b> </td></tr>
-                                            <tr><td>Product Price</td><td><b>'.$pro_price.' CHF</b></td></tr>
-                                            <tr><td>Quantity</td><td><b>'.$pro_qty.'</b></td></tr>
-                                            <tr><td>Payment</td><td><b>Waiting for confirmation</b></td></tr>
-                                            <tr><td>Transaction Id</td><td><b>'.$transId.'</b></td></tr>
+                                    
+                                        <table class="product-table">
+                                            <tr><td>'.lang("CART_PRODUCT").'</td><td><b>'.$pro_title.'</b> </td></tr>
+                                            <tr><td>'.lang("CART_PROD_PRICE").'</td><td><b>'.$pro_price.' CHF</b></td></tr>
+                                            <tr><td>'.lang("CART_QUANTITY").'</td><td><b>'.$pro_qty.'</b></td></tr>
+                                            <tr><td>'.lang("CART_PPAYMENT").'</td><td><b>'.lang("CART_WAITING_CONF").'</b></td></tr>
+                                            <tr><td>'.lang("CART_ID").'</td><td><b>'.$transId.'</b></td></tr>
                                         </table>
                                     </div>
                                 </div>
@@ -121,8 +126,9 @@ $run_query = mysqli_query($mysqli, $sql);
                         <p><br/></p>
                         <div class="row">
                             <div class="col-md-12">
-                                <button style="float:right;" onclick="window.history.back()" class="btn btn-info btn-lg"><?php echo lang("EDIT") ?></button>
-                                <button style="float:right;" id="confirm-order" name="confirm-order" class="btn btn-success btn-lg"><?php echo lang("CONFIRM_ORDER") ?></button>
+                                <button style="float:right;" onclick="window.history.back()" class="btn btn-secondary btn-lg"><?php echo lang("EDIT") ?></button>
+                                <span>&nbsp;</span>
+                                <button style="float:right;" id="confirm-order" name="confirm-order" class="btn btn-primary btn-lg"><?php echo lang("CONFIRM_ORDER") ?></button>
                             </div>
                         </div>
                     </div>
