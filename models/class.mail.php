@@ -1,6 +1,7 @@
 <?php
 // Pear Mail Library
-require_once "pear/Mail.php";
+include_once "vendor/autoload.php";
+
 class userCakeMail {
 
 		// A text based system with hooks to replace various strs in txt email templates is used
@@ -25,49 +26,51 @@ class userCakeMail {
 			return true;
 		}
 	}
+
 	public function sendMail($email, $subject, $msg = NULL) {
+// This is your From email address
+        $from = array("no-reply@dzproduction.com" => 'dropZone Production');
+        // Email recipients
+        $to = array(
+            $email => $email
+        );
 
-		$headers = array (
-				'From' => "dropZone Production < no-reply@dzproduction.com >",
-				'To' => $email,
-				'Subject' => '=?UTF-8?B?' . base64_encode ( $subject ) . '?=',
-				'MIME-Version' => "1.0",
-				'Content-type' => 'text/plain; charset="UTF-8"',
-				'Content-Transfer-Encoding' => '8bit' 
-		);
-		//
-		// 'Content-type' => "text/html; charset=iso-8859-1\r\n\r\n"
+        // Login credentials
+        $username = 'azure_9027786a4bbc4c42562513151f648e03@azure.com';
+        $password = 'dzSecure21';
 
-		$smtp = Mail::factory ('smtp', array (
-			'host' => 'ssl://smtp.bfh.ch',
-			'port' => '587',
-			'auth' => true,
-			'username' => 'thevj1',
-			'password' => 'Starbucks21'
-		) );
+        // Setup Swift mailer parameters
+        $transport = Swift_SmtpTransport::newInstance('smtp.sendgrid.net', 587);
+        $transport->setUsername($username);
+        $transport->setPassword($password);
+        $swift = Swift_Mailer::newInstance($transport);
 
-		// $header = "MIME-Version: 1.0\r\n";
-		// $header .= "Content-type: text/plain; charset=iso-8859-1\r\n";
-		// $header .= "From: EVALink Download Center <" . $emailAddress . ">\r\n";
-		
-		// Check to see if we sending a template email.
-		if ($msg == NULL)
-			$msg = $this->contents;
-		
-		$message = $msg;
-		
-		$message = wordwrap ( $message, 70 );
-		
-		$mail = $smtp->send ( $email, $headers, $message );
-		// mail($to,$subject,$msg,$header);
-		
+        // Create a message (subject)
+        $message = new Swift_Message($subject);
 
-		 if (PEAR::isError($mail)) {
-			 echo('<p>' . $mail->getMessage() . '</p>');
-			 return false;
-		 } else {
-			 return true;
-		 }
+        // Check to see if we sending a template email.
+        if ($msg == NULL)
+            $msg = $this->contents;
+
+        $msg = wordwrap ( $msg, 70 );
+
+        // attach the body of the email
+        $message->setFrom($from);
+        $message->setTo($to);
+        $message->setBody($msg, 'text/plain');
+
+        // send message
+        if ($recipients = $swift->send($message, $failures))
+        {
+            // This will let us know how many users received this message
+            return true;
+        }
+        // something went wrong =(
+        else
+        {
+            print_r($failures);
+            return false;
+        }
 
 	}
 }

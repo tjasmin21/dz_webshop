@@ -238,9 +238,12 @@ $lang = array_merge ( $lang, array (
     "LOST_PW_REQ_FILE" => "lost-password-request_de.txt",
     "YOUR_LOST_PW_FILE" => "your-lost-password_de.txt",
     "ORDER_CONFIRMATION_FILE" => "order-confirmation_de.txt",
+    "ORDER_REQUEST_FILE" => "order-request_de.txt",
     "LOSTPW_MAIL_SUBJECT" => "Passwort vergessen",
     "NEWPW_MAIL_SUBJECT" => "Ihr neues Passwort",
     "ORDER_CONFIRM_SUBJECT" => "Bestellbestätigung",
+    "ORDER_REQUEST_SUBJECT" => "Bestellungsanfrage",
+
 ) );
 
 //shippingForm
