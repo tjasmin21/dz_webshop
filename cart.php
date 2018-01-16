@@ -20,7 +20,7 @@ require_once ("header.php");
                 <tr>
                     <th scope="col">Action</th>
                     <th scope="col">Product Name</th>
-                    <th scope="col">Quantity</th>
+                    <th scope="col">Quantity in hour</th>
                     <th scope="col">Product Price</th>
                     <th scope="col">Price in CHF</th>
                 </tr>

@@ -147,7 +147,7 @@ $lang = array_merge ( $lang, array (
 
 // Buttons and form-fields
 $lang = array_merge ( $lang, array (
-    "SHIP_METHOD" => "Versandart",
+    "SHIP_METHOD" => "Kontakt Wahl",
     "CHECKOUT" => "Checkout",
     "RESET" => "Reset ",
     "LOGIN_BTN" => "Anmelden",
@@ -252,7 +252,7 @@ $lang = array_merge ( $lang, array (
 $lang = array_merge ( $lang, array (
     "COUNTRY_CHOOSE" => "Land auswählen: ",
     "COMMENT_WRITE" => "Schreib einen Kommentar an uns",
-    "SHIP_INFORMATION" => "Versandsinformationen",
+    "SHIP_INFORMATION" => "Bestellinformationen",
 
 ) );
 

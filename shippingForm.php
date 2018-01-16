@@ -308,9 +308,9 @@ require_once ("header.php");
                                     </div>
                                     <div class="col-md-6">
                                         <label for="shipMethod"><?php echo lang("SHIP_METHOD") ?></label><br>
-                                        <input type="radio" name="shipMethod" value="Standard shipping" checked> Standard shipping<br>
-                                        <input type="radio" name="shipMethod" value="Express shipping"> Express shipping<br>
-                                        <input type="radio" name="shipMethod" value="Premium express shipping"> Premium express shipping
+                                        <input type="radio" name="shipMethod" value="Per Telefon" checked> Per Telefon<br>
+                                        <input type="radio" name="shipMethod" value="Per Email"> Per Email<br>
+                                        <input type="radio" name="shipMethod" value="Per Post"> Per Post
                                     </div>
                                 </div>
                                 <div class='form-group'>
