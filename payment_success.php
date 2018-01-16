@@ -12,15 +12,25 @@ $hooks = array(
     "subjectStrs" => array($_COOKIE ['firstname'], $_COOKIE ['lastname'],$_COOKIE ['email'] )
 );
 
-if(!$mailCustomer->newTemplateMsg(lang("ORDER_CONFIRMATION_FILE"),$hooks) &&
-    !$mailDZ->newTemplateMsg(lang("ORDER_REQUEST_FILE"),$hooks)  )
+if(!$mailCustomer->newTemplateMsg(lang("ORDER_CONFIRMATION_FILE"),$hooks))
 {
     $errors[] = lang("MAIL_TEMPLATE_BUILD_ERROR");
 }
 else
 {
-    if(!$mailCustomer->sendMail($_COOKIE ['email'],lang("ORDER_CONFIRM_SUBJECT"))&&
-        !$mailDZ->sendMail("jasmin.thevathas@hotmail.com",lang("ORDER_CONFIRM_SUBJECT")))
+    if(!$mailCustomer->sendMail($_COOKIE ['email'],lang("ORDER_CONFIRM_SUBJECT"))     )
+    {
+        $errors[] = lang("MAIL_ERROR");
+    }
+}
+
+if(!$mailDZ->newTemplateMsg(lang("ORDER_REQUEST_FILE"),$hooks)  )
+{
+    $errors[] = lang("MAIL_TEMPLATE_BUILD_ERROR");
+}
+else
+{
+    if(!$mailDZ->sendMail("jasmin.thevathas@hotmail.com",lang("ORDER_REQUEST_SUBJECT")))
     {
         $errors[] = lang("MAIL_ERROR");
     }
