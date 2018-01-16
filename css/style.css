@@ -219,6 +219,22 @@ footer a ,footer a:hover, footer a:active{
     text-align: right;
 }
 
+@media(max-width:  900px){
+    .top-nav-right{
+        float: left;
+        width: auto;
+        text-align: left;
+    }
+    #search{
+        margin: 10px 0 10px 0;
+        min-width: 300px;
+        max-width: 30%;
+    }
+    #search_btn{
+       float:left;
+    }
+}
+
 .footer-language ul, .top-nav-right ul {
     list-style-position: inside;
     padding-left: 0;

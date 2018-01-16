@@ -30,17 +30,17 @@ Default navigation: Home, Products, Search, Cart
                 </li>
 
                 <?php echo "
-                <li style='width:300px;left:10px;top:10px;'>
+                <li>
                     <input type='text' class='form-control mr-sm-2' id='search' placeholder=".lang('SEARCH_BUTTON').">
                 </li>
-                <li style='top:10px;left:20px;'>
+                <li>
                     <button class='btn btn-primary my-2 my-sm-0' id='search_btn'>
                         ".lang('SEARCH_BUTTON')."
                     </button>
                 </li>
             </ul>
             "?>
-            <ul class="navbar-nav top-nav-right">
+            <ul class="navbar-nav mobile top-nav-right">
                 <?php
 
                 if (!isUserLoggedIn()) {
