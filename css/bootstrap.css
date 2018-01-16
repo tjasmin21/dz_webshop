@@ -8424,36 +8424,16 @@ footer a:hover {
     box-sizing: border-box;
 }
 
-/**
-    CUSTOMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
- */
-
 .bgImage {
-    background: #cccccc url("../img/layout/indexBackground.jpg");
-    height: 80%;
-    width: 100%;
-}
-
-.welcomeTitle {
-    font-size: 100px;
+    background: #cccccc url("../img/layout/indexbackground.jpg");
+    height: 100%;
     color: white;
-    text-align: center;
-    position: absolute;
-    top: 30px;
+    font-weight: bold;
+    font-size: 100;
+
 }
 
 .welcomeText {
-    margin: auto;
-    width: 80%;
+    width: 100%;
     text-align: center;
-    font-size: 100%;
-}
-
-#currentLink {
-    color: white;
-    background-color: #337ab7;
-}
-
-#resetLink {
-    font-weight: bold;
 }

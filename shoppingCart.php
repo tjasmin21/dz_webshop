@@ -69,7 +69,7 @@ if (isset($_POST["getProduct"])) {
             }
             $pro_image = $row['product_image'];
             echo "
-				<div class='card' style='width: 18rem;'>
+				<div class='card col-md-4'>
 				    <div class='card-body'>
                         <h5 class='card-title'>$pro_title</h5>
                         <h6 class='card-subtitle mb-2 text-primary' >$pro_price</h6>
