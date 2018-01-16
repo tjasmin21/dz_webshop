@@ -76,8 +76,8 @@ $lang = array_merge($lang, array(
     "NAV_CART" => "Cart",
     "NAV_SIGN_IN" => "Sign in",
     "NAV_SIGN_UP" => "Sign up",
-    "NAV_CH_PW" => "cahnge password",
-    "NAV_CH_MAIL" => "cahnge e-mail",
+    "NAV_CH_PW" => "Change password",
+    "NAV_CH_MAIL" => "Change e-mail",
     "NAV_LOFOUT" => "Logout"
 ));
 
@@ -161,8 +161,8 @@ $lang = array_merge ( $lang, array (
     "REGISTER_TXT" => "Here, you can register to the EVALink<sup>&reg;</sup> Demo Center by following only a few steps.",
     "ACTIVATION_SUBJECT" => "Activation mail",
     "FEEDBACK_SUCCESSFUL_SENT" => "Your feedback has been successfully sent.",
-    "CART_CHECKOUT" => "cart checkout",
-    "ORDER_DETAILS" => "customer order details",
+    "CART_CHECKOUT" => "Cart checkout",
+    "ORDER_DETAILS" => "Customer order details",
     "THANK_YOU" => "Thank you",
     "HELLO" => "Hello",
     "SEARCH_BUTTON" => "Search",

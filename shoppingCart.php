@@ -161,7 +161,7 @@ if (isset($_POST["addToProduct"])) {
                 echo "
 				<div class='alert alert-success'>
 					<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-					<b>".lang('CART_MSG_ADD')."</b>
+					<b>".lang('CART_MSG_ADDED')."</b>
 				</div>
 			";
             }
