@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 16. Jan 2018 um 01:18
+-- Erstellungszeit: 16. Jan 2018 um 01:27
 -- Server-Version: 10.1.28-MariaDB
 -- PHP-Version: 7.1.11
 
@@ -201,25 +201,25 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `product_cat`, `product_brand`, `product_title`, `product_price`, `product_desc`, `product_image`) VALUES
-(1, 1, 1, 'Mastering', 100, 'Wir verleihen deinem Track den letzten Feinschliff. (Unterstützte Formate .wav und .aiff)', 'mastering.png'),
-(5, 2, 1, 'Digitale Aufnahmen bearbeitet', 140, 'Mit unserem auf digitale Musik ausgelegstes Tonstudio, ermöglichen wir dir aufnahmen von unseren digitalen Instrumenten (Roland TD-30 und Roland FP-7). Aufnahmen von Schlagzeug und Tasteninstrumente in höchster Qualität.\r\n\r\nZustätzlich bearbeiten wir die Aufnahme nach deinen Wünschen. (Verwendung von Effekten und finalem Mastering)', 'digitale_aufnahme.png'),
-(6, 2, 1, 'Digitale Aufnahmen unbearbeitet', 80, 'Mit unserem auf digitale Musik ausgelegstes Tonstudio, ermöglichen wir dir aufnahmen von unseren digitalen Instrumenten (Roland TD-30 und Roland FP-7). Aufnahmen von Schlagzeug und Tasteninstrumente in höchster Qualität.', 'digitale_aufnahme.png'),
-(7, 2, 1, 'Akkustische Instrumente bearbeitet', 140, 'Wir nehme dein Instrument in unserem Tonstudio auf.\r\n\r\nAufnahme von parallel Tonspuren bis zwei Spuren möglich.\r\n\r\nZustätzlich bearbeiten wir die Aufnhame nach deinen Wünschen. (Verwendung von Effekten und finalem Mastering)', 'instrumente.png'),
+(1, 1, 1, 'Mastering', 100, 'Wir verleihen deinem Track den letzten Feinschliff. (Unterst&#252;tzte Formate .wav und .aiff)', 'mastering.png'),
+(5, 2, 1, 'Digitale Aufnahmen bearbeitet', 140, 'Mit unserem auf digitale Musik ausgelegstes Tonstudio, erm&#246;glichen wir dir aufnahmen von unseren digitalen Instrumenten (Roland TD-30 und Roland FP-7). Aufnahmen von Schlagzeug und Tasteninstrumente in h&#246;chster Qualit&#246;t.\r\n\r\nZust&#246;tzlich bearbeiten wir die Aufnahme nach deinen W&#252;nschen. (Verwendung von Effekten und finalem Mastering)', 'digitale_aufnahme.png'),
+(6, 2, 1, 'Digitale Aufnahmen unbearbeitet', 80, 'Mit unserem auf digitale Musik ausgelegstes Tonstudio, erm&#246;glichen wir dir aufnahmen von unseren digitalen Instrumenten (Roland TD-30 und Roland FP-7). Aufnahmen von Schlagzeug und Tasteninstrumente in h&#246;chster Qualit&#246;t.', 'digitale_aufnahme.png'),
+(7, 2, 1, 'Akkustische Instrumente bearbeitet', 140, 'Wir nehme dein Instrument in unserem Tonstudio auf.\r\n\r\nAufnahme von parallel Tonspuren bis zwei Spuren m&#246;glich.\r\n\r\nZust&#246;tzlich bearbeiten wir die Aufnhame nach deinen W&#252;nschen. (Verwendung von Effekten und finalem Mastering)', 'instrumente.png'),
 (8, 5, 2, 'Shootings', 0, 'Unsere Photographen stellen dich in unseren Shootings in den MIttelpunkt.', 'shooting.png'),
-(9, 2, 1, 'Akkustische Instrumente unbearbeitet', 80, 'Wir nehme dein Instrument in unserem Tonstudio auf.\r\n\r\nAufnahme von parallel Tonspuren bis zwei Spuren möglich.', 'instrumente.png'),
-(10, 5, 2, 'Landschaft / Themenbilder', 0, 'Unsere Photographen ermöglichen dir, mit Hilfe von einmaligen Landschafts- oder Themenbildern, dein Projekt abzuheben.', 'shooting.png'),
-(11, 5, 2, 'Events', 0, 'Unsere Photographen halten deine unvergässlichen Momente an Hochzeiten, Geburtstagen, Taufen, etc. für die Ewigkeit fest.', 'events.png'),
+(9, 2, 1, 'Akkustische Instrumente unbearbeitet', 80, 'Wir nehme dein Instrument in unserem Tonstudio auf.\r\n\r\nAufnahme von parallel Tonspuren bis zwei Spuren m&#246;glich.', 'instrumente.png'),
+(10, 5, 2, 'Landschaft / Themenbilder', 0, 'Unsere Photographen erm&#246;glichen dir, mit Hilfe von einmaligen Landschafts- oder Themenbildern, dein Projekt abzuheben.', 'shooting.png'),
+(11, 5, 2, 'Events', 0, 'Unsere Photographen halten deine unverg&#246;sslichen Momente an Hochzeiten, Geburtstagen, Taufen, etc. f&#252;r die Ewigkeit fest.', 'events.png'),
 (12, 6, 2, 'Vertonung', 100, 'Wir erwecken dein Video / Film mit qualitativ hochstehendem Tonmaterial zum Leben.', 'vertonung.png'),
-(32, 2, 1, 'Vocal bearbeitet', 120, 'Wir nehmen deine Stimme in unserer Gesangskabine in höchster Qualität auf. Zustätzlich bearbeiten wir die Aufnahme nach deinen Wünschen.\r\n\r\n(Verwendung von Effekten und finalem Mastering)', 'vocal.jpg'),
-(33, 3, 1, 'PA', 300, 'Wir vermieten dir für dein Event unser Studio-PA. Dieses besteht aus 2x Makkie Thump 12 1000W 12\" Powered Loudspeaker, einem Behringer Xenyx 1002 und dem entsprechenden Kabelsalat.', 'PA.png'),
-(34, 7, 2, 'Visual Effects', 0, 'Wir ermöglichen dir Visual Effects (Logoanimation, etc.) für dein Video / Film.', 'visual.png'),
-(35, 4, 1, 'Band', 0, 'Wir vermitteln dir für dein Projekt unsere ad-hoc Band \"The ragtag\".', 'band.jpg'),
-(36, 7, 2, 'zusätzliches Personal', 0, 'Bei einer grossen Video-/Filmproduktion holen wir zusätzliche Leute dazu, damit dein Video / Film deinen Vorstellungen gerecht wird.', 'personal.png'),
-(37, 7, 2, 'Special Shots', 140, 'Wir ermöglichen dir Special Shots (bspw. Unterwasseraufnahmen) für dein Video / Film.', 'shooting.png'),
-(38, 7, 2, 'Drohnenaufnahme', 180, 'Wir verwenden unsere 4k Drohne für dein Video / Film. Dabei wird die Drohne von einem erfahrenen Piloten geflogen', 'drohne.png'),
+(32, 2, 1, 'Vocal bearbeitet', 120, 'Wir nehmen deine Stimme in unserer Gesangskabine in h&#246;chster Qualit&#246;t auf. Zust&#246;tzlich bearbeiten wir die Aufnahme nach deinen W&#252;nschen.\r\n\r\n(Verwendung von Effekten und finalem Mastering)', 'vocal.jpg'),
+(33, 3, 1, 'PA', 300, 'Wir vermieten dir f&#252;r dein Event unser Studio-PA. Dieses besteht aus 2x Makkie Thump 12 1000W 12\" Powered Loudspeaker, einem Behringer Xenyx 1002 und dem entsprechenden Kabelsalat.', 'PA.png'),
+(34, 7, 2, 'Visual Effects', 0, 'Wir erm&#246;glichen dir Visual Effects (Logoanimation, etc.) f&#252;r dein Video / Film.', 'visual.png'),
+(35, 4, 1, 'Band', 0, 'Wir vermitteln dir f&#252;r dein Projekt unsere ad-hoc Band \"The ragtag\".', 'band.jpg'),
+(36, 7, 2, 'zus&#246;tzliches Personal', 0, 'Bei einer grossen Video-/Filmproduktion holen wir zus&#246;tzliche Leute dazu, damit dein Video / Film deinen Vorstellungen gerecht wird.', 'personal.png'),
+(37, 7, 2, 'Special Shots', 140, 'Wir erm&#246;glichen dir Special Shots (bspw. Unterwasseraufnahmen) f&#252;r dein Video / Film.', 'shooting.png'),
+(38, 7, 2, 'Drohnenaufnahme', 180, 'Wir verwenden unsere 4k Drohne f&#252;r dein Video / Film. Dabei wird die Drohne von einem erfahrenen Piloten geflogen', 'drohne.png'),
 (39, 7, 2, 'Song Komposition', 100, 'Wir komponieren den Song zu deinem Video / Film. Dabei kannst du deine ganz eigenen Ideen einbringen und aktiv an der Songproduktion teilhaben.', 'band.jpg'),
-(45, 4, 1, 'Instrument', 0, 'Wir vermitteln dir für dein Projekt den passenden Instrumentalisten / die passende Instrumentalistin', 'instrumente.png'),
-(46, 4, 1, 'Gesang', 0, 'Wir vermitteln dir für dein Projekt den passenden Sänger / die passende Sängerin.', 'vocal.jpg');
+(45, 4, 1, 'Instrument', 0, 'Wir vermitteln dir f&#252;r dein Projekt den passenden Instrumentalisten / die passende Instrumentalistin', 'instrumente.png'),
+(46, 4, 1, 'Gesang', 0, 'Wir vermitteln dir f&#252;r dein Projekt den passenden S&#246;nger / die passende S&#246;ngerin.', 'vocal.jpg');
 
 -- --------------------------------------------------------
 

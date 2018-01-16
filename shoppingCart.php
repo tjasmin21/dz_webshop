@@ -5,7 +5,7 @@ if (isset($_POST["brand"])) {
     $brand_query = "SELECT * FROM brands";
     $run_query = mysqli_query($mysqli, $brand_query);
     echo "
-		<a href='#' class='list-group-item list-group-item-action disabled'><h4>".lang('TITLE_BRAND')."</h4></a>
+		<a href='#' class='list-group-item list-group-item-action disabled'><h4>" . lang('TITLE_BRAND') . "</h4></a>
 	";
     if (mysqli_num_rows($run_query) > 0) {
         while ($row = mysqli_fetch_array($run_query)) {
@@ -22,7 +22,7 @@ if (isset($_POST["category"])) {
     $category_query = "SELECT * FROM categories";
     $run_query = mysqli_query($mysqli, $category_query) or die(mysqli_error($mysqli));
     echo "
-			<a href='#' class='list-group-item list-group-item-action disabled'><h4>".lang('TITLE_CAT')."</h4></a>
+			<a href='#' class='list-group-item list-group-item-action disabled'><h4>" . lang('TITLE_CAT') . "</h4></a>
 	";
     if (mysqli_num_rows($run_query) > 0) {
         while ($row = mysqli_fetch_array($run_query)) {
@@ -34,7 +34,7 @@ if (isset($_POST["category"])) {
 			";
         }
         echo "
-		        <a href='#' id='resetLink' class='category list-group-item list-group-item-action active' cid='0'>".lang('TITLE_RESET_FILTER')."</a>
+		        <a href='#' id='resetLink' class='category list-group-item list-group-item-action active' cid='0'>" . lang('TITLE_RESET_FILTER') . "</a>
 			";
     }
 }
@@ -62,10 +62,10 @@ if (isset($_POST["getProduct"])) {
             $pro_price = $row['product_price'];
             $pro_desc = $row['product_desc'];
 
-            if($pro_price == 0){
+            if ($pro_price == 0) {
                 $pro_price = lang("CART_PRICE_ON_DEMAND");
-            }else{
-                $pro_price = $pro_price.lang("CART_PRICE_HOUR");
+            } else {
+                $pro_price = $pro_price . lang("CART_PRICE_HOUR");
             }
             $pro_image = $row['product_image'];
             echo "
@@ -109,10 +109,10 @@ if (isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || iss
         $pro_price = $row['product_price'];
         $pro_desc = $row['product_desc'];
 
-        if($pro_price == 0){
+        if ($pro_price == 0) {
             $pro_price = lang("CART_PRICE_ON_DEMAND");
-        }else{
-            $pro_price = $pro_price.lang("CART_PRICE_HOUR");
+        } else {
+            $pro_price = $pro_price . lang("CART_PRICE_HOUR");
         }
         $pro_image = $row['product_image'];
         $pro_desc = $row['product_desc'];
@@ -141,7 +141,7 @@ if (isset($_POST["addToProduct"])) {
             echo "
 			<div class='alert alert-warning'>
 					<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-					<b>".lang('CART_MSG_ALREADY')."</b>
+					<b>" . lang('CART_MSG_ALREADY') . "</b>
 			</div>
 		";
         } else {
@@ -161,7 +161,7 @@ if (isset($_POST["addToProduct"])) {
                 echo "
 				<div class='alert alert-success'>
 					<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-					<b>".lang('CART_MSG_ADD')."</b>
+					<b>".lang('CART_MSG_ADDED')."</b>
 				</div>
 			";
             }
@@ -170,7 +170,7 @@ if (isset($_POST["addToProduct"])) {
         echo "
 				<div class='alert alert-success'>
 					<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-					<b>".lang('CART_MSG_SIGN_UP')."</b>
+					<b>" . lang('CART_MSG_SIGN_UP') . "</b>
 				</div>
 			";
     }
@@ -198,43 +198,48 @@ if (isset($_POST["get_cart_product"]) || isset($_POST["cart_checkout"])) {
             setcookie("ta", $total_amt, strtotime("+1 day"), "/", "", "", TRUE);
             if (isset($_POST["get_cart_product"])) {
                 echo "
+                <table>
 				 <tr>
-					<td>$no</td>
-					<td><img src='img/content/$pro_image' width='60px' height='50px'></td>
-					<td>$pro_name</td>
-					<td>$pro_price".lang('CART_PRICE_HOUR')."</td>
+					<td style='width:120px;'></td>
+					<td style='width:400px;'>$no</td>
+					<td style='width:120px;'><img src='img/content/$pro_image' width='60px' height='50px'></td>
+					<td style='width:120px;'>$pro_name</td>
+					<td style='width:120px;'>$pro_price" . lang('CART_PRICE_HOUR') . "</td>
 				 </tr>
+				 </table>
 			";
                 $no = $no + 1;
             } else {
                 echo "
+                    <table>
 					<tr>
-					    <td>
+					    <td style='width:120px;'>
                             <div class='btn-group' role='group'>
                                 <a href='#' remove_id='$pro_id' class='btn btn-danger btn-xs remove'><span class='fa fa-trash'></span></a>
                                 <a href='#' update_id='$pro_id' class='btn btn-primary btn-xs update'><span class='fa fa-check-circle-o '></span></a>
                             </div>
                         </td>
-                        <td>$pro_name</td>
-                        <td><input type='number' class='form-control qty' pid='$pro_id' id='qty-$pro_id' value='$qty' min='1'></td>
-                        <td><input type='text' class='form-control price' pid='$pro_id' id='price-$pro_id' value='$pro_price' disabled></td>
-                        <td><input type='text' class='form-control total' pid='$pro_id' id='total-$pro_id' value='$total' disabled></td>
+                        <td style='width:400px;'>$pro_name</td>
+                        <td style='width:120px;'><input type='number' class='form-control qty' pid='$pro_id' id='qty-$pro_id' value='$qty' min='1'></td>
+                        <td style='width:120px;'><input type='text' class='form-control price' pid='$pro_id' id='price-$pro_id' value='$pro_price' disabled></td>
+                        <td style='width:120px;'><input type='text' class='form-control total' pid='$pro_id' id='total-$pro_id' value='$total' disabled></td>
 					</tr>
+					</table>
 				";
             }
 
         }
         if (isset($_POST["cart_checkout"])) {
-            echo "<div class='row'>
-					<div class='col-md-8'></div>
-					<div class='col-md-4'>
-						<h1>Total: $total_amt CHF</h1>
+            echo "  <div class='row'>
+                    <div class='col-md-8'></div>
+					<div class='col-md-4' style='text-align: right; margin-bottom: 20px'>
+						<h3>Total: $total_amt CHF</h3>
 					</div>";
         }
 
         echo "
             <div class='col-md-12'>
-                <input  onclick='location.href=\"shippingForm.php\"' style='float:right;' value=" . lang("CHECKOUT") . " type='button' id='checkout' name='checkout' class='btn btn-success btn-lg'>
+                <input  onclick='location.href=\"shippingForm.php\"' style='float:right;' value=" . lang("CHECKOUT") . " type='button' id='checkout' name='checkout' class='btn btn-primary btn-lg'>
             </div>
         ";
 
@@ -285,7 +290,7 @@ if (isset($_POST["removeFromCart"])) {
         echo "
 			<div class='alert alert-danger'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				<b>".lang('CART_MSG_REMOVED')."</b>
+				<b>" . lang('CART_MSG_REMOVED') . "</b>
 			</div>
 		";
     }
@@ -310,40 +315,10 @@ if (isset($_POST["updateProduct"])) {
         echo "
 			<div class='alert alert-success'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				<b>".lang('CART_MSG_UPDATED')."</b>
+				<b>" . lang('CART_MSG_UPDATED') . "</b>
 			</div>
 		";
     }
 }
 
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

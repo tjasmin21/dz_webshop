@@ -1,21 +1,21 @@
-﻿<?php
+﻿﻿<?php
 $thisPage = "usermenu";
 require_once("header.php");
 
-// Prevent the user visiting the logged in page if he is not logged in
-if (!isUserLoggedIn()) {
-    header("Location: index.php");
-    die ();
-}
+//// Prevent the user visiting the logged in page if he is not logged in
+//if (!isUserLoggedIn ()) {
+//	header ( "Location: index.php" );
+//	die ();
+//}
 
 if (!empty ($_POST)) {
 
-    $errors = array();
-    $successes = array();
-    $password = $_POST ["password"];
-    $email = $_POST ["email"];
+    $errors = array ();
+	$successes = array ();
+	$password = md5($_POST ["password"]);
+	$email = $_POST ["email"];
 
-    if (isUserPwCorrect($loggedInUser->user_name, $password)) {
+    if(isUserPwCorrect($loggedInUser->username, $password)) {
         if ($email != $loggedInUser->email) {
 
             if (trim($email) == "") {
@@ -24,8 +24,6 @@ if (!empty ($_POST)) {
                 //Extra validation for older bowsers, because
                 $errors [] = lang("ACCOUNT_INVALID_EMAIL");
 
-            } else if (emailExists($email)) {
-                $errors[] = lang("ACCOUNT_EMAIL_IN_USE", array($email));
             }
 
             //End data validation

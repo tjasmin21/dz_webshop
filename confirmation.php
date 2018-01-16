@@ -1,4 +1,4 @@
-﻿<?php
+﻿﻿<?php
 $thisPage = "cart";
 
 require_once("models/funcs.php");
@@ -43,45 +43,43 @@ $run_query = mysqli_query($mysqli, $sql);
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <label><?php echo lang("FIRSTNAME") ?>:</label>
+                            <label><b><?php echo lang("FIRSTNAME") ?>:</b></label>
                             <label> <?php echo $_COOKIE ['firstname'] ?></label>
                         </div>
                         <div class="col-md-6">
-                            <label ><?php echo lang("LASTNAME") ?>:</label>
+                            <label ><b><?php echo lang("LASTNAME") ?>:</b></label>
                             <label ><?php echo $_COOKIE["lastname"]?></label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <label ><?php echo lang("TEL") ?>:</label>
+                            <label ><b><?php echo lang("TEL") ?>:</b></label>
                             <label ><?php echo $_COOKIE["telephone"] ?></label>
                         </div>
                         <div class="col-md-6">
-                            <label ><?php echo lang("EMAIL") ?>:</label>
+                            <label ><b><?php echo lang("EMAIL") ?>:</b></label>
                             <label ><?php echo $_COOKIE["email"] ?></label>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12">
-                            <label ><?php echo lang("ADDRESS") ?>:</label>
+                        <div class="col-md-6">
+                            <label ><b><?php echo lang("ADDRESS") ?>:</b></label>
                             <label ><?php echo $_COOKIE["address"] ?></label>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <label ><?php echo lang("COUNTRY") ?>:</label>
+                        <div class="col-md-6">
+                            <label ><b><?php echo lang("COUNTRY") ?>:</b></label>
                             <label ><?php echo $_COOKIE["countries"] ?></label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <label ><?php echo lang("SHIP_METHOD") ?>:</label>
+                            <label ><b><?php echo lang("SHIP_METHOD") ?>:</b></label>
                             <label ><?php echo $_COOKIE["shipMethod"] ?></label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <label ><?php echo lang("COMMENT") ?>:</label>
+                            <label ><b><?php echo lang("COMMENT") ?>:</b></label>
                             <label ><?php echo $_COOKIE["comment"] ?></label>
                         </div>
                     </div>
@@ -103,18 +101,15 @@ $run_query = mysqli_query($mysqli, $sql);
                                 $transNr++;
                                 echo '
                                 <div class="row">
-                                    <div class="col-md-6">
-                                    
-                                        <table class="product-table">
-                                            <tr><td>'.lang("CART_PRODUCT").'</td><td><b>'.$pro_title.'</b> </td></tr>
-                                            <tr><td>'.lang("CART_PROD_PRICE").'</td><td><b>'.$pro_price.' CHF</b></td></tr>
-                                            <tr><td>'.lang("CART_QUANTITY").'</td><td><b>'.$pro_qty.'</b></td></tr>
-                                            <tr><td>'.lang("CART_PPAYMENT").'</td><td><b>'.lang("CART_WAITING_CONF").'</b></td></tr>
-                                            <tr><td>'.lang("CART_ID").'</td><td><b>'.$transId.'</b></td></tr>
-                                        </table>
-                                    </div>
+                                    <table class="product-table">
+                                        <tr><td>'.lang("CART_PRODUCT").'</td><td><b>'.$pro_title.'</b> </td></tr>
+                                        <tr><td>'.lang("CART_PROD_PRICE").'</td><td><b>'.$pro_price.' CHF</b></td></tr>
+                                        <tr><td>'.lang("CART_QUANTITY").'</td><td><b>'.$pro_qty.'</b></td></tr>
+                                        <tr><td>'.lang("CART_PPAYMENT").'</td><td><b>'.lang("CART_WAITING_CONF").'</b></td></tr>
+                                        <tr><td>'.lang("CART_ID").'</td><td><b>'.$transId.'</b></td></tr>
+                                    </table>
                                 </div>
-                                <p></p>
+                                 <p><br/></p>
                                 <p></p>
                                 <p></p>';
                             }

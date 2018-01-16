@@ -1,4 +1,4 @@
-﻿<?php
+﻿﻿<?php
 
 /*
  * %m1% - Dymamic markers which are replaced at run time by the relevant index.
@@ -34,7 +34,7 @@ $lang = array_merge ( $lang, array (
     "ACCOUNT_DETAILS_UPDATED" => "Kontoinformationen sind aktualisiert",
     "ACCOUNT_ACTIVATION_MESSAGE" => "http://%m1%activate-account.php?token=%m2%",
     "ACCOUNT_ACTIVATION_COMPLETE" => "Sie haben Ihr Konto erfolgreich aktiviert. Sie können sich jetzt einloggen. ",
-    "ACCOUNT_REGISTRATION_COMPLETE_TYPE1" => "Sie haben sich erfolgreich registriert. Sie können sich jetzt hier <a href='customer_login.php'>einloggen</a> . ",
+    "ACCOUNT_REGISTRATION_COMPLETE_TYPE1" => "Sie haben sich erfolgreich registriert. Sie können sich jetzt hier <a href='/customer_login.php'>einloggen</a> . ",
     "ACCOUNT_REGISTRATION_COMPLETE_TYPE2" => "Sie haben sich erfolgreich registriert. Wir haben soeben eine Bestätigungsmail an Ihre E-Mail-Adresse gesendet. Bitte klicken Sie auf den darin enthaltenen Link, um die Registrierung abzuschliessen.",
     "ACCOUNT_PASSWORD_NOTHING_TO_UPDATE" => "Sie können nicht mit einem alten Passwort aktualisieren.",
     "ACCOUNT_PASSWORD_UPDATED" => "Kontopasswort wurde aktualisiert",
@@ -85,6 +85,7 @@ $lang = array_merge($lang, array(
 $lang = array_merge ( $lang, array (
     "CAPTCHA_FAIL" => "Fehler beim Erstellen des Securitycodes",
     "DENY" => "Abbrechen",
+    "CONFIRM_URL" => "Bestätigen",
     "SUCCESS" => "Erfolgreich",
     "ERROR" => "Fehler",
     "NOTHING_TO_UPDATE" => "Nichts zum aktualisieren",
@@ -157,6 +158,7 @@ $lang = array_merge ( $lang, array (
     "FEEDBACK_TXT" => "Wir freuen uns auf Ihr Feedback. Bitte benutzten Sie dazu das untenstehende Formular.",
     "PW_CHANGE_TXT" => "Mit dem untenstehenden Formular können Sie sich ein neues Passwort vergeben.",
     "EMAIL_CHANGE_TXT" => "Mit dem untenstehenden Formular können Sie sich eine neue Email Adresse vergeben.",
+    "REGISTER_TXT" => "Hier können Sie sich mit wenigen Schritten für unser EVALink<sup>&reg;</sup> Demo Center registrieren.",
     "ACTIVATION_SUBJECT" => "Aktivierungmail",
     "FEEDBACK_SUCCESSFUL_SENT" => "Ihr Feedback wurde erfolgreich an uns gesendet.",
     "CART_CHECKOUT" => "zur Kasse",
@@ -173,10 +175,10 @@ $lang = array_merge ( $lang, array (
 
 // Buttons and form-fields
 $lang = array_merge ( $lang, array (
-    "SHIP_METHOD" => "Versandart",
-    "SHIP_METHOD_STANDARD" => "Standard",
-    "SHIP_METHOD_EXPRESS" => "Express",
-    "SHIP_METHOD_PREMIUM" => "Premium",
+    "SHIP_METHOD" => "Kontakt Wahl",
+    "SHIP_METHOD_STANDARD" => "Per Telefon",
+    "SHIP_METHOD_EXPRESS" => "Per Email",
+    "SHIP_METHOD_PREMIUM" => "Per Post",
     "CHECKOUT" => "Fertigstellen",
     "RESET" => "Zurücksetzten ",
     "LOGIN_BTN" => "Anmelden",
@@ -269,16 +271,19 @@ $lang = array_merge ( $lang, array (
     "LOST_PW_REQ_FILE" => "lost-password-request_de.txt",
     "YOUR_LOST_PW_FILE" => "your-lost-password_de.txt",
     "ORDER_CONFIRMATION_FILE" => "order-confirmation_de.txt",
+    "ORDER_REQUEST_FILE" => "order-request_de.txt",
     "LOSTPW_MAIL_SUBJECT" => "Passwort vergessen",
     "NEWPW_MAIL_SUBJECT" => "Ihr neues Passwort",
     "ORDER_CONFIRM_SUBJECT" => "Bestellbestätigung",
+    "ORDER_REQUEST_SUBJECT" => "Bestellungsanfrage",
+
 ) );
 
 //shippingForm
 $lang = array_merge ( $lang, array (
     "COUNTRY_CHOOSE" => "Land auswählen: ",
     "COMMENT_WRITE" => "Schreib einen Kommentar an uns",
-    "SHIP_INFORMATION" => "Versandsinformationen",
+    "SHIP_INFORMATION" => "Bestellinformationen",
 
 ) );
 
@@ -311,6 +316,6 @@ $lang = array_merge ( $lang, array (
     "COUNTRY" => "Land",
     "COMMENT" => "Ihr Kommentar",
     "CONFIRMATION_SUCCESS" => "Wir haben Ihnen ein Mail mit den Bestellungsinformationen verschickt",
-    "LOGIN_SUCC" => "Sie haben sich erfolgreich eingeloggt. Klicken Sie <a href='shop.php'>hier</a>, um zum Shop zu gelangen."
+    "LOGIN_SUCC" => "Sie haben sich erfolgreich eingeloggt. Klicken Sie <a href='/shop.php'>hier</a>, um zum Shop zu gelangen."
 ) );
 ?>

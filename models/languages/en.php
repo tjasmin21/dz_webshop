@@ -1,4 +1,4 @@
-﻿<?php
+﻿﻿<?php
 
 /*
 * %m1% - Dymamic markers which are replaced at run time by the relevant index.
@@ -33,8 +33,8 @@ $lang = array_merge ( $lang, array (
     "ACCOUNT_PASSWORD_INVALID" => "Current password doesn't match the one we have on record",
     "ACCOUNT_DETAILS_UPDATED" => "Account details updated",
     "ACCOUNT_ACTIVATION_MESSAGE" => "http://%m1%activate-account.php?token=%m2%",
-    "ACCOUNT_ACTIVATION_COMPLETE" => "You have successfully activated your account. You can now login <a href=\"index.php\">here</a>.",
-    "ACCOUNT_REGISTRATION_COMPLETE_TYPE1" => "You have successfully registered. You can now login <a href=\"index.php\">here</a>.",
+    "ACCOUNT_ACTIVATION_COMPLETE" => "You have successfully activated your account. You can now login <a href='/customer_login.php'>here</a>.",
+    "ACCOUNT_REGISTRATION_COMPLETE_TYPE1" => "You have successfully registered. You can now login <a href='/customer_login.php'>here</a>.",
     "ACCOUNT_REGISTRATION_COMPLETE_TYPE2" => "Your account has been created successfully. A confirmation email has been sent to your email address. Please follow the link within the email in order to finish registration.",
     "ACCOUNT_PASSWORD_NOTHING_TO_UPDATE" => "You cannot update with the same password",
     "ACCOUNT_PASSWORD_UPDATED" => "Account password updated",
@@ -76,8 +76,8 @@ $lang = array_merge($lang, array(
     "NAV_CART" => "Cart",
     "NAV_SIGN_IN" => "Sign in",
     "NAV_SIGN_UP" => "Sign up",
-    "NAV_CH_PW" => "cahnge password",
-    "NAV_CH_MAIL" => "cahnge e-mail",
+    "NAV_CH_PW" => "Change password",
+    "NAV_CH_MAIL" => "Change e-mail",
     "NAV_LOFOUT" => "Logout"
 ));
 
@@ -86,6 +86,7 @@ $lang = array_merge($lang, array(
 $lang = array_merge ( $lang, array (
     "CAPTCHA_FAIL" => "Error creating the security code",
     "DENY" => "Deny",
+    "CONFIRM_URL" => "Confirm",
     "SUCCESS" => "Success",
     "ERROR" => "Error",
     "NOTHING_TO_UPDATE" => "Nothing to update",
@@ -157,10 +158,11 @@ $lang = array_merge ( $lang, array (
     "FEEDBACK_TXT" => "We look forward to your feedback. Please fill out the form below.",
     "PW_CHANGE_TXT" => "Please use the form below to create a new password.",
     "EMAIL_CHANGE_TXT" => "Please use the form below to update your email.",
+    "REGISTER_TXT" => "Here, you can register to the EVALink<sup>&reg;</sup> Demo Center by following only a few steps.",
     "ACTIVATION_SUBJECT" => "Activation mail",
     "FEEDBACK_SUCCESSFUL_SENT" => "Your feedback has been successfully sent.",
-    "CART_CHECKOUT" => "cart checkout",
-    "ORDER_DETAILS" => "customer order details",
+    "CART_CHECKOUT" => "Cart checkout",
+    "ORDER_DETAILS" => "Customer order details",
     "THANK_YOU" => "Thank you",
     "HELLO" => "Hello",
     "SEARCH_BUTTON" => "Search",
@@ -173,10 +175,10 @@ $lang = array_merge ( $lang, array (
 
 // Buttons and form-fields
 $lang = array_merge ( $lang, array (
-    "SHIP_METHOD" => "Shipping method",
-    "SHIP_METHOD_STANDARD" => "Standard shipping",
-    "SHIP_METHOD_EXPRESS" => "Express shipping",
-    "SHIP_METHOD_PREMIUM" => "Premium express shipping",
+    "SHIP_METHOD" => "Contact method",
+    "SHIP_METHOD_STANDARD" => "By telephone",
+    "SHIP_METHOD_EXPRESS" => "By email",
+    "SHIP_METHOD_PREMIUM" => "By postal",
     "CHECKOUT" => "Checkout ",
     "RESET" => "Reset ",
     "LOGIN_BTN" => "Login",
@@ -269,16 +271,18 @@ $lang = array_merge ( $lang, array (
     "LOST_PW_REQ_FILE" => "lost-password-request_en.txt",
     "YOUR_LOST_PW_FILE" => "your-lost-password_en.txt",
     "ORDER_CONFIRMATION_FILE" => "order-confirmation_en.txt",
+    "ORDER_REQUEST_FILE" => "order-request_en.txt",
     "LOSTPW_MAIL_SUBJECT" => "Lost password request",
     "NEWPW_MAIL_SUBJECT" => "Your new password",
     "ORDER_CONFIRM_SUBJECT" => "Order confirmation",
+    "ORDER_REQUEST_SUBJECT" => "Order request",
 ) );
 
 //shippingForm
 $lang = array_merge ( $lang, array (
     "COUNTRY_CHOOSE" => "Choose your country: ",
     "COMMENT_WRITE" => "Write a comment to us",
-    "SHIP_INFORMATION" => "Shipping information",
+    "SHIP_INFORMATION" => "Order information",
 
 ) );
 

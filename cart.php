@@ -15,36 +15,19 @@ require_once ("header.php");
 			<div class="col-md-2"></div>
 		</div>
         <h1><?php echo lang("CART_CHECKOUT") ?></h1>
-        <table class="table">
-            <thead>
+        <table>
                 <tr>
-                    <th scope="col"><?php echo lang("CART_ACTION") ?></th>
-                    <th scope="col"><?php echo lang("CART_PRODUCT") ?></th>
-                    <th scope="col"><?php echo lang("CART_QUANTITY") ?></th>
-                    <th scope="col"><?php echo lang("CART_PROD_PRICE") ?></th>
-                    <th scope="col"><?php echo lang("CART_PRICE") ?></th>
+                    <td style="width:120px; font-weight: bold;"><?php echo lang("CART_ACTION") ?></td>
+                    <td style="width:400px; font-weight: bold;"><?php echo lang("CART_PRODUCT") ?></td>
+                    <td style="width:120px; font-weight: bold;"><?php echo lang("CART_QUANTITY") ?></td>
+                    <td style="width:120px; font-weight: bold;"><?php echo lang("CART_PROD_PRICE") ?></td>
+                    <td style="width:120px; font-weight: bold;"><?php echo lang("CART_PRICE") ?></td>
                 </tr>
-            </thead>
-            <tbody id="cart_checkout"></tbody>
-        </table>
+            </table>
+            <span id="cart_checkout"></span>
         <div class="col-md-2"></div>
     </div>
 
 <?php
     require_once ("footer.php");
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,11 +1,11 @@
 ﻿<?php
 require_once( "config.php" );
 
-// Prevent the user visiting the logged in page if he/she is already logged in
-if (isUserLoggedIn ()  ) {
-	header ( "Location: index.php" );
-	die ();
-}
+//// Prevent the user visiting the logged in page if he/she is already logged in
+//if (isUserLoggedIn ()  ) {
+//	header ( "Location: index.php" );
+//	die ();
+//}
 
 $_SESSION ["email"] = "";
 $_SESSION ["username"] = "";
@@ -68,9 +68,9 @@ if (! empty ( $_POST )) {
 		$_SESSION ["username"] = "";
 	}
 
-	if (minMaxRange ( 3, 50, $password ) && minMaxRange ( 3, 50, $confirm_pass )) {
+	if (minMaxRange ( 6, 50, $password ) && minMaxRange ( 6, 50, $confirm_pass )) {
 		$errors [] = lang ( "ACCOUNT_PASS_CHAR_LIMIT", array (
-				3,
+				6,
 				50 
 		) );
 	} else if ($password != $confirm_pass) {

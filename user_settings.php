@@ -1,21 +1,21 @@
-﻿<?php
+﻿﻿<?php
 $thisPage = "usermenu";
 require_once("header.php");
 
-// Prevent the user visiting the logged in page if he is not logged in
-if (!isUserLoggedIn()) {
-    header("Location: index.php");
-    die ();
-}
+//// Prevent the user visiting the logged in page if he is not logged in
+//if (!isUserLoggedIn ()) {
+//	header ( "Location: index.php" );
+//	die ();
+//}
 
 if (!empty ($_POST)) {
     $errors = array();
     $successes = array();
-    $password = $_POST ["password"];
-    $password_new = $_POST ["passwordc"];
-    $password_confirm = $_POST ["passwordcheck"];
+    $password = md5($_POST ["password"]);
+    $password_new = trim($_POST ["passwordc"]);
+    $password_confirm = trim($_POST ["passwordcheck"]);
 
-    if (isUserPwCorrect($loggedInUser->user_name, $password)) {
+    if (isUserPwCorrect($loggedInUser->username, $password)) {
         if ($password_new != "" or $password_confirm != "") {
             if (trim($password_new) == "") {
                 $errors [] = lang("ACCOUNT_SPECIFY_NEW_PASSWORD");
@@ -33,7 +33,7 @@ if (!empty ($_POST)) {
             // End data validation
             if (count($errors) == 0) {
                 // Also prevent updating if someone attempts to update with the same password
-                $entered_pass_new = md5($password_new, $loggedInUser->hash_pw);
+                $entered_pass_new = md5($password_new);
 
                 if ($entered_pass_new == $loggedInUser->hash_pw) {
                     // Don't update, this fool is trying to update with the same password Â¬Â¬

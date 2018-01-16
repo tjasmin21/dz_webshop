@@ -1,4 +1,4 @@
-﻿<?php
+﻿﻿<?php
 require_once("header.php");
 
 /**
@@ -105,7 +105,7 @@ if(!empty($_POST))
 	}
 	else if(!usernameExists($username))
 	{
-		$errors[] = lang("ACCOUNT_INVALID_USERNAME");
+		$errors[] = lang("ACCOUNT_INVALID_USERNAME")." - ".$username;
 	}
 	
 	if(count($errors) == 0)
@@ -120,21 +120,20 @@ if(!empty($_POST))
 		{
 			//Check if the user has any outstanding lost password requests
 			$userdetails = fetchUserDetails($username);
-			if($userdetails["lost_password_request"] == 1)
-			{
-				$errors[] = lang("FORGOTPASS_REQUEST_EXISTS");
-			}
-			else
-			{
+//			if($userdetails["lost_password_request"] == 1)
+//			{
+//				$errors[] = lang("FORGOTPASS_REQUEST_EXISTS");
+//			}
+//			else
+//			{
 				//Email the user asking to confirm this change password request
 				//We can use the template builder here
 				
 				//We use the activation token again for the url key it gets regenerated everytime it's used.
 
-				//TODO JASMIN Adressen anpassen??
 				$mail = new userCakeMail();
-				$confirm_url = lang("CONFIRM_UML")."\n"."http://localhost/dz_webshop/forgot-password.php?confirm=".$userdetails["activation_token"];
-				$deny_url = lang("DENY")."\n"."http://localhost/dz_webshop/forgot-password.php?deny=".$userdetails["activation_token"];
+				$confirm_url = lang("CONFIRM_URL")."\n"."https://dzwebshop.azurewebsites.net/forgot-password.php?confirm=".$userdetails["activation_token"];
+				$deny_url = lang("DENY")."\n"."https://dzwebshop.azurewebsites.net/forgot-password.php?deny=".$userdetails["activation_token"];
 				
 				//Setup our custom hooks
 				$hooks = array(
@@ -166,7 +165,7 @@ if(!empty($_POST))
 					}
 				}
 			}
-		}
+//		}
 	}
 }
 //TODO HTML CSS

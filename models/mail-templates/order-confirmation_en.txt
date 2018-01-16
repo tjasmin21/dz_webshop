@@ -1,8 +1,7 @@
-﻿Hello #FIRSTNAME# #LASTNAME#,
+﻿﻿Hello #FIRSTNAME# #LASTNAME#,
 
-Your order has been successfully submitted. You will hear from us soon.
-Thank you
-
+Your order was sent successfully. We will contact you as soon as possible.
+Thank you for your purchase.
 
 Best regards,
-Your dropZone-Team
+dropZone Team
