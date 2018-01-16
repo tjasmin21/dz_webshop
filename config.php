@@ -1,4 +1,12 @@
 ﻿<?php
+require_once 'Microsoft/WindowsAzure/Storage/Table.php';
+require_once 'Microsoft/WindowsAzure/SessionHandler.php';
+$storageClient = new Microsoft_WindowsAzure_Storage_Table('table.core.windows.net',
+    'dzwebshopstorage',
+    'guwFi1UxarCK0xCn7AD4w1nD2qUUKr7Qul2wJg1+RyXzl3NkKKjsoufVl+Fj0AybGkJuzT3d3tmFWR5ceOogpw==');
+$sessionHandler = new Microsoft_WindowsAzure_SessionHandler($storageClient , 'sessionstable');
+$sessionHandler->register();
+
 session_start();
 
 require_once("models/db-settings.php"); // Require DB connection
