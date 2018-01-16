@@ -1,6 +1,6 @@
 <?php
 
-require_once ("header.php");
+require_once("header.php");
 
 
 $mailCustomer = new userCakeMail();
@@ -33,37 +33,37 @@ else
     if(!$mailDZ->sendMail("jasmin.thevathas@hotmail.com",lang("ORDER_REQUEST_SUBJECT")))
     {
         $errors[] = lang("MAIL_ERROR");
-    }
-    else
-    {
+    } else {
         $successes[] = lang("CONFIRMATION_SUCCESS");
     }
 }
 
 ?>
-	<p><br/></p>
-	<p><br/></p>
-	<p><br/></p>
-	<div class="container-fluid">
-	
-		<div class="row">
-			<div class="col-md-2"></div>
-			<div class="col-md-8">
-				<div class="panel panel-default">
-					<div class="panel-body">
-						<h1>Thankyou </h1>
-						<hr/>
-						<p>Hello <?php echo $_SESSION["name"]; ?>, <b></b><br/>
-                            <?php echo lang("CONFIRMATION_SUCCESS") ?> <br/></p>
-						<a href="index.php" class="btn btn-success btn-lg">Continue Shopping</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-2"></div>
-		</div>
-	</div>
+<!--TODO HTML CSS-->
+<p><br/></p>
+<p><br/></p>
+<p><br/></p>
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h1><?php lang("THANK_YOU") ?></h1>
+                    <hr/>
+                    <p><?php echo lang("HELLO"); ?> <?php echo $_SESSION["name"]; ?>, <b></b><br/>
+                        <?php echo lang("CONFIRMATION_SUCCESS") ?> <br/></p>
+                    <button class="btn btn-primary btn-lg"><a href="index.php"><?php echo lang("SHOPPING"); ?></a>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
 <?php
-    require_once ("footer.php");
+require_once("footer.php");
 ?>
 
 

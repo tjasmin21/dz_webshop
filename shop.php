@@ -11,7 +11,6 @@ require_once("header.php");
     </div>
 </div>
 
-<!--	<div class="container-fluid">-->
 <div class="row">
     <div class="content shop">
         <div class="row">
@@ -28,7 +27,7 @@ require_once("header.php");
                 </div>
                 <div class="album text-muted">
                     <div class="container">
-                        <h1>Products</h1>
+                        <h1><?php echo lang("TITLE_PROD") ?></h1>
                         <div id="get_product" class="row products">
                             <!--Here we get product jquery Ajax Request-->
                         </div>
@@ -43,51 +42,3 @@ require_once("header.php");
 <?php
 require_once("footer.php");
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

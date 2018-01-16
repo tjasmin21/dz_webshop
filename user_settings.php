@@ -52,7 +52,7 @@ if (!empty ($_POST)) {
         $errors[] = lang("ACCOUNT_USER_OR_PASS_INVALID");
     }
 }
-
+//TODO HTML CSS
 echo "
 	<p><br/></p>
 	<p><br/></p>

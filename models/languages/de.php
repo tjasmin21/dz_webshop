@@ -71,7 +71,15 @@ $lang = array_merge ( $lang, array (
     "CONFIG_UPDATE_SUCCESSFUL" => "Ihre Seiteneinstellungen wurden aktualisiert. Sie müssen die Seite ev. neu laden, um die Änderungen zu sehen"
 ) );
 
-
+//Navigation
+$lang = array_merge($lang, array(
+    "NAV_CART" => "Warenkorb",
+    "NAV_SIGN_IN" => "Anmelden",
+    "NAV_SIGN_UP" => "Registrieren",
+    "NAV_CH_PW" => "Passwort ändern",
+    "NAV_CH_MAIL" => "E-Mail ändern",
+    "NAV_LOFOUT" => "Abmelden"
+));
 
 // Miscellaneous
 $lang = array_merge ( $lang, array (
@@ -102,6 +110,16 @@ $lang = array_merge ( $lang, array (
     "CANNOT_DELETE_NEWUSERS" => "Die Defaultgruppe 'new user' kann nicht entfernt werden",
     "CANNOT_DELETE_ADMIN" => "Die Defaultgruppe 'admin' kann nicht entfernt werden"
 ) );
+
+// Welcome
+$lang = array_merge ( $lang, array (
+    "WELCOME_TEXT_1" => "Wir freuen uns dir die Möglichkeit zu bieten, deine Ideen in ein Multimediaprodukt umzusetzen.
+            Unsere Angebotsstruktur ermöglicht dir, qualitativ hochstehende Unterstützung zu angemessenen Preisen.
+            Unser Ziel ist es, mit dir, egal ob Unternehmung oder Privatperson, ein Multimediaprodukt zu realisieren,
+            welches deinen Vorstellungen gerecht wird. Dabei ist es unser Anliegen, das Projekt so zu gestalten, dass
+            es deinen Möglichkeiten entspricht.",
+    "WELCOME_TEXT_2" => "Wir freuen uns darauf, mit dir deine Vorstellungen in Bild und Ton Realität werden zu lassen."
+));
 
 // Titles
 $lang = array_merge ( $lang, array (
@@ -143,13 +161,26 @@ $lang = array_merge ( $lang, array (
     "REGISTER_TXT" => "Hier können Sie sich mit wenigen Schritten für unser EVALink<sup>&reg;</sup> Demo Center registrieren.",
     "ACTIVATION_SUBJECT" => "Aktivierungmail",
     "FEEDBACK_SUCCESSFUL_SENT" => "Ihr Feedback wurde erfolgreich an uns gesendet.",
+    "CART_CHECKOUT" => "zur Kasse",
+    "ORDER_DETAILS" => "Details zum Kundenauftrag",
+    "THANK_YOU" => "Danke",
+    "HELLO" => "Hallo",
+    "SEARCH_BUTTON" => "Suchen",
+    "SHOPPING" => "weiter einkaufen",
+    "TITLE_PROD" => "Produkte",
+    "TITLE_BRAND" => "Marke",
+    "TITLE_CAT" => "Kategorien",
+    "TITLE_RESET_FILTER" => "FILTER ZURÜCKSETZTEN"
 ) );
 
 // Buttons and form-fields
 $lang = array_merge ( $lang, array (
     "SHIP_METHOD" => "Kontakt Wahl",
-    "CHECKOUT" => "Checkout",
-    "RESET" => "Reset ",
+    "SHIP_METHOD_STANDARD" => "Per Telefon",
+    "SHIP_METHOD_EXPRESS" => "Per Email",
+    "SHIP_METHOD_PREMIUM" => "Per Post",
+    "CHECKOUT" => "Fertigstellen",
+    "RESET" => "Zurücksetzten ",
     "LOGIN_BTN" => "Anmelden",
     "REGISTER_BTN" => "Registrieren",
     "SUBMIT_BTN" => "Bestätigen",
@@ -256,6 +287,26 @@ $lang = array_merge ( $lang, array (
 
 ) );
 
+//cart & shopping
+$lang = array_merge ( $lang, array (
+    "CART_ACTION" => "Aktion",
+    "CART_PRODUCT" => "Produktname",
+    "CART_QUANTITY" => "Anzahl",
+    "CART_PROD_PRICE" => "Produktpreis",
+    "CART_PRICE" => "Preis in CHF",
+    "CART_PPAYMENT" => "Zahlung",
+    "CART_WAITING_CONF" => "Warten auf Bestätigung",
+    "CART_ID" => "Bestellnummer",
+    "CART_PRICE_ON_DEMAND" => "Preis auf Anfrage",
+    "CART_PRICE_HOUR" => ".00 CHF/Stunde",
+    "CART_MSG_ALREADY" => "Das Produkt befindet sich bereits im Warenkorb",
+    "CART_MSG_ADDED" => "Produkt hinzugefügt",
+    "CART_MSG_SIGN_UP" => "Sie müssen sich anmelden, bevor Sie Produkte in den Warebkorb legen können",
+    "CART_MSG_REMOVED" => "Produkt wurde aus dem Warenkorb entfernt",
+    "CART_MSG_UPDATED" => "Produkt wurde angepasst",
+
+) );
+
 //confirmation
 $lang = array_merge ( $lang, array (
     "TXT_CONTROL" => "Bitte bestätigen sie ihre Daten. Falls die Angaben nicht stimmen, können sie zurück, um sie zu bearbeiten.",
@@ -264,6 +315,7 @@ $lang = array_merge ( $lang, array (
     "CONFIRM_DATA" => "Angaben bestätigen",
     "COUNTRY" => "Land",
     "COMMENT" => "Ihr Kommentar",
-    "CONFIRMATION_SUCCESS" => "Wir haben Ihnen ein Mail mit den Bestellungsinformationen verschickt"
+    "CONFIRMATION_SUCCESS" => "Wir haben Ihnen ein Mail mit den Bestellungsinformationen verschickt",
+    "LOGIN_SUCC" => "Sie haben sich erfolgreich eingeloggt. Klicken Sie <a href='/shop.php'>hier</a>, um zum Shop zu gelangen."
 ) );
 ?>
