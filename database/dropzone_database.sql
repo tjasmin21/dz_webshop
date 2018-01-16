@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 31. Dez 2017 um 04:51
+-- Erstellungszeit: 16. Jan 2018 um 01:27
 -- Server-Version: 10.1.28-MariaDB
 -- PHP-Version: 7.1.11
 
@@ -64,11 +64,13 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`id`, `p_id`, `ip_add`, `user_id`, `product_title`, `product_image`, `qty`, `price`, `total_amt`) VALUES
-(1, 1, '0', 0, 'Samsung Dous 2', 'samsung mobile.jpg', 1, 5000, 5000),
-(2, 2, '0', 0, 'iPhone 5s', 'iphone mobile.jpg', 1, 25000, 25000),
-(12, 1, '0', 6, 'Mastering', 'samsung mobile.jpg', 1, 100, 100),
-(13, 5, '0', 6, 'Digitale Aufnahmen bearbeitet', 'ipad 2.jpg', 1, 140, 140),
-(14, 5, '0', 7, 'Digitale Aufnahmen bearbeitet', 'ipad 2.jpg', 1, 140, 140);
+(1, 1, '0', 0, 'Samsung Dous 2', 'mastering.png', 1, 5000, 5000),
+(2, 2, '0', 0, 'iPhone 5s', 'mastering.png', 1, 25000, 25000),
+(12, 1, '0', 6, 'Mastering', 'mastering.png', 1, 100, 100),
+(13, 5, '0', 6, 'Digitale Aufnahmen bearbeitet', 'mastering.png', 1, 140, 140),
+(23, 7, '0', 7, 'Akkustische Instrumente bearbeitet', 'instrumente.png', 2, 140, 280),
+(24, 1, '0', 7, 'Mastering', 'mastering.png', 3, 100, 300),
+(25, 5, '0', 7, 'Digitale Aufnahmen bearbeitet', 'digitale_aufnahme.png', 1, 140, 140);
 
 -- --------------------------------------------------------
 
@@ -191,34 +193,33 @@ CREATE TABLE `products` (
   `product_title` varchar(255) NOT NULL,
   `product_price` int(100) NOT NULL,
   `product_desc` text NOT NULL,
-  `product_image` text NOT NULL,
-  `product_keywords` text NOT NULL
+  `product_image` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Daten für Tabelle `products`
 --
 
-INSERT INTO `products` (`product_id`, `product_cat`, `product_brand`, `product_title`, `product_price`, `product_desc`, `product_image`, `product_keywords`) VALUES
-(1, 1, 1, 'Mastering', 100, 'Samsung Dous 2 sgh ', 'samsung mobile.jpg', 'samsung mobile electronics'),
-(5, 2, 1, 'Digitale Aufnahmen bearbeitet', 140, 'samsung ipad', 'ipad 2.jpg', 'ipad tablet samsung'),
-(6, 2, 1, 'Digitale Aufnahmen unbearbeitet', 80, 'Hp Red and Black combination Laptop', 'k2-_ed8b8f8d-e696-4a96-8ce9-d78246f10ed1.v1.jpg-bc204bdaebb10e709a997a8bb4518156dfa6e3ed-optim-450x450.jpg', 'hp laptop '),
-(7, 2, 1, 'Akkustische Instrumente bearbeitet', 140, 'Laptop Hp Pavillion', '12039452_525963140912391_6353341236808813360_n.png', 'Laptop Hp Pavillion'),
-(8, 5, 2, 'Shootings', 0, 'Sony Mobile', 'sony mobile.jpg', 'sony mobile'),
-(9, 2, 1, 'Akkustische Instrumente unbearbeitet', 80, 'iphone', 'white iphone.png', 'iphone apple mobile'),
-(10, 5, 2, 'Landschaft / Themenbilder', 0, 'red dress for girls', 'red dress.jpg', 'red dress '),
-(11, 5, 2, 'Events', 0, 'Blue dress', 'images.jpg', 'blue dress cloths'),
-(12, 6, 2, 'Vertonung', 100, 'ladies casual summer two colors pleted', '7475-ladies-casual-dresses-summer-two-colors-pleated.jpg', 'girl dress cloths casual'),
-(32, 2, 1, 'Vocal bearbeitet', 120, 'book shelf', 'furniture-book-shelf-250x250.jpg', 'book shelf furniture'),
-(33, 3, 1, 'PA', 300, 'Refrigerator', 'CT_WM_BTS-BTC-AppliancesHome_20150723.jpg', 'refrigerator samsung'),
-(34, 7, 2, 'Visual Effects', 0, 'Emergency Light', 'emergency light.JPG', 'emergency light'),
-(35, 4, 1, 'Band', 0, 'Vaccum Cleaner', 'images (2).jpg', 'Vaccum Cleaner'),
-(36, 7, 2, 'zusätzliches Personal', 0, 'gj', 'iron.JPG', 'iron'),
-(37, 7, 2, 'Special Shots', 140, 'LED TV', 'images (4).jpg', 'led tv lg'),
-(38, 7, 2, 'Drohnenaufnahme', 180, 'Microwave Oven', 'images.jpg', 'Microwave Oven'),
-(39, 7, 2, 'Song Komposition', 100, 'Mixer Grinder', 'singer-mixer-grinder-mg-46-medium_4bfa018096c25dec7ba0af40662856ef.jpg', 'Mixer Grinder'),
-(45, 4, 1, 'Instrument', 0, '0', 'samsung_galaxy_note3_note3neo.JPG', 'samsung galaxy Note 3 neo'),
-(46, 4, 1, 'Gesang', 0, '', 'samsung_galaxy_note3_note3neo.JPG', 'samsung galxaxy note 3 neo');
+INSERT INTO `products` (`product_id`, `product_cat`, `product_brand`, `product_title`, `product_price`, `product_desc`, `product_image`) VALUES
+(1, 1, 1, 'Mastering', 100, 'Wir verleihen deinem Track den letzten Feinschliff. (Unterst&#252;tzte Formate .wav und .aiff)', 'mastering.png'),
+(5, 2, 1, 'Digitale Aufnahmen bearbeitet', 140, 'Mit unserem auf digitale Musik ausgelegstes Tonstudio, erm&#246;glichen wir dir aufnahmen von unseren digitalen Instrumenten (Roland TD-30 und Roland FP-7). Aufnahmen von Schlagzeug und Tasteninstrumente in h&#246;chster Qualit&#246;t.\r\n\r\nZust&#246;tzlich bearbeiten wir die Aufnahme nach deinen W&#252;nschen. (Verwendung von Effekten und finalem Mastering)', 'digitale_aufnahme.png'),
+(6, 2, 1, 'Digitale Aufnahmen unbearbeitet', 80, 'Mit unserem auf digitale Musik ausgelegstes Tonstudio, erm&#246;glichen wir dir aufnahmen von unseren digitalen Instrumenten (Roland TD-30 und Roland FP-7). Aufnahmen von Schlagzeug und Tasteninstrumente in h&#246;chster Qualit&#246;t.', 'digitale_aufnahme.png'),
+(7, 2, 1, 'Akkustische Instrumente bearbeitet', 140, 'Wir nehme dein Instrument in unserem Tonstudio auf.\r\n\r\nAufnahme von parallel Tonspuren bis zwei Spuren m&#246;glich.\r\n\r\nZust&#246;tzlich bearbeiten wir die Aufnhame nach deinen W&#252;nschen. (Verwendung von Effekten und finalem Mastering)', 'instrumente.png'),
+(8, 5, 2, 'Shootings', 0, 'Unsere Photographen stellen dich in unseren Shootings in den MIttelpunkt.', 'shooting.png'),
+(9, 2, 1, 'Akkustische Instrumente unbearbeitet', 80, 'Wir nehme dein Instrument in unserem Tonstudio auf.\r\n\r\nAufnahme von parallel Tonspuren bis zwei Spuren m&#246;glich.', 'instrumente.png'),
+(10, 5, 2, 'Landschaft / Themenbilder', 0, 'Unsere Photographen erm&#246;glichen dir, mit Hilfe von einmaligen Landschafts- oder Themenbildern, dein Projekt abzuheben.', 'shooting.png'),
+(11, 5, 2, 'Events', 0, 'Unsere Photographen halten deine unverg&#246;sslichen Momente an Hochzeiten, Geburtstagen, Taufen, etc. f&#252;r die Ewigkeit fest.', 'events.png'),
+(12, 6, 2, 'Vertonung', 100, 'Wir erwecken dein Video / Film mit qualitativ hochstehendem Tonmaterial zum Leben.', 'vertonung.png'),
+(32, 2, 1, 'Vocal bearbeitet', 120, 'Wir nehmen deine Stimme in unserer Gesangskabine in h&#246;chster Qualit&#246;t auf. Zust&#246;tzlich bearbeiten wir die Aufnahme nach deinen W&#252;nschen.\r\n\r\n(Verwendung von Effekten und finalem Mastering)', 'vocal.jpg'),
+(33, 3, 1, 'PA', 300, 'Wir vermieten dir f&#252;r dein Event unser Studio-PA. Dieses besteht aus 2x Makkie Thump 12 1000W 12\" Powered Loudspeaker, einem Behringer Xenyx 1002 und dem entsprechenden Kabelsalat.', 'PA.png'),
+(34, 7, 2, 'Visual Effects', 0, 'Wir erm&#246;glichen dir Visual Effects (Logoanimation, etc.) f&#252;r dein Video / Film.', 'visual.png'),
+(35, 4, 1, 'Band', 0, 'Wir vermitteln dir f&#252;r dein Projekt unsere ad-hoc Band \"The ragtag\".', 'band.jpg'),
+(36, 7, 2, 'zus&#246;tzliches Personal', 0, 'Bei einer grossen Video-/Filmproduktion holen wir zus&#246;tzliche Leute dazu, damit dein Video / Film deinen Vorstellungen gerecht wird.', 'personal.png'),
+(37, 7, 2, 'Special Shots', 140, 'Wir erm&#246;glichen dir Special Shots (bspw. Unterwasseraufnahmen) f&#252;r dein Video / Film.', 'shooting.png'),
+(38, 7, 2, 'Drohnenaufnahme', 180, 'Wir verwenden unsere 4k Drohne f&#252;r dein Video / Film. Dabei wird die Drohne von einem erfahrenen Piloten geflogen', 'drohne.png'),
+(39, 7, 2, 'Song Komposition', 100, 'Wir komponieren den Song zu deinem Video / Film. Dabei kannst du deine ganz eigenen Ideen einbringen und aktiv an der Songproduktion teilhaben.', 'band.jpg'),
+(45, 4, 1, 'Instrument', 0, 'Wir vermitteln dir f&#252;r dein Projekt den passenden Instrumentalisten / die passende Instrumentalistin', 'instrumente.png'),
+(46, 4, 1, 'Gesang', 0, 'Wir vermitteln dir f&#252;r dein Projekt den passenden S&#246;nger / die passende S&#246;ngerin.', 'vocal.jpg');
 
 -- --------------------------------------------------------
 
@@ -254,7 +255,7 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `user_name`, `address`, `p
 (4, 'Asvini', 'Thevathas', 'asvini', 'SchÃ¼tzenweg 14', '0a0583203be320f890989fb1175002e6', 'jasmin.thevathas@sitasys.com', '5454ef9f6840c1d48ef92bab3c01c33d', 1511459735, 0, 1, 'New Member', 1511459735, 0),
 (5, 'Asvini', 'Thevathas', 'asvini1', 'SchÃ¼tzenweg 14', '0bfff65e563892e8586a9a65379a9fe1', 'jasmin.thevathas@sitasys.com', 'a0759f296214a821e01a48e3fcb2f764', 1511460020, 0, 1, 'New Member', 1511460020, 0),
 (6, 'Asvini', 'Thevathas', 'asvini2', 'SchÃ¼tzenweg 14', '25d55ad283aa400af464c76d713c07ad', 'jasmin.thevathas@sitasys.com', '8b3ba6ef5d576207d032d346f0cb60e8', 1513280811, 0, 1, 'New Member', 1513280811, 1514422884),
-(7, 'Jasmin', 'Thevathas', 'jasmin5', 'Oberdorfstrasse 3', '96e79218965eb72c92a549dd5a330112', 'jasmin.thevathas@hotmail.com', '45352adf8135fce9aa4a638de18d9cc4', 1514686550, 0, 1, 'New Member', 1514686550, 1514692025);
+(7, 'Jasmin', 'Thevathas', 'jasmin5', 'Oberdorfstrasse 3', '96e79218965eb72c92a549dd5a330112', 'jasmin.thevathas@hotmail.com', '45352adf8135fce9aa4a638de18d9cc4', 1514686550, 0, 1, 'New Member', 1514686550, 1515977208);
 
 -- --------------------------------------------------------
 
@@ -348,7 +349,7 @@ ALTER TABLE `brands`
 -- AUTO_INCREMENT für Tabelle `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT für Tabelle `categories`
