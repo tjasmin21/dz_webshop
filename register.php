@@ -68,9 +68,9 @@ if (! empty ( $_POST )) {
 		$_SESSION ["username"] = "";
 	}
 
-	if (minMaxRange ( 3, 50, $password ) && minMaxRange ( 3, 50, $confirm_pass )) {
+	if (minMaxRange ( 6, 50, $password ) && minMaxRange ( 6, 50, $confirm_pass )) {
 		$errors [] = lang ( "ACCOUNT_PASS_CHAR_LIMIT", array (
-				3,
+				6,
 				50 
 		) );
 	} else if ($password != $confirm_pass) {
