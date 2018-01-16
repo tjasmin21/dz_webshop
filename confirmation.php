@@ -101,18 +101,15 @@ $run_query = mysqli_query($mysqli, $sql);
                                 $transNr++;
                                 echo '
                                 <div class="row">
-                                    <div class="col-md-6">
-                                    
-                                        <table class="product-table">
-                                            <tr><td>'.lang("CART_PRODUCT").'</td><td><b>'.$pro_title.'</b> </td></tr>
-                                            <tr><td>'.lang("CART_PROD_PRICE").'</td><td><b>'.$pro_price.' CHF</b></td></tr>
-                                            <tr><td>'.lang("CART_QUANTITY").'</td><td><b>'.$pro_qty.'</b></td></tr>
-                                            <tr><td>'.lang("CART_PPAYMENT").'</td><td><b>'.lang("CART_WAITING_CONF").'</b></td></tr>
-                                            <tr><td>'.lang("CART_ID").'</td><td><b>'.$transId.'</b></td></tr>
-                                        </table>
-                                    </div>
+                                    <table class="product-table">
+                                        <tr><td>'.lang("CART_PRODUCT").'</td><td><b>'.$pro_title.'</b> </td></tr>
+                                        <tr><td>'.lang("CART_PROD_PRICE").'</td><td><b>'.$pro_price.' CHF</b></td></tr>
+                                        <tr><td>'.lang("CART_QUANTITY").'</td><td><b>'.$pro_qty.'</b></td></tr>
+                                        <tr><td>'.lang("CART_PPAYMENT").'</td><td><b>'.lang("CART_WAITING_CONF").'</b></td></tr>
+                                        <tr><td>'.lang("CART_ID").'</td><td><b>'.$transId.'</b></td></tr>
+                                    </table>
                                 </div>
-                                <p></p>
+                                 <p><br/></p>
                                 <p></p>
                                 <p></p>';
                             }
