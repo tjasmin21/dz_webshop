@@ -1,8 +1,8 @@
-﻿Guten Tag #FIRSTNAME# #LASTNAME#
+﻿Hello dropZone employees
 
-Ihre Bestellung wurde erfolgreich abgeschickt. Sie werden in kürze von uns hören.
-Danke für ihre Treue.
+An order of #FIRSTNAME# #LASTNAME# has been received.
+The mail address is #EMAIL#.
 
 
-Freundliche Grüsse,
-dropZone Team
+Best regards,
+Your mail service

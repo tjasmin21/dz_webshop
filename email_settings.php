@@ -24,8 +24,6 @@ if (! empty ( $_POST )) {
                 //Extra validation for older bowsers, because
                 $errors [] = lang("ACCOUNT_INVALID_EMAIL");
 
-            } else if (emailExists($email)) {
-                $errors[] = lang("ACCOUNT_EMAIL_IN_USE", array($email));
             }
 
             //End data validation
