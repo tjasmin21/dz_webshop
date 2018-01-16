@@ -1,6 +1,7 @@
 ﻿Hello #FIRSTNAME# #LASTNAME#,
 
-Do you need a new password for the EVALink® Demo Center? Please follow the link below to reset it.
+Your order was sent successfully. We will contact you as soon as possible.
+Thank you for your purchase.
 
 Best regards,
 dropZone Team
