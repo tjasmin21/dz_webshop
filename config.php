@@ -1,10 +1,10 @@
 ﻿<?php
-require_once("models/db-settings.php"); // Require DB connection
+session_start();
 
+require_once("models/db-settings.php"); // Require DB connection
 
 require_once("models/funcs.php");
 require_once("models/db_funcs.php");
-session_start();
 
 include_once('httpsprache.php');
 
