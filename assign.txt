@@ -1,0 +1,61 @@
+# Assignment
+
+## Team
+
+Names: Jasmin Thevathas & Joy Wirth
+Project Title: dropZone Production Webshop
+
+Project setup:
+- Deployed on azure.com
+- MySQL server on azure.com
+- File storage on azure.com
+- Mail server is azure.com
+
+
+## Site and Page Structure
+
+- Index
+- Shop
+User not logged in
+    - Sign In
+    - Sign Up
+    - Forgot password
+User logged in
+  - Cart
+    - Shipping form
+    - Order confirmation
+    - Order placement successful
+  - Password change
+  - Email change
+  - Logout
+
+
+## Database
+MySQL database located on azure.com
+Msqli library is used to connect and use the database
+
+## Multilingual
+Two languages,german and english, are available for this website.
+For this function two arrays got used and a function (lang()), which managed them.
+Default will be the browser language
+
+## Authentication
+The user details are saved in the database. The passwords are hashed.
+
+## Qookies
+Qookies are used to save the shippment informations. Since those information only have a short lifetime
+(either it's till they place the order or it's till they sign out)
+
+## Sessions
+Sessions are used for example to know if and which user is connected. The database connection was saved in a
+session to avoid multiple connections and also the language was saved in one.
+
+## AJAX
+AJAX was used for example to filter the shopitems without a reload or to update the number of items in the cart (navigation)
+
+## JQuery
+JQuery got used for example to redirect a site depending on a click or a simple dialog popping up.
+
+## Responsiveness
+The site is responsive. Bootstrap framework was used for the design. The framework already includes those special settings
+(media queries)
